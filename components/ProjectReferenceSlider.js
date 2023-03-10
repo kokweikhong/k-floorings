@@ -23,32 +23,26 @@ export default function ProjectReferenceSlider() {
     dots: true,
     centerMode: true,
     infinite: true,
-    centerPadding: "60px",
-    slidesToShow: 3,
+    centerPadding: "300px",
+    slidesToShow: 1,
     slidesToScroll: 1,
     speed: 500,
     arrows: false,
     // dotsClass: "project-ref-dots",
     responsive: [
       {
-        breakpoint: 768,
+        breakpoint: 1024,
         settings: {
-          centerMode: false,
-          //   centerPadding: "60px",
-          slidesToShow: 1,
-          slidesToScroll: 1,
-          infinite: true,
-          dots: true,
+          centerPadding: "150px",
         },
       },
-      //   {
-      //     breakpoint: 600,
-      //     settings: {
-      //       slidesToShow: 2,
-      //       slidesToScroll: 2,
-      //       initialSlide: 2
-      //     }
-      //   },
+      {
+        breakpoint: 600,
+        settings: {
+          centerMode: false,
+          centerPadding: "0px",
+        },
+      },
       //   {
       //     breakpoint: 480,
       //     settings: {
@@ -61,7 +55,7 @@ export default function ProjectReferenceSlider() {
   return (
     <section>
       {/* project reference */}
-      <section className="pt-[50px] bg-[#f3f3f3]">
+      <section className="py-[50px] bg-[#f3f3f3]">
         <div className="px-[15px] flex flex-col items-start">
           <h4 className="relative pr-[60px] text-primary tracking-[2px] after:content-[''] after:w-[35px] after:h-[2px] after:bg-primary after:absolute after:top-1/2 after:right-0">
             Asia
@@ -73,7 +67,7 @@ export default function ProjectReferenceSlider() {
           <Slider {...settings}>
             {projects.map((project, index) => {
               return (
-                <div key={index} className="px-[15px] w-full h-full">
+                <div key={index} className="px-[15px] h-full">
                   <div>
                     <Image
                       src={project.img.src}
