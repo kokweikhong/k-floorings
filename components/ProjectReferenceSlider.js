@@ -12,9 +12,21 @@ import project3 from "../public/images/home/project-reference_MONOCOT.jpg";
 
 // TODO : alt tags
 const projects = [
-  { img: { src: project1, alt: "" } },
-  { img: { src: project2, alt: "" } },
-  { img: { src: project3, alt: "" } },
+  {
+    img: { src: project1, alt: "" },
+    title: "Channel @ KLCC",
+    material: "Kandinsky (Kildare)",
+  },
+  {
+    img: { src: project2, alt: "" },
+    title: "Dyson @ St James Power Station",
+    material: "Kandinsky (Zerno)",
+  },
+  {
+    img: { src: project3, alt: "" },
+    title: "Monocot Soleil",
+    material: "Kandinsk (Pugachov & Bartek)",
+  },
 ];
 
 export default function ProjectReferenceSlider() {
@@ -67,13 +79,17 @@ export default function ProjectReferenceSlider() {
           <Slider {...settings}>
             {projects.map((project, index) => {
               return (
-                <div key={index} className="px-[15px] h-full">
+                <div key={index} className="px-[15px] h-full relative">
                   <div>
                     <Image
                       src={project.img.src}
                       alt={project.img.alt}
                       className="w-full h-full rounded-[15px] object-cover"
                     />
+                  </div>
+                  <div className="absolute bottom-0 flex flex-col items-center justify-center w-full gap-1 text-[#fff]">
+                    <h3>{project.title}</h3>
+                    <h4>{project.material}</h4>
                   </div>
                 </div>
               );
