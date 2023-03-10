@@ -3,74 +3,84 @@
 @tailwind utilities;
 
 @layer components {
-    .btn-primary-fill {
-      @apply text-[15px] text-[#fff] bg-primary px-[20px] py-[15px] uppercase rounded-[40px] font-medium;
-    }
+  .btn-primary-fill {
+    @apply text-[15px] text-[#fff] bg-primary px-[20px] py-[15px] uppercase rounded-[40px] font-medium;
+  }
 }
 
 body {
-    font-family: var(--font-inter);
+  font-family: var(--font-inter);
+}
+
+h1,
+h2,
+h3 {
+  font-family: var(--font-raleway);
 }
 
 h1 {
-    font-family: var(--font-raleway);
-    font-weight: 900;
-    font-size: 3.052rem;
-    /* font-size: 5.653rem; */
+  font-size: 1.802rem;
+  font-weight: 900;
 }
 
 h2 {
-    font-family: var(--font-raleway);
-    font-size: 2.441rem;
-    font-weight: 800;
+  font-size: 1.602rem;
+  font-weight: 800;
 }
 
 h3 {
-    font-size: 1.953rem;
+  font-size: 1.424rem;
+  font-weight: 700;
 }
 
 h4 {
-    font-size: 1.563rem;
+  font-size: 1.266rem;
+  font-weight: 600;
 }
 
 h5 {
-    font-size: 1.25rem;
-}
-
-.small {
-    font-size: 0.8rem;
-}
-
-.caption {
-    font-size: 0.64rem;
+  font-size: 1.125rem;
+  font-weight: 500;
 }
 
 @media (min-width: 1024px) {
-    /* h1 {font-size: 11.089rem;} */
-      
-    h1 {font-size: 6.854rem;}
-      
-    h2 {font-size: 4.236rem;}
-      
-    h3 {font-size: 2.618rem;}
-      
-    h4 {font-size: 1.618rem;}
+  /* h1 {font-size: 11.089rem;} */
+
+  h1 {
+    font-size: 3.052rem;
+  }
+
+  h2 {
+    font-size: 2.441rem;
+  }
+
+  h3 {
+    font-size: 1.953rem;
+  }
+
+  h4 {
+    font-size: 1.563rem;
+  }
+
+  h5 {
+    font-size: 1.25rem;
+  }
 }
 
-.slick-dots{
-    bottom: -40px;
+.slick-dots {
+  bottom: -40px;
 }
 
 .slick-dots li {
-    margin: 0 1px !important;
-    width: 30px;
-    height: 30px;
+  margin: 0 1px !important;
+  width: 30px;
+  height: 30px;
 }
 
 .slick-dots li button {
-    padding: 0;
+  padding: 0;
 }
 
 .slick-dots li button:before {
-    font-size: 15px;
+  font-size: 15px;
 }
