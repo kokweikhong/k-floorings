@@ -57,6 +57,10 @@ h5 {
     h4 {font-size: 1.618rem;}
 }
 
+.slick-dots{
+    bottom: -40px;
+}
+
 .slick-dots li {
     margin: 0 1px !important;
     width: 30px;
@@ -65,4 +69,8 @@ h5 {
 
 .slick-dots li button {
     padding: 0;
+}
+
+.slick-dots li button:before {
+    font-size: 15px;
 }

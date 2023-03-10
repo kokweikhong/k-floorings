@@ -1,16 +1,10 @@
-"use client";
-
 import Image from "next/image";
 import Link from "next/link";
 
-// import Slider from "react-slick";
-import Slider from "react-slick";
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
-
-import homeData from "../data/home.json";
+import ProjectReferenceSlider from "@/components/ProjectReferenceSlider";
 
 import heroImage from "../public/images/home/hero_image_1.jpg";
+
 import cert1 from "../public/images/home/SGBC.svg";
 import cert2 from "../public/images/home/STAT.svg";
 import cert3 from "../public/images/home/TUV.svg";
@@ -20,9 +14,8 @@ import applicationFloor from "../public/images/home/application_floor.jpg";
 import applicationStair from "../public/images/home/application_stair.jpeg";
 import applicationWall from "../public/images/home/application_wall.jpg";
 
-import project1 from "../public/images/home/project-reference_KLCC.jpg";
-import project2 from "../public/images/home/project-reference_DYSON.jpg";
-import project3 from "../public/images/home/project-reference_MONOCOT.jpg";
+import callToActionImage from "../public/images/home/Sustainability.jpeg";
+import certEuropeanStandard from "../public/icons/european standards.svg";
 
 const certs = [
   {
@@ -61,58 +54,13 @@ const applications = [
   },
 ];
 
-// TODO : alt tags
-const projects = [
-  { img: { src: project1, alt: "" } },
-  { img: { src: project2, alt: "" } },
-  { img: { src: project3, alt: "" } },
-];
-
 // TODO : hero image alt
 
 export default function Home() {
-  const settings = {
-    // className: "center",
-    dots: true,
-    // centerMode: true,
-    infinite: true,
-    centerPadding: "60px",
-    slidesToShow: 1,
-    speed: 500,
-    arrows: false,
-    // dotsClass: "project-ref-dots",
-    // responsive: [
-    //   {
-    //     breakpoint: 1024,
-    //     settings: {
-    //       slidesToShow: 3,
-    //       slidesToScroll: 3,
-    //       infinite: true,
-    //       dots: true
-    //     }
-    //   },
-    //   {
-    //     breakpoint: 600,
-    //     settings: {
-    //       slidesToShow: 2,
-    //       slidesToScroll: 2,
-    //       initialSlide: 2
-    //     }
-    //   },
-    //   {
-    //     breakpoint: 480,
-    //     settings: {
-    //       slidesToShow: 1,
-    //       slidesToScroll: 1
-    //     }
-    //   }
-    // ]
-  };
-
   return (
     <main>
       {/* hero section */}
-      <section className="flex flex-col h-screen relative justify-center text-center">
+      <section className="relative flex flex-col justify-center h-screen text-center">
         <div className="absolute top-0 left-0 -z-[1] w-full h-full">
           <Image
             src={heroImage}
@@ -180,7 +128,7 @@ export default function Home() {
                     <Image
                       src={app.img.src}
                       alt={app.img.alt}
-                      className="w-full h-full object-cover"
+                      className="object-cover w-full h-full"
                     />
                   </div>
                   <div className="flex flex-col items-start px-[20px] max-w-[500px]">
@@ -194,29 +142,65 @@ export default function Home() {
         </div>
       </section>
 
-      {/* project reference */}
-      <section className="pt-[50px] px-[15px] bg-[#f3f3f3]">
-        <div className="px-[15px] flex flex-col items-start">
-          <h4 className="relative pr-[60px] text-primary tracking-[2px] after:content-[''] after:w-[35px] after:h-[2px] after:bg-primary after:absolute after:top-1/2 after:right-0">
-            Asia
-          </h4>
-          <h2>Project Reference</h2>
-        </div>
+      {/* call to action */}
+      <section>
+        <div className="relative my-[50px] after:absolute after:top-0 after:left-0 after:w-full after:h-full after:bg-black/40 after:-z-[1]">
+          <div className="absolute top-0 left-0 -z-[1] w-full h-full">
+            <Image
+              src={callToActionImage}
+              alt="natural, forest, wood"
+              className="object-cover w-full h-full"
+            />
+          </div>
+          <div className="grid grid-cols-2">
+            <div className="flex items-center justify-center">
+              <div className="text-left">
+                <h3>
+                  <span className="uppercase text-[#fff]">kandinsky</span>
+                </h3>
+                <span className="uppercase bg-[#fff] px-3">lite</span>
+              </div>
+            </div>
+            <div className="bg-black text-[#fff] flex justify-center items-center">
+              <div className="text-left">
+                <h3>
+                  <span className="uppercase">kandinsky</span>
+                </h3>
+                <span className="w-full uppercase">coming soon</span>
+              </div>
+            </div>
+          </div>
 
-        <div>
-          <Slider {...settings}>
-            {projects.map((project, index) => {
-              return (
-                <div key={index}>
-                  <div>
-                    <Image src={project.img.src} alt={project.img.alt} />
-                  </div>
-                </div>
-              );
-            })}
-          </Slider>
+          <div className="flex items-center justify-center gap-[80px] py-[30px]">
+            <div className="w-[400px] max-w-[400px] text-[#fff] text-center flex flex-col justify-center items-center">
+              <div className="w-[250px]">
+                <Image
+                  src={certEuropeanStandard}
+                  alt="european standards | FSC"
+                  className="w-full h-fll"
+                />
+              </div>
+              <h2 className="py-3 text-[32px] leading-[1.5]">
+                <span className="uppercase">
+                  sustainably and ethically sourced
+                </span>
+              </h2>
+            </div>
+
+            <div className="hidden lg:block">
+              <Link
+                href="#"
+                className="bg-[#fff] font-semibold uppercase text-[15px] py-[20px] px-[24px] rounded-[40px]"
+              >
+                find out more
+              </Link>
+            </div>
+          </div>
         </div>
       </section>
+
+      {/* project references */}
+      <ProjectReferenceSlider />
     </main>
   );
 }
