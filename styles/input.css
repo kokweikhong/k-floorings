@@ -43,6 +43,28 @@ h5 {
   font-weight: 500;
 }
 
+@media (min-width: 768px) {
+  h1 {
+    font-size: 2.488rem;
+  }
+
+  h2 {
+    font-size: 2.074rem;
+  }
+
+  h3 {
+    font-size: 1.728rem;
+  }
+
+  h4 {
+    font-size: 1.44rem;
+  }
+
+  h5 {
+    font-size: 1.2rem;
+  }
+}
+
 @media (min-width: 1024px) {
   /* h1 {font-size: 11.089rem;} */
 

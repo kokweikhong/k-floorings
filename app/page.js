@@ -156,7 +156,9 @@ export default function Home() {
             <div className="flex items-center justify-center">
               <div className="text-left">
                 <h3>
-                  <span className="uppercase text-[#fff]">kandinsky</span>
+                  <span className="uppercase text-[#fff] tracking-widest">
+                    kandinsky
+                  </span>
                 </h3>
                 <span className="uppercase bg-[#fff] px-3">lite</span>
               </div>
@@ -164,7 +166,7 @@ export default function Home() {
             <div className="bg-black text-[#fff] flex justify-center items-center">
               <div className="text-left">
                 <h3>
-                  <span className="uppercase">kandinsky</span>
+                  <span className="uppercase tracking-widest">kandinsky</span>
                 </h3>
                 <span className="w-full uppercase">coming soon</span>
               </div>
