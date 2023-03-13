@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 
 import heroImage from "../../public/images/home/Sustainability.jpeg";
 import productsData from "../../data/product.json";
@@ -15,7 +16,7 @@ export default function ProductPage() {
           />
         </div>
         <div className="text-[#fff] max-w-[500px] flex flex-col items-center justify-center h-full text-center mx-auto px-[15px]">
-          <h1 className="uppercase tracking-wider">product page</h1>
+          <h1 className="tracking-wider uppercase">product page</h1>
 
           <span className="w-full h-[1px] bg-[#fff] my-8"></span>
 
@@ -33,7 +34,7 @@ export default function ProductPage() {
           <div className="flex items-center justify-center py-2">
             <div className="text-left">
               <h3>
-                <span className="uppercase tracking-widest">kandinsky</span>
+                <span className="tracking-widest uppercase">kandinsky</span>
               </h3>
               <span className="uppercase bg-[#000] text-[#fff] px-3">lite</span>
             </div>
@@ -41,7 +42,7 @@ export default function ProductPage() {
           <div className="bg-black text-[#fff] flex justify-center items-center py-2">
             <div className="text-left">
               <h3>
-                <span className="uppercase tracking-widest">kandinsky</span>
+                <span className="tracking-widest uppercase">kandinsky</span>
               </h3>
               <span className="w-full uppercase">coming soon</span>
             </div>
@@ -56,25 +57,64 @@ export default function ProductPage() {
         <div className="grid grid-cols-2 gap-[15px]">
           {productsData.map((product, index) => {
             return (
-              <div key={index}>
+              <div key={index} className="relative">
                 <div className="w-full h-[350px]">
                   <Image
                     src={`/products/${product.sku}/Thumbnails_${product.sku}.jpg`}
                     alt=""
                     width="500"
                     height="500"
-                    className="w-full h-full object-cover"
+                    className="object-cover w-full h-full"
                   />
                 </div>
-                <div>
+                <div className="absolute top-0 right-0 w-[50px] m-2">
                   <div>
-                    <Image
-                      src={`/product patterns/${product.pattern}.svg`}
-                      alt=""
-                      width="500"
-                      height="500"
-                    />
+                    <div>
+                      <Image
+                        src={`/product patterns/${product.pattern.src}`}
+                        alt=""
+                        width="48"
+                        height="48"
+                      />
+                    </div>
+                    <p
+                      className={`${
+                        product.patternColor === "white"
+                          ? "text-[#fff]"
+                          : "text-[#000]"
+                      } text-[12px] break-all`}
+                    >
+                      {product.pattern.name}
+                    </p>
                   </div>
+                  <div>
+                    <div>
+                      <Image
+                        src={`/product grains/${product.grain.src}`}
+                        alt=""
+                        width="48"
+                        height="48"
+                      />
+                    </div>
+                    <p
+                      className={`${
+                        product.patternColor === "white"
+                          ? "text-[#fff]"
+                          : "text-[#000]"
+                      } text-[12px] break-all`}
+                    >
+                      {product.grain.name}
+                    </p>
+                  </div>
+                </div>
+
+                <div>
+                  <Link
+                    href="#"
+                    className="absolute bottom-0 left-0 w-full text-center uppercase text-[#fff] font-semibold text-[12px] p-2 cursor-pointer"
+                  >
+                    get free sample
+                  </Link>
                 </div>
               </div>
             );

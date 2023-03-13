@@ -3,66 +3,126 @@
     "index": "KL-C-1051",
     "sku": "KL.C.1051",
     "name": "Natural Oak (Chevron)",
-    "pattern": "Chevron",
-    "grain": "natural grains",
+    "pattern": { "name": "Chevron", "src": "Chevron.svg" },
+    "grain": { "name": "Natural Grains", "src": "Natural Grains.svg" },
     "description": "Natural Oak (Chevron) boasts a beautiful mix of straight and large wood grains, creating a natural and timeless look. With its warm brown tones and organic patterns, it adds a touch of understated elegance to any space.",
     "patternColor": "black",
-    "thumnail": "",
-    "images": []
+    "thumnail": "Thumnails_KL.C.1051.jpg",
+    "images": [
+      "KL.C.1051-1.jpg",
+      "KL.C.1051-2.jpg",
+      "KL.C.1051-3.jpg",
+      "KL.C.1051-4.jpg",
+      "KL.C.1051-5.jpg",
+      "KL.C.1051-6.jpg"
+    ]
   },
   {
     "index": "KL-C-SY0",
     "sku": "KL.C.SY0",
     "name": "Ebony",
-    "pattern": "chevron",
-    "grain": "natural grains",
+    "pattern": { "name": "Chevron", "src": "Chevron - White.svg" },
+    "grain": { "name": "Natural Grains", "src": "Natural Grains - White.svg" },
     "description": "The deep and dark tones of this flooring option add drama and sophistication to any interior. Its chevron pattern gives a modern and refined touch, making it a perfect choice for contemporary spaces.",
     "patternColor": "white",
-    "thumnail": "",
-    "images": []
+    "thumnail": "Thumbnails_KL.C.SY0.jpg",
+    "images": [
+      "KL.C.SY0-1.jpg",
+      "KL.C.SY0-2.jpg",
+      "KL.C.SY0-3.jpg",
+      "KL.C.SY0-4.jpg",
+      "KL.C.SY0-5.jpg"
+    ]
   },
   {
     "index": "KL-F351-S",
     "sku": "KL.F351.S",
     "name": "Natural Oak (Straight)",
-    "pattern": "straight",
-    "grain": "straight grains",
+    "pattern": { "name": "Straight", "src": "Straight.svg" },
+    "grain": { "name": "Straight Grains", "src": "Straight Grains.svg" },
     "description": "With its 80% of straight grain and 20% of natural grains, this flooring option gives a modern and clean look to any room. Its light and youthful color gives a sense of freshness and airiness to the space, creating an inviting and cozy atmosphere.",
     "patternColor": "black",
-    "thumnail": "",
-    "images": []
+    "thumnail": "Thumbnails_KL.F351.S.jpg",
+    "images": [
+      "KL.F351.S-1.jpg",
+      "KL.F351.S-2.jpg",
+      "KL.F351.S-3.jpg",
+      "KL.F351.S-4.jpg",
+      "KL.F351.S-5.jpg",
+      "KL.F351.S-6.jpg"
+    ]
   },
   {
     "index": "KL-F352-S",
     "sku": "KL.F352.S",
     "name": "Alabaster Oak",
-    "pattern": "straight",
-    "grain": "straight grains",
+    "pattern": { "name": "Straight", "src": "Straight.svg" },
+    "grain": { "name": "Straight Grains", "src": "Straight Grains.svg" },
     "description": "Alabaster Oak derives its name from the mineral known for its pure white color. Its warm white hue and short provides a clean and minimalistic look that can make any interior space feel more spacious and open. The versatility of the color complements a wide range of interior design styles, making it a popular choice among architects and interior designers.",
     "patternColor": "black",
-    "thumnail": "",
-    "images": []
+    "thumnail": "Thumbnails_KL.F352.S.jpg",
+    "images": [
+      "KL.F352.S-1.jpg",
+      "KL.F352.S-2.jpg",
+      "KL.F352.S-3.jpg",
+      "KL.F352.S-4.jpg",
+      "KL.F352.S-5.jpg",
+      "KL.F352.S-6.jpg",
+      "KL.F352.S-7.jpg"
+    ]
   },
   {
     "index": "KL-H-JS501-2",
     "sku": "KL.H.JS501-2",
     "name": "Misty Walnut",
-    "pattern": "Herringbone",
-    "grain": "natural grains",
+    "pattern": { "name": "Herringbone", "src": "Herringbone - White.svg" },
+    "grain": { "name": "Natural Grains", "src": "Natural Grains - White.svg" },
     "description": "Made from American Black Walnut Herringbone, the clean and understated grain pattern of this flooring option adds a sense of tranquility and peacefulness to any interior. Its light brown color creates a soft and inviting atmosphere, perfect for creating a cozy and warm atmosphere.",
     "patternColor": "white",
-    "thumnail": "",
-    "images": []
+    "thumnail": "Thumbnails_KL.H.JS501-2.jpg",
+    "images": [
+      "KL.H.JS501-2-1.jpg",
+      "KL.H.JS501-2-2.jpg",
+      "KL.H.JS501-2-3.jpg",
+      "KL.H.JS501-2.4.jpg",
+      "KL.H.JS501-2-5.jpg",
+      "KL.H.JS501-2-6.jpg"
+    ]
   },
   {
     "index": "KL-H-JS510-2",
     "sku": "KL.H.JS510-2",
     "name": "Lappi",
-    "pattern": "Herringbone",
-    "grain": "natural grains",
+    "pattern": { "name": "Herringbone", "src": "Herringbone.svg" },
+    "grain": { "name": "Natural Grains", "src": "Natural Grains.svg" },
     "description": "Oak Herringbone, The rich and bronze color of this flooring option brings a sense of warmth and depth to any space. Its mixed grain pattern adds texture and interest to the flooring, making it a perfect choice for creating a unique and stylish interior.",
     "patternColor": "black",
-    "thumnail": "",
-    "images": []
+    "thumnail": "Thumbnails_KL.H.JS510-2.jpg",
+    "images": [
+      "KL.H.JS510-2-1.jpg",
+      "KL.H.JS510-2-2.jpg",
+      "KL.H.JS510-2-3.jpg",
+      "KL.H.JS510-2-4.jpg",
+      "KL.H.JS510-2-5.jpg",
+      "KL.H.JS510-2-6.jpg"
+    ]
+  },
+  {
+    "index": "KL-8318",
+    "sku": "KL.8318",
+    "name": "Olive Oak",
+    "pattern": { "name": "Straight", "src": "Straight - White.svg" },
+    "grain": { "name": "Natural Grains", "src": "Natural Grains - White.svg" },
+    "description": "The warm and inviting olive color with a slight hint of green of this flooring option adds a touch of natural beauty to any space. Its white wood grain creates a sense of health and vitality, making it a great choice for creating a refreshing and rejuvenating interior.",
+    "patternColor": "white",
+    "thumnail": "Thumbnails_KL.H.JS510-2.jpg",
+    "images": [
+      "KL.H.JS510-2-1.jpg",
+      "KL.H.JS510-2-2.jpg",
+      "KL.H.JS510-2-3.jpg",
+      "KL.H.JS510-2-4.jpg",
+      "KL.H.JS510-2-5.jpg",
+      "KL.H.JS510-2-6.jpg"
+    ]
   }
 ]
