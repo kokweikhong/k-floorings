@@ -31,7 +31,7 @@ const projects = [
 
 export default function ProjectReferenceSlider() {
   const settings = {
-    // className: "center",
+    className: "project-references-slider",
     dots: true,
     centerMode: true,
     infinite: true,

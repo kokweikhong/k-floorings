@@ -50,22 +50,45 @@ export default function ProductPage() {
         </div>
       </section>
 
+      <section className="container mt-[50px]">
+        <div className="text-center text-primary flex flex-col gap-4">
+          <div className="flex justify-center items-center gap-2">
+            <div>
+              <Image src="/icons/FSC.svg" alt="FSC" width="52" height="52" />
+            </div>
+            <div className="flex items-center">
+              <div>
+                <Image src="/icons/EN.svg" alt="EN" width="52" height="52" />
+              </div>
+              <h3 className="leading-[1] text-[14px]">
+                EUROPEAN <br />
+                STANDARDS
+              </h3>
+            </div>
+            <div>
+              <Image src="/icons/CE.svg" alt="CE" width="52" height="52" />
+            </div>
+          </div>
+          <h2 className="uppercase">sustainably and ethically sourced</h2>
+        </div>
+      </section>
+
+      {/* products */}
       <section className="container mx-auto text-center mt-[50px] px-[15px]">
-        <h2 className="uppercase text-primary">
-          sustainably and ethically sourced
-        </h2>
-        <div className="grid grid-cols-2 gap-[15px]">
+        <div className="grid grid-cols-2 gap-[15px] md:grid-cols-3 xl:grid-cols-4">
           {productsData.map((product, index) => {
             return (
               <div key={index} className="relative">
                 <div className="w-full h-[350px]">
-                  <Image
-                    src={`/products/${product.sku}/Thumbnails_${product.sku}.jpg`}
-                    alt=""
-                    width="500"
-                    height="500"
-                    className="object-cover w-full h-full"
-                  />
+                  <Link href={`/product/${product.index}`}>
+                    <Image
+                      src={`/products/${product.sku}/Thumbnails_${product.sku}.jpg`}
+                      alt=""
+                      width="500"
+                      height="500"
+                      className="object-cover w-full h-full"
+                    />
+                  </Link>
                 </div>
                 <div className="absolute top-0 right-0 w-[50px] m-2">
                   <div>
@@ -108,7 +131,7 @@ export default function ProductPage() {
                   </div>
                 </div>
 
-                <div>
+                <div className="z-10">
                   <Link
                     href="#"
                     className="absolute bottom-0 left-0 w-full text-center uppercase text-[#fff] font-semibold text-[12px] p-2 cursor-pointer"
@@ -119,6 +142,20 @@ export default function ProductPage() {
               </div>
             );
           })}
+        </div>
+      </section>
+
+      <section className="container mx-auto mt-[50px]">
+        <div className="border-top border-t-[#D9D9D9] border py-2">
+          <p className="text-center uppercase text-secondary">{`${productsData.length} of ${productsData.length} shown`}</p>
+        </div>
+        <div className="bg-primary text-center py-3">
+          <h3 className="text-[#fff] tracking-widest flex justify-center items-center gap-2">
+            <span>KANDINSKY</span>
+            <span className="text-[#000] bg-[#fff] font-semibold font-inter tracking-widest text-[1.4rem] px-1">
+              LITE
+            </span>
+          </h3>
         </div>
       </section>
     </main>

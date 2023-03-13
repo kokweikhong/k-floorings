@@ -1,5 +1,6 @@
 import "../styles/main.css";
 import { Inter, Raleway } from "@/utils/fonts";
+import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 
 export const metadata = {
@@ -11,6 +12,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={`${Inter.variable} ${Raleway.variable}`}>
+        <Header />
         {children}
         <Footer />
       </body>

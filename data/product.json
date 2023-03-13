@@ -124,5 +124,112 @@
       "KL.H.JS510-2-5.jpg",
       "KL.H.JS510-2-6.jpg"
     ]
+  },
+  {
+    "index": "KL-F301",
+    "sku": "KL.F301",
+    "name": "Aged Walnut",
+    "pattern": { "name": "Straight", "src": "Straight - White.svg" },
+    "grain": { "name": "Natural Grains", "src": "Natural Grains - White.svg" },
+    "description": "The rich and mature tones of this American Black Walnut flooring option create a sense of classic elegance in any space. Its dark blue grain pattern adds depth and interest to the flooring, making it a perfect choice for creating a sophisticated and refined interior.",
+    "patternColor": "white",
+    "thumnail": "Thumbnails_KL.F301.jpg",
+    "images": [
+      "KL.F301-1.jpg",
+      "KL.F301-2.jpg",
+      "KL.F301-3.jpg",
+      "KL.F301-4.jpg",
+      "KL.F301-5.jpg"
+    ]
+  },
+  {
+    "index": "KL-8529",
+    "sku": "KL.8529",
+    "name": "Creame Oak",
+    "pattern": { "name": "Straight", "src": "Straight.svg" },
+    "grain": { "name": "Natural Grains", "src": "Natural Grains.svg" },
+    "description": "Creme Oak features a variation of mixed wood grain pattern, creating a natural and authentic look. Its warm and inviting color adds a touch of elegance to any space, while its versatile style makes it a great choice for a wide range of interiors.",
+    "patternColor": "black",
+    "thumnail": "Thumbnails_KL.8529.jpg",
+    "images": [
+      "KL.8529-1.jpg",
+      "KL.8529-2.jpg",
+      "KL.8529-3.jpg",
+      "KL.8529-4.jpg",
+      "KL.8529-5.jpg",
+      "KL.8529-6.jpg"
+    ]
+  },
+  {
+    "index": "KL-8316",
+    "sku": "KL.8316",
+    "name": "Milled Oat",
+    "pattern": { "name": "Straight", "src": "Straight.svg" },
+    "grain": { "name": "Natural Grains", "src": "Natural Grains.svg" },
+    "description": "The light and airy brown color of this flooring option gives a sense of freshness and natural beauty to any space. Its rustic and organic wood grain pattern adds texture and interest, making it a great choice for creating a cozy and inviting interior.",
+    "patternColor": "black",
+    "thumnail": "Thumbnails_KL.8316.jpg",
+    "images": [
+      "KL.8316-1.jpg",
+      "KL.8316-2.jpg",
+      "KL.8316-3.jpg",
+      "KL.8316-4.jpg",
+      "KL.8316-5.jpg"
+    ]
+  },
+  {
+    "index": "KL-3513",
+    "sku": "KL.3513",
+    "name": "Milled Oat",
+    "pattern": { "name": "Straight", "src": "Straight - White.svg" },
+    "grain": { "name": "Natural Grains", "src": "Natural Grains - White.svg" },
+    "description": "The mixed wood grain pattern of this flooring option adds warmth and character to any space. Its warm brown tones create a cozy and inviting atmosphere, making it a great choice for creating a comfortable and relaxing atmosphere.",
+    "patternColor": "white",
+    "thumnail": "Thumbnails_KL.3513.jpg",
+    "images": [
+      "KL.3513-1.jpg",
+      "KL.3513-2.jpg",
+      "KL.3513-3.jpg",
+      "KL.3513-4.jpg",
+      "KL.3513-5.jpg"
+    ]
+  },
+  {
+    "index": "KL-F356",
+    "sku": "KL.F356",
+    "name": "Milled Oat",
+    "pattern": { "name": "Straight", "src": "Straight.svg" },
+    "grain": { "name": "Natural Grains", "src": "Natural Grains.svg" },
+    "description": "Glacier Ash is named for its resemblance to the pristine white color of a glacier. The wood's incredibly pale and bright tone makes it the whitest color option available. Its subtle wood grain adds texture and depth to the flooring, making it a versatile choice for any interior design style. The cool white color of Glacier Ash can bring a refreshing and airy atmosphere to a space, while also providing a modern and sleek aesthetic.",
+    "patternColor": "black",
+    "thumnail": "Thumbnails_KL.F356.jpg",
+    "images": [
+      "KL.F356-1.jpg",
+      "KL.F356-2.jpg",
+      "KL.F356-3.jpg",
+      "KL.F356-4.jpg",
+      "KL.F356-5.jpg",
+      "KL.F356-6.jpg",
+      "KL.F356-7.jpg"
+    ]
+  },
+  {
+    "index": "KL-F358",
+    "sku": "KL.F358",
+    "name": "Milled Oat",
+    "pattern": { "name": "Straight", "src": "Straight - White.svg" },
+    "grain": { "name": "Natural Grains", "src": "Natural Grains - White.svg" },
+    "description": "The mixed wood grain pattern of this flooring option creates a sense of aristocracy and classic elegance. Its bronze complexion adds warmth and depth to the flooring, making it a great choice for creating a stylish and sophisticated interior.",
+    "patternColor": "white",
+    "thumnail": "Thumbnails_KL.F358.jpg",
+    "images": [
+      "KL.F358-1.jpg",
+      "KL.F358-2.jpg",
+      "KL.F358-3.jpg",
+      "KL.F358-4.jpg",
+      "KL.F358-5.jpg",
+      "KL.F358-6.jpg",
+      "KL.F358-7.jpg"
+    ]
   }
 ]

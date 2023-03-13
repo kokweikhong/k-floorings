@@ -89,20 +89,36 @@ h5 {
   }
 }
 
-.slick-dots {
+.project-references-slider .slick-dots {
   bottom: -40px;
 }
 
-.slick-dots li {
+.project-references-slider .slick-dots li {
   margin: 0 1px !important;
   width: 30px;
   height: 30px;
 }
 
-.slick-dots li button {
+.project-references-slider .slick-dots li button {
   padding: 0;
 }
 
-.slick-dots li button:before {
+.project-references-slider .slick-dots li button:before {
   font-size: 15px;
 }
+
+.product-slider .slick-dots {
+  bottom: 10px !important;
+}
+
+.product-slider .slick-dots li {
+  margin: 0 !important;
+}
+
+/* .product-slider .slick-dots li button:before {
+  color: #fff !important;
+}
+
+.product-slider .slick-active {
+  color: #000 !important;
+} */
