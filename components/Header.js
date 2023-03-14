@@ -2,8 +2,9 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { usePathname } from "next/navigation";
+import { ProductContext } from "@/context/product";
 
 export default function Header() {
   const [isBurgerMenuClose, setIsBurgerMenuClose] = useState(false);
@@ -11,6 +12,7 @@ export default function Header() {
   const [isHeaderHide, setIsHeaderHide] = useState(false);
   const [lastScrollY, setLastScrollY] = useState(300);
   const pathname = usePathname();
+  const { products } = useContext(ProductContext);
 
   useEffect(() => {
     setIsBurgerMenuClose(false);
@@ -120,7 +122,9 @@ export default function Header() {
                 href="/catalogue"
                 className="block text-2xl text-white no-underline mb-[30px] md:text-gray-800 md:text-lg md:px-[10px] md:py-[2px] md:m-auto"
               >
-                Catalogue
+                {`Catalogue (${
+                  products.filter((ele) => ele.isSelected).length
+                })`}
               </Link>
             </li>
             <li>

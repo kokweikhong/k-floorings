@@ -642,10 +642,6 @@ video {
   grid-column: 1 / -1;
 }
 
-.float-right {
-  float: right;
-}
-
 .m-2 {
   margin: 0.5rem;
 }
@@ -683,6 +679,10 @@ video {
   margin-bottom: 1.25rem;
 }
 
+.mb-\[150px\] {
+  margin-bottom: 150px;
+}
+
 .mb-\[20px\] {
   margin-bottom: 20px;
 }
@@ -711,8 +711,12 @@ video {
   margin-top: 50px;
 }
 
-.mb-\[150px\] {
-  margin-bottom: 150px;
+.mb-0 {
+  margin-bottom: 0px;
+}
+
+.mb-\[50px\] {
+  margin-bottom: 50px;
 }
 
 .block {
@@ -759,6 +763,10 @@ video {
   height: 3px;
 }
 
+.h-\[48px\] {
+  height: 48px;
+}
+
 .h-\[52px\] {
   height: 52px;
 }
@@ -773,10 +781,6 @@ video {
 
 .h-screen {
   height: 100vh;
-}
-
-.h-\[48px\] {
-  height: 48px;
 }
 
 .max-h-\[550px\] {
@@ -811,6 +815,10 @@ video {
   width: 400px;
 }
 
+.w-\[48px\] {
+  width: 48px;
+}
+
 .w-\[50px\] {
   width: 50px;
 }
@@ -821,10 +829,6 @@ video {
 
 .w-full {
   width: 100%;
-}
-
-.w-\[48px\] {
-  width: 48px;
 }
 
 .min-w-full {
@@ -841,10 +845,6 @@ video {
 
 .max-w-\[500px\] {
   max-width: 500px;
-}
-
-.max-w-\[48px\] {
-  max-width: 48px;
 }
 
 .max-w-\[60px\] {
@@ -878,10 +878,6 @@ video {
 
 .flex-wrap {
   flex-wrap: wrap;
-}
-
-.place-items-end {
-  place-items: end;
 }
 
 .items-start {
@@ -942,10 +938,6 @@ video {
 
 .gap-\[80px\] {
   gap: 80px;
-}
-
-.gap-0 {
-  gap: 0px;
 }
 
 .self-center {
@@ -1142,21 +1134,17 @@ video {
   text-align: center;
 }
 
-.text-right {
-  text-align: right;
-}
-
 .font-inter {
   font-family: var(--font-inter), ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-}
-
-.\!font-inter {
-  font-family: var(--font-inter), ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji" !important;
 }
 
 .text-2xl {
   font-size: 1.5rem;
   line-height: 2rem;
+}
+
+.text-\[0\.8rem\] {
+  font-size: 0.8rem;
 }
 
 .text-\[1\.4rem\] {
@@ -1191,10 +1179,6 @@ video {
   font-size: 32px;
 }
 
-.text-\[0\.8rem\] {
-  font-size: 0.8rem;
-}
-
 .font-semibold {
   font-weight: 600;
 }
@@ -1213,10 +1197,6 @@ video {
 
 .leading-\[1\] {
   line-height: 1;
-}
-
-.leading-\[0\] {
-  line-height: 0;
 }
 
 .tracking-\[2px\] {
@@ -1295,6 +1275,10 @@ video {
 
 .opacity-100 {
   opacity: 1;
+}
+
+.filter {
+  filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
 }
 
 .transition {

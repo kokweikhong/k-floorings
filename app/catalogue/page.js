@@ -82,19 +82,27 @@ export default function CataloguePage() {
                   </div>
                   <div>
                     <h4 className="uppercase">material</h4>
-                    {/* <h3 className="font-inter uppercase">{product.name}</h3> */}
+                    <h3 className="font-inter uppercase">
+                      {product.specification.species}
+                    </h3>
                   </div>
                   <div>
                     <h4 className="uppercase">thickness</h4>
-                    {/* <h3 className="font-inter uppercase">{product.name}</h3> */}
+                    <h3 className="font-inter uppercase">
+                      {product.specification.thickness}
+                    </h3>
                   </div>
                   <div>
                     <h4 className="uppercase">dimension</h4>
-                    {/* <h3 className="font-inter uppercase">{product.name}</h3> */}
+                    <h3 className="font-inter uppercase">
+                      {product.specification.dimension}
+                    </h3>
                   </div>
                   <div>
                     <h4 className="uppercase">grain</h4>
-                    {/* <h3 className="font-inter uppercase">{product.name}</h3> */}
+                    <h3 className="font-inter uppercase">
+                      {product.specification.grain}
+                    </h3>
                   </div>
                   <div>
                     <button>

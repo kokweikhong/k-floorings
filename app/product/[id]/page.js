@@ -185,16 +185,25 @@ export default function IndividualProductPage({ params }) {
           </div>
 
           <div className="w-1/2">
-            <ProductDetail label="Material" value="" />
+            <ProductDetail
+              label="Material"
+              value={product.specification.species}
+            />
           </div>
           <div className="w-1/2">
-            <ProductDetail label="thickness" value="" />
+            <ProductDetail
+              label="thickness"
+              value={product.specification.thickness}
+            />
           </div>
           <div>
-            <ProductDetail label="dimension" value="" />
+            <ProductDetail
+              label="dimension"
+              value={product.specification.dimension}
+            />
           </div>
           <div>
-            <ProductDetail label="grain" value="" />
+            <ProductDetail label="grain" value={product.specification.grain} />
           </div>
         </div>
       </section>

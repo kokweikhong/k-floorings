@@ -1,5 +1,8 @@
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 import svgMail from "../public/icons/mail.svg";
 import svgPhone from "../public/icons/phone.svg";
@@ -8,10 +11,23 @@ import svgFacebook from "../public/icons/facebook.svg";
 import svgLinkedin from "../public/icons/linkedin.svg";
 import svgWhatsapp from "../public/icons/whatsapp.svg";
 import svgYoutube from "../public/icons/youtube.svg";
+import { useEffect, useState } from "react";
 
 export default function Footer() {
+  const [margin, setMargin] = useState("mb-0");
+  const pathname = usePathname();
+
+  useEffect(() => {
+    console.log(pathname.match("/product/(....)"));
+    if (pathname.includes("catalogue") || pathname.match("/product/(....)")) {
+      setMargin("mb-[150px]");
+    } else {
+      setMargin("mb-0");
+    }
+  }, [pathname]);
+
   return (
-    <footer className="footer mt-[50px] px-[15px] mb-[150px] md:mb-0">
+    <footer className={`footer mt-[50px] px-[15px] ${margin} md:${margin}`}>
       <div className="flex flex-col justify-start gap-[30px] md:grid md:grid-cols-2">
         {/* location */}
         <div className="flex flex-col md:row-span-2">
