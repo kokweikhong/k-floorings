@@ -87,9 +87,9 @@ export default function ProjectReferenceSlider() {
                       className="w-full h-full rounded-[15px] object-cover"
                     />
                   </div>
-                  <div className="absolute bottom-0 flex flex-col items-center justify-center w-full gap-1 text-[#fff]">
-                    <h3>{project.title}</h3>
-                    <h4>{project.material}</h4>
+                  <div className="absolute bottom-0 flex flex-col items-center justify-center w-full gap-1 text-[#eee] z-10">
+                    <h3 className="text-sm">{project.title}</h3>
+                    <h4 className="text-sm">{project.material}</h4>
                   </div>
                 </div>
               );

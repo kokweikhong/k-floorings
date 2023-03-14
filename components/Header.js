@@ -61,7 +61,7 @@ export default function Header() {
         isHeaderHide ? "hidden" : "block"
       } sticky top-0 w-full bg-white z-50 h-[65px]`}
     >
-      <nav className="relative flex w-full h-full p-5">
+      <nav className="relative flex w-full h-full p-5 container mx-auto">
         <div className="my-auto mr-auto">
           <Link href="/" shallow>
             <Image
@@ -77,7 +77,7 @@ export default function Header() {
           id="burger-menu"
           className={`${
             isBurgerMenuClose ? "" : "close"
-          } relative cursor-pointer h-6 w-6 self-center ml-auto overflow-visible z-[2] md:hidden`}
+          } relative cursor-pointer h-6 w-6 self-center ml-auto overflow-visible z-[2] lg:hidden`}
           onClick={handleMenuToggle}
         >
           <span
@@ -98,47 +98,47 @@ export default function Header() {
               ? "overlay visible opacity-100 pt-[100px] bg-black bg-opacity-80"
               : "invisible opacity-0 pt-5"
           } z-[1] min-w-full min-h-full fixed top-0 left-0 h-0 text-center transition-all duration-300 ease-in-out
-            md:h-full md:min-w-0 md:p-0 md:static md:visible md:opacity-100`}
+            lg:h-full lg:min-w-0 lg:p-0 lg:static lg:visible lg:opacity-100`}
         >
-          <ul className="text-white md:flex md:flex-nowrap">
-            <li>
+          <ul className="text-white lg:flex lg:flex-nowrap lg:gap-8">
+            <li className="text-[12px] font-medium">
               <Link
                 href="/"
-                className="block text-2xl text-white no-underline mb-[30px] md:text-gray-800 md:text-lg md:px-[10px] md:py-[2px] md:m-auto"
+                className="block text-2xl text-white no-underline mb-[30px] lg:text-gray-800 lg:text-lg lg:py-[2px] lg:m-auto"
               >
                 Home
               </Link>
             </li>
-            <li>
+            <li className="text-[12px] font-medium">
               <Link
                 href="/product"
-                className="block text-2xl text-white no-underline mb-[30px] md:text-gray-800 md:text-lg md:px-[10px] md:py-[2px] md:m-auto"
+                className="block text-2xl text-white no-underline mb-[30px] lg:text-gray-800 lg:text-lg lg:py-[2px] lg:m-auto"
               >
-                Product Page
+                Product
               </Link>
             </li>
-            <li>
+            <li className="text-[12px] font-medium">
               <Link
                 href="/catalogue"
-                className="block text-2xl text-white no-underline mb-[30px] md:text-gray-800 md:text-lg md:px-[10px] md:py-[2px] md:m-auto"
+                className="block text-2xl text-white no-underline mb-[30px] lg:text-gray-800 lg:text-lg lg:py-[2px] lg:m-auto"
               >
                 {`Catalogue (${
                   products.filter((ele) => ele.isSelected).length
                 })`}
               </Link>
             </li>
-            <li>
+            <li className="text-[12px] font-medium">
               <Link
                 href="/about"
-                className="block text-2xl text-white no-underline mb-[30px] md:text-gray-800 md:text-lg md:px-[10px] md:py-[2px] md:m-auto"
+                className="block text-2xl text-white no-underline mb-[30px] lg:text-gray-800 lg:text-lg lg:py-[2px] lg:m-auto"
               >
                 About Us
               </Link>
             </li>
-            <li>
+            <li className="text-[12px] font-medium">
               <Link
                 href="/contact"
-                className="block text-2xl text-white no-underline mb-[30px] md:text-gray-800 md:text-lg md:px-[10px] md:py-[2px] md:m-auto"
+                className="block text-2xl text-white no-underline mb-[30px] lg:text-gray-800 lg:text-lg lg:py-[2px] lg:m-auto"
               >
                 Contact Us
               </Link>

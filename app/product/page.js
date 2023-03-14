@@ -50,7 +50,7 @@ export default function ProductPage() {
         </div>
       </section>
 
-      <section className="container mt-[50px]">
+      <section className="container mx-auto mt-[50px]">
         <div className="text-center text-primary flex flex-col gap-4">
           <div className="flex justify-center items-center gap-2">
             <div>
@@ -145,7 +145,7 @@ export default function ProductPage() {
         </div>
       </section>
 
-      <section className="container mx-auto mt-[50px]">
+      <section className="mt-[50px]">
         <div className="border-top border-t-[#D9D9D9] border py-2">
           <p className="text-center uppercase text-secondary">{`${productsData.length} of ${productsData.length} shown`}</p>
         </div>

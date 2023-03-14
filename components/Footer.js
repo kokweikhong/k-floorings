@@ -19,15 +19,19 @@ export default function Footer() {
 
   useEffect(() => {
     console.log(pathname.match("/product/(....)"));
-    if (pathname.includes("catalogue") || pathname.match("/product/(....)")) {
-      setMargin("mb-[150px]");
+    if (pathname.match("/product/(....)")) {
+      setMargin("mb-[150px] md:mb-0");
+    } else if (pathname.includes("catalogue")) {
+      setMargin("mb-[270px] md:mb-0");
     } else {
       setMargin("mb-0");
     }
   }, [pathname]);
 
   return (
-    <footer className={`footer mt-[50px] px-[15px] ${margin} md:${margin}`}>
+    <footer
+      className={`footer mt-[50px] px-[15px] ${margin} container mx-auto`}
+    >
       <div className="flex flex-col justify-start gap-[30px] md:grid md:grid-cols-2">
         {/* location */}
         <div className="flex flex-col md:row-span-2">

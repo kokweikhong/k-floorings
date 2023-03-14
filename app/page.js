@@ -76,7 +76,7 @@ export default function Home() {
             Sustainable and ethically sourced, KANDINSKY offers engineered
             timber for walls, ceilings, stairs, and flooring.
           </p>
-          <a href="" className="btn-primary-fill">
+          <a href="/product" className="btn-primary-fill">
             get your free sample now
           </a>
         </div>
