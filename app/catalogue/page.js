@@ -24,21 +24,23 @@ export default function CataloguePage() {
                 <div key={index} className="grid grid-cols-2 gap-[15px]">
                   <div className="grid grid-cols-3 col-span-full gap-[15px]">
                     {/* product thumbnail */}
-                    <div className="h-full w-full">
+                    <div className="w-full h-full">
                       <Image
                         src={`/products/${product.sku}/${product.thumbnail}`}
                         alt=""
                         width="500"
                         height="500"
-                        className="w-full h-full object-cover"
+                        className="object-cover w-full h-full"
                       />
                     </div>
 
                     {/* sku and name */}
                     <div className="flex flex-col gap-2">
                       <div className="flex flex-col">
-                        <h4 className="uppercase">sku</h4>
-                        <h3 className="font-inter uppercase">{product.sku}</h3>
+                        <h4 className="uppercase text-[#767676]">
+                          <span className="!font-light">sku</span>
+                        </h4>
+                        <h3 className="uppercase font-inter">{product.sku}</h3>
                       </div>
                       <div className="flex flex-col">
                         <h4 className="uppercase">name</h4>
@@ -49,7 +51,7 @@ export default function CataloguePage() {
                     </div>
 
                     {/* pattern and grain svg */}
-                    <div className="flex flex-wrap gap-3 items-start justify-end">
+                    <div className="flex flex-wrap items-start justify-end gap-3">
                       <div className="w-full max-w-[60px] flex flex-col items-center">
                         <div className="w-[48px] h-[48px]">
                           <Image
@@ -82,25 +84,25 @@ export default function CataloguePage() {
                   </div>
                   <div>
                     <h4 className="uppercase">material</h4>
-                    <h3 className="font-inter uppercase">
+                    <h3 className="uppercase font-inter">
                       {product.specification.species}
                     </h3>
                   </div>
                   <div>
                     <h4 className="uppercase">thickness</h4>
-                    <h3 className="font-inter uppercase">
+                    <h3 className="uppercase font-inter">
                       {product.specification.thickness}
                     </h3>
                   </div>
                   <div>
                     <h4 className="uppercase">dimension</h4>
-                    <h3 className="font-inter uppercase">
+                    <h3 className="uppercase font-inter">
                       {product.specification.dimension}
                     </h3>
                   </div>
                   <div>
                     <h4 className="uppercase">grain</h4>
-                    <h3 className="font-inter uppercase">
+                    <h3 className="uppercase font-inter">
                       {product.specification.grain}
                     </h3>
                   </div>

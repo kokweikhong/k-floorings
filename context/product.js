@@ -26,14 +26,14 @@ const reducer = (state, action) => {
     case actions.ADD_SELECTED_ITEM:
       return {
         ...state,
-        products: data.map((ele) => {
+        products: state.products.map((ele) => {
           return ele.sku === action.sku ? { ...ele, isSelected: true } : ele;
         }),
       };
     case actions.REMOVE_SELECTED_ITEM:
       return {
         ...state,
-        products: data.map((ele) => {
+        products: state.products.map((ele) => {
           return ele.sku === action.sku ? { ...ele, isSelected: false } : ele;
         }),
       };

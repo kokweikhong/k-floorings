@@ -5,7 +5,6 @@ import Link from "next/link";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import productsData from "../../../data/product.json";
 import { useContext, useEffect, useState } from "react";
 import { ProductContext } from "@/context/product";
 
@@ -35,7 +34,7 @@ const ProductDetail = ({ label, value }) => {
   return (
     <>
       <h5 className="text-[#767676] uppercase">{label}</h5>
-      <h3 className="font-inter uppercase">{value}</h3>
+      <h3 className="uppercase font-inter">{value}</h3>
     </>
   );
 };
@@ -49,16 +48,14 @@ export default function IndividualProductPage({ params }) {
     if (products.length < 1) {
       initProducts();
     }
-  }, []);
+  }, [initProducts, products.length]);
 
   useEffect(() => {
     console.log(products.length);
     setProduct(Array.from(products).find((ele) => ele.index === params.id));
     console.log(product);
-  }, [products, params.id]);
-
-  if (products.length < 1 || product === undefined)
-    return <div>Loading...</div>;
+    // console.log(product.isSelected);
+  }, [products, params.id, product]);
 
   const handleAddCatalogue = () => {
     console.log(product.isSelected);
@@ -69,6 +66,10 @@ export default function IndividualProductPage({ params }) {
     }
     console.log(product.isSelected);
   };
+
+  if (products.length < 1 || product === undefined)
+    return <div>Loading...</div>;
+
   const settings = {
     className: "product-slider",
     dots: true,
@@ -110,7 +111,7 @@ export default function IndividualProductPage({ params }) {
             <ProductDetail label="name" value={product.name} />
           </div>
 
-          <div className="text-center flex justify-end gap-2">
+          <div className="flex justify-end gap-2 text-center">
             <div className="flex flex-col items-center justify-start max-w-[40px]">
               <div>
                 <Image
@@ -142,7 +143,7 @@ export default function IndividualProductPage({ params }) {
           <div className="fixed bottom-0 flex flex-col justify-center gap-2 w-full bg-[#fff] z-20 py-6">
             <button
               onClick={handleAddCatalogue}
-              className="flex items-center text-center justify-center"
+              className="flex items-center justify-center text-center"
             >
               <div>
                 <Image
@@ -166,7 +167,7 @@ export default function IndividualProductPage({ params }) {
             </div>
           </div>
 
-          <div className="col-span-full flex items-end cursor-pointer">
+          <div className="flex items-end cursor-pointer col-span-full">
             <Link href="" className="underline text-[#1128F8]">
               Click to view
             </Link>
