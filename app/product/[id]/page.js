@@ -6,6 +6,8 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import productsData from "../../../data/product.json";
+import { useContext, useEffect, useState } from "react";
+import { ProductContext } from "@/context/product";
 
 function NextArrow(props) {
   const { className, style, onClick } = props;
@@ -39,12 +41,34 @@ const ProductDetail = ({ label, value }) => {
 };
 
 export default function IndividualProductPage({ params }) {
-  console.log(params);
-  console.log(productsData);
-  const product = Array.from(productsData).find(
-    (ele) => ele.index === params.id
-  );
-  console.log(product);
+  const { products, initProducts, addSelected, removeSelected } =
+    useContext(ProductContext);
+  const [product, setProduct] = useState();
+
+  useEffect(() => {
+    if (products.length < 1) {
+      initProducts();
+    }
+  }, []);
+
+  useEffect(() => {
+    console.log(products.length);
+    setProduct(Array.from(products).find((ele) => ele.index === params.id));
+    console.log(product);
+  }, [products, params.id]);
+
+  if (products.length < 1 || product === undefined)
+    return <div>Loading...</div>;
+
+  const handleAddCatalogue = () => {
+    console.log(product.isSelected);
+    if (product.isSelected) {
+      removeSelected(product.sku);
+    } else if (!product.isSelected) {
+      addSelected(product.sku);
+    }
+    console.log(product.isSelected);
+  };
   const settings = {
     className: "product-slider",
     dots: true,
@@ -58,23 +82,23 @@ export default function IndividualProductPage({ params }) {
   return (
     <main>
       <section>
-        <div>
-          <Slider {...settings}>
-            {product?.images.map((img, index) => {
-              return (
-                <div key={index} className="max-h-[550px]">
-                  <Image
-                    src={`/products/${product.sku}/${img}`}
-                    alt=""
-                    width="1980"
-                    height="1280"
-                    className="object-cover w-full h-full"
-                  />
-                </div>
-              );
-            })}
-          </Slider>
-        </div>
+        {/* <div> */}
+        <Slider {...settings}>
+          {product?.images.map((img, index) => {
+            return (
+              <div key={index} className="max-h-[550px]">
+                <Image
+                  src={`/products/${product.sku}/${img}`}
+                  alt=""
+                  width="1980"
+                  height="1280"
+                  className="object-cover w-full h-full"
+                />
+              </div>
+            );
+          })}
+        </Slider>
+        {/* </div> */}
       </section>
 
       {/* breadcrumb */}
@@ -116,7 +140,10 @@ export default function IndividualProductPage({ params }) {
           </div>
 
           <div className="fixed bottom-0 flex flex-col justify-center gap-2 w-full bg-[#fff] z-20 py-6">
-            <div className="flex items-center text-center justify-center">
+            <button
+              onClick={handleAddCatalogue}
+              className="flex items-center text-center justify-center"
+            >
               <div>
                 <Image
                   src="/icons/Star Idle.svg"
@@ -126,12 +153,12 @@ export default function IndividualProductPage({ params }) {
                 />
               </div>
               <span className="text-[#000] font-semibold">
-                Add to Catalogue
+                {`Add to Catalogue ${product.isSelected}`}
               </span>
-            </div>
+            </button>
             <div className="text-center">
               <Link
-                href=""
+                href="/catalogue"
                 className="uppercase rounded-[40px] bg-primary text-[#fff] text-[14px] px-[18px] py-[14px]"
               >
                 get your free sample now

@@ -82,7 +82,7 @@ export default function ProductPage() {
                 <div className="w-full h-[350px]">
                   <Link href={`/product/${product.index}`}>
                     <Image
-                      src={`/products/${product.sku}/Thumbnails_${product.sku}.jpg`}
+                      src={`/products/${product.sku}/${product.thumbnail}`}
                       alt=""
                       width="500"
                       height="500"

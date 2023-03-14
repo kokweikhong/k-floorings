@@ -11,7 +11,7 @@ import svgYoutube from "../public/icons/youtube.svg";
 
 export default function Footer() {
   return (
-    <footer className="footer mt-[50px] px-[15px]">
+    <footer className="footer mt-[50px] px-[15px] mb-[150px] md:mb-0">
       <div className="flex flex-col justify-start gap-[30px] md:grid md:grid-cols-2">
         {/* location */}
         <div className="flex flex-col md:row-span-2">

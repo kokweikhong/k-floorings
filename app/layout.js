@@ -2,6 +2,7 @@ import "../styles/main.css";
 import { Inter, Raleway } from "@/utils/fonts";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import { ProductProvider } from "@/context/product";
 
 export const metadata = {
   title: "Kandinsky",
@@ -12,9 +13,11 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={`${Inter.variable} ${Raleway.variable}`}>
-        <Header />
-        {children}
-        <Footer />
+        <ProductProvider>
+          <Header />
+          {children}
+          <Footer />
+        </ProductProvider>
       </body>
     </html>
   );
