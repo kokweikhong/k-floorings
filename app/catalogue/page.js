@@ -16,7 +16,7 @@ export default function CataloguePage() {
           <h3 className="uppercase text-primary text-base font-normal py-8 border-y border-y-[#D9D9D9]">
             get your free sample here
           </h3>
-          <div className="flex justify-center items-center gap-6 mt-7">
+          <div className="flex items-center justify-center gap-6 mt-7">
             <div>
               <Image
                 src="/icons/Bizsafe.svg"
@@ -97,7 +97,7 @@ export default function CataloguePage() {
                     </div>
 
                     {/* pattern and grain svg */}
-                    <div className="flex flex-wrap self-start grow md:flex-nowrap items-start justify-end gap-3">
+                    <div className="flex flex-wrap items-start self-start justify-end gap-3 grow md:flex-nowrap">
                       <div className="w-full max-w-[60px] flex flex-col items-center">
                         <div className="w-[42px] h-[42px]">
                           <Image
@@ -165,9 +165,9 @@ export default function CataloguePage() {
                     </h3>
                   </div>
 
-                  <div className="col-span-full py-4 lg:absolute lg:bottom-0 lg:right-0">
+                  <div className="py-4 col-span-full lg:absolute lg:bottom-0 lg:right-0">
                     <button
-                      className="flex flex-col justify-center items-center mx-auto mb-4"
+                      className="flex flex-col items-center justify-center mx-auto mb-4"
                       onClick={() => {
                         console.log(product.index);
                         removeSelected(product.sku);
@@ -200,7 +200,7 @@ export default function CataloguePage() {
             products.filter((ele) => ele.isSelected).length
           })`}
         </Link>
-        <div className="flex flex-col gap-4 items-center justify-center">
+        <div className="flex flex-col items-center justify-center gap-2">
           <p className="text-[10px] leading-[12px]">or contact us at</p>
           <div className="flex gap-10">
             <div className="w-[45px] h-[45px]">

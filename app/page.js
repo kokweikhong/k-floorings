@@ -9,9 +9,9 @@ import cert1 from "../public/images/home/SGBC.svg";
 import cert2 from "../public/images/home/STAT.svg";
 import cert3 from "../public/images/home/TUV.svg";
 
-import applicationCeiling from "../public/images/home/application_ceiling.jpeg";
+import applicationCeiling from "../public/images/home/application_ceiling.jpg";
 import applicationFloor from "../public/images/home/application_floor.jpg";
-import applicationStair from "../public/images/home/application_stair.jpeg";
+import applicationStair from "../public/images/home/application_stair.jpg";
 import applicationWall from "../public/images/home/application_wall.jpg";
 
 import callToActionImage from "../public/images/home/Sustainability.jpeg";
@@ -172,7 +172,7 @@ export default function Home() {
             <div className="bg-black text-[#fff] flex justify-center items-center">
               <div className="text-left">
                 <h3>
-                  <span className="uppercase tracking-widest">kandinsky</span>
+                  <span className="tracking-widest uppercase">kandinsky</span>
                 </h3>
                 <span className="w-full uppercase">coming soon</span>
               </div>

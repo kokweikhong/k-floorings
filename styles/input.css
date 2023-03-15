@@ -6,6 +6,9 @@
   .btn-primary-fill {
     @apply text-[16px] text-[#fff] bg-primary px-[32px] py-[24px] uppercase rounded-[40px] font-semibold tracking-[2px];
   }
+  [role=alert] {
+    @apply text-red-500 italic text-[14px] font-medium;
+  }
 }
 
 body {

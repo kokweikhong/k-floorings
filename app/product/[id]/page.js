@@ -7,6 +7,7 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { useContext, useEffect, useState } from "react";
 import { ProductContext } from "@/context/product";
+import Breadcrumb from "@/components/Breadcrumb";
 
 function NextArrow(props) {
   const { className, style, onClick } = props;
@@ -110,7 +111,36 @@ export default function IndividualProductPage({ params }) {
       </section>
 
       {/* breadcrumb */}
-      <section></section>
+      <section className="container mx-auto">
+        <Breadcrumb
+          props={{
+            links: [
+              {
+                url: "/product",
+                object: (
+                  <div className="h-[10px] w-[125px] md:h-[12px] md:w-[145px]">
+                    <Image
+                      src="/icons/Kandinsky Lite - vertical.svg"
+                      alt="kandinsky lite logo"
+                      width="125"
+                      height="10"
+                      className="w-full h-full"
+                    />
+                  </div>
+                ),
+              },
+              {
+                url: `/product/${product.index}`,
+                object: (
+                  <span className="text-[12px] md:text-[15px] font-semibold align-middle">
+                    {`${product.sku}`}
+                  </span>
+                ),
+              },
+            ],
+          }}
+        />
+      </section>
 
       <section className="container mx-auto mt-[50px] px-[15px] text-primary">
         <div className="grid grid-cols-3 gap-6 relative md:pb-[160px] lg:pb-0">
@@ -187,7 +217,7 @@ export default function IndividualProductPage({ params }) {
           </div>
 
           <div className="flex flex-col">
-            <div className="flex flex-col md:flex-row justify-end gap-2 text-center absolute top-0 right-0 md:static md:justify-center">
+            <div className="absolute top-0 right-0 flex flex-col justify-end gap-2 text-center md:flex-row md:static md:justify-center">
               <div className="flex flex-col items-center justify-start">
                 <div>
                   <Image
@@ -245,7 +275,7 @@ export default function IndividualProductPage({ params }) {
                   Add to Catalogue
                 </span>
               </button>
-              {/* <div className="text-center h-full"> */}
+              {/* <div className="h-full text-center"> */}
               <Link
                 href="/catalogue"
                 className="uppercase rounded-[40px] bg-primary text-[#fff] text-[14px] px-[18px] py-[14px] mx-auto shadow-xl"
