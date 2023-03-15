@@ -128,7 +128,7 @@ export default function IndividualProductPage({ params }) {
             {/* click to view pdf */}
             <div className="flex items-end cursor-pointer col-span-full">
               <Link
-                href="/product showcase/Aged Walnut_Kandinsky lite product showcase.pdf"
+                href={`/product showcase/${product.showcase}`}
                 download
                 rel="noopener noreferrer"
                 className="underline text-[#1128F8] text-[24px] leading-[15px] self-center md:text-[1.3rem] lg:text-[1.7rem]"

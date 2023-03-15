@@ -101,7 +101,7 @@ export default function ProductPage() {
           {productsData.map((product, index) => {
             return (
               <div key={index} className="relative">
-                <div className="w-full h-[250px] md:h-[335px]">
+                <div className="w-full h-[250px] md:h-[335px] relative">
                   <Link href={`/product/${product.index}`}>
                     <Image
                       src={`/products/${product.sku}/${product.thumbnail}`}
@@ -111,6 +111,14 @@ export default function ProductPage() {
                       className="object-cover w-full h-full"
                     />
                   </Link>
+                  <div className="z-10">
+                    <Link
+                      href="#"
+                      className="absolute bottom-0 left-0 w-full text-center uppercase text-[#fff] font-semibold text-[12px] p-2 cursor-pointer"
+                    >
+                      get free sample
+                    </Link>
+                  </div>
                 </div>
                 <div className="absolute top-0 right-0 w-[50px] m-2">
                   <div>
@@ -153,15 +161,6 @@ export default function ProductPage() {
                       {product.grain.name}
                     </p>
                   </div>
-                </div>
-
-                <div className="z-10">
-                  <Link
-                    href="#"
-                    className="absolute bottom-0 left-0 w-full text-center uppercase text-[#fff] font-semibold text-[12px] p-2 cursor-pointer"
-                  >
-                    get free sample
-                  </Link>
                 </div>
 
                 <div>
