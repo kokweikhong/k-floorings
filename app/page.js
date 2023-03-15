@@ -69,10 +69,10 @@ export default function Home() {
           />
         </div>
         <div className="flex flex-col items-center gap-5 px-[15px] lg:ml-auto 2xl:mr-[10%]">
-          <h1 className="uppercase text-[#fff] lg:max-w-[700px]">
+          <h1 className="uppercase text-[#fff] text-[64px] lg:text-[54px] lg:max-w-[700px] leading-[68px] px-[20px]">
             wood meets art
           </h1>
-          <p className="text-[#eee] max-w-[400px]">
+          <p className="text-[#eee] text-[18px] md:text-[28px] lg:text-[21px] max-w-[550px] px-[20px]">
             Sustainable and ethically sourced, KANDINSKY offers engineered
             timber for walls, ceilings, stairs, and flooring.
           </p>
@@ -85,21 +85,23 @@ export default function Home() {
       {/* application */}
       <section className="mt-[50px]">
         <div className="px-[15px] flex flex-col items-start">
-          <h4 className="relative pr-[60px] text-primary tracking-[2px] after:content-[''] after:w-[35px] after:h-[2px] after:bg-primary after:absolute after:top-1/2 after:right-0">
+          <h4 className="relative pr-[60px] text-primary text-[26px] font-bold lg:mx-auto lg:after:hidden after:content-[''] after:w-[35px] after:h-[2px] after:bg-primary after:absolute after:top-1/2 after:right-0">
             Application
           </h4>
-          <h2>Handcrafted European Wood</h2>
+          <h2 className="font-extrabold text-[42px] leading-[50.8px] lg:mx-auto">
+            Handcrafted European Wood
+          </h2>
         </div>
-        <div className="lg:grid lg:grid-cols-3 lg:mt-[30px]">
+        <div className="my-[30px] xl:grid xl:grid-cols-3">
           {/* certificates */}
-          <div className="px-[15px] grid grid-cols-3 gap-[10px] my-[30px] lg:col-start-3 lg:grid-cols-1">
+          <div className="px-[15px] grid grid-cols-3 gap-[38px] my-[30px] xl:col-start-3 xl:col-span-1 xl:grid-cols-1">
             {certs.map((cert, index) => {
               return (
                 <div
                   key={index}
-                  className="text-center lg:flex lg:flex-col lg:justify-center"
+                  className="text-center flex flex-col gap-2 justify-center w-[80px] xl:w-[160px] mx-auto"
                 >
-                  <div className="w-full h-[150px]">
+                  <div className="w-[62px] h-[62px] md:w-[90px] md:h-[90px] mx-auto">
                     <Image
                       src={cert.src}
                       alt={cert.alt}
@@ -107,7 +109,7 @@ export default function Home() {
                     />
                   </div>
                   <h3 className="leading-[0.5]">
-                    <span className="text-[12px] lg:text-base">
+                    <span className="text-[12px] font-normal xl:text-base">
                       {cert.desc}
                     </span>
                   </h3>
@@ -117,12 +119,12 @@ export default function Home() {
           </div>
 
           {/* services */}
-          <div className="flex flex-col lg:col-span-2 lg:col-start-1 lg:row-start-1">
+          <div className="flex flex-col lg:grid lg:grid-cols-2 xl:col-span-2 xl:row-start-1 xl:grid-cols-1 xl:col-start-1">
             {applications.map((app, index) => {
               return (
                 <div
                   key={index}
-                  className="py-[80px] w-full relative flex items-center justify-center border-b-[#eee] border-b"
+                  className="py-[80px] w-full h-[180px] relative flex items-center justify-center border-b-[#eee] border-b"
                 >
                   <div className="absolute top-0 left-0 -z-[1] w-full h-full after:h-full after:w-full after:absolute after:top-0 after:left-0 after:bg-black/40">
                     <Image
@@ -131,9 +133,13 @@ export default function Home() {
                       className="object-cover w-full h-full"
                     />
                   </div>
-                  <div className="flex flex-col items-start px-[20px] max-w-[500px]">
-                    <h3 className="uppercase text-[#fff]">{app.title}</h3>
-                    <p className="text-[#eee]">{app.desc}</p>
+                  <div className="flex flex-col items-start px-[38px] py-[10px] md:w-[410px]">
+                    <h3 className="uppercase text-[#fff] text-[24px] font-bold mb-[15px]">
+                      {app.title}
+                    </h3>
+                    <p className="text-[#eee] font-light leading-[19px]">
+                      {app.desc}
+                    </p>
                   </div>
                 </div>
               );
@@ -173,9 +179,9 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="flex items-center justify-center gap-[80px] py-[30px]">
-            <div className="w-[400px] max-w-[400px] text-[#fff] text-center flex flex-col justify-center items-center">
-              <div className="w-[250px]">
+          <div className="flex items-center justify-center gap-[80px] py-[30px] lg:grid lg:grid-cols-3">
+            <div className="w-[380px] max-w-[380px] text-[#fff] text-center flex flex-col justify-center items-center lg:mx-auto lg:col-span-2">
+              <div className="w-[170px]">
                 <Image
                   src={certEuropeanStandard}
                   alt="european standards | FSC"
@@ -192,7 +198,7 @@ export default function Home() {
             <div className="hidden lg:block">
               <Link
                 href="#"
-                className="bg-[#fff] font-semibold uppercase text-[15px] py-[20px] px-[24px] rounded-[40px]"
+                className="bg-[#fff] font-semibold uppercase text-[16px] py-[24px] px-[32px] rounded-[40px]"
               >
                 find out more
               </Link>

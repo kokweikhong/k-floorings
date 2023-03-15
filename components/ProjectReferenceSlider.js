@@ -69,10 +69,12 @@ export default function ProjectReferenceSlider() {
       {/* project reference */}
       <section className="py-[50px] bg-[#f3f3f3]">
         <div className="px-[15px] flex flex-col items-start">
-          <h4 className="relative pr-[60px] text-primary tracking-[2px] after:content-[''] after:w-[35px] after:h-[2px] after:bg-primary after:absolute after:top-1/2 after:right-0">
+          <h4 className="relative pr-[60px] text-primary text-[26px] font-bold lg:after:hidden lg:mx-auto after:content-[''] after:w-[35px] after:h-[2px] after:bg-primary after:absolute after:top-1/2 after:right-0">
             Asia
           </h4>
-          <h2>Project Reference</h2>
+          <h2 className="text-[42px] font-extrabold lg:mx-auto">
+            Project Reference
+          </h2>
         </div>
 
         <div>
@@ -88,8 +90,10 @@ export default function ProjectReferenceSlider() {
                     />
                   </div>
                   <div className="absolute bottom-0 flex flex-col items-center justify-center w-full gap-1 text-[#eee] z-10">
-                    <h3 className="text-sm">{project.title}</h3>
-                    <h4 className="text-sm">{project.material}</h4>
+                    <h3 className="text-base font-bold">{project.title}</h3>
+                    <h4 className="text-[10px] font-normal">
+                      {project.material}
+                    </h4>
                   </div>
                 </div>
               );

@@ -32,12 +32,12 @@ export default function Footer() {
     <footer
       className={`footer mt-[50px] px-[15px] ${margin} container mx-auto`}
     >
-      <div className="flex flex-col justify-start gap-[30px] md:grid md:grid-cols-2">
+      <div className="flex flex-col justify-start gap-[30px] md:grid md:grid-cols-2 text-[20px] font-normal">
         {/* location */}
         <div className="flex flex-col md:row-span-2">
           <div className="border-b border-b-[#d9d9d9] mb-5">
             <h3 className="mb-1">
-              <span className="uppercase text-[#333333] text-[22px]">
+              <span className="uppercase text-[#000] text-[20px] font-normal">
                 Location
               </span>
             </h3>
@@ -45,9 +45,9 @@ export default function Footer() {
           {/* Singapore */}
           <div className="flex flex-col justify-start gap-1 mb-[20px]">
             <h4 className="text-[#999]">
-              <span className="text-[20px]">SINGAPORE</span>
+              <span className="text-[20px] font-medium">SINGAPORE</span>
             </h4>
-            <p>54 Senoko Road, Singapore 758118, Floor 1</p>
+            <p className="">54 Senoko Road, Singapore 758118, Floor 1</p>
             <div className="flex items-center">
               <div className="w-[36px] h-[36px]">
                 <Image
@@ -105,7 +105,7 @@ export default function Footer() {
         <div>
           <div className="border-b border-b-[#d9d9d9] mb-5">
             <h3 className="mb-1">
-              <span className="uppercase text-[#333333] text-[22px]">
+              <span className="uppercase text-[#000] text-[20px] font-normal">
                 contact us
               </span>
             </h3>
@@ -183,7 +183,7 @@ export default function Footer() {
         <div className="md:col-start-2 md:row-start-2">
           <div className="border-b border-b-[#d9d9d9] mb-5">
             <h3 className="mb-1">
-              <span className="uppercase text-[#333333] text-[22px]">
+              <span className="uppercase text-[#000] text-[20px] font-normal">
                 legal
               </span>
             </h3>
@@ -199,7 +199,7 @@ export default function Footer() {
 
         {/* description */}
         <div className="md:col-span-full">
-          <p className="text-center">
+          <p className="text-center text-base">
             KANDINSKY Engineered Wood is handcrafted with European oak. To
             ensure maximum structural stability with minimum movement between
             the timber boards, the softwood core grains are laid and glued
@@ -209,7 +209,7 @@ export default function Footer() {
 
         {/* copyright */}
         <div className="md:col-span-full">
-          <p className="text-center">201407349E ©2023 k-floorings</p>
+          <p className="text-center text-base">201407349E ©2023 k-floorings</p>
         </div>
       </div>
     </footer>

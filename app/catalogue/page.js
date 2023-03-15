@@ -158,7 +158,13 @@ export default function CataloguePage() {
                     </h3>
                   </div>
                   <div className="col-span-full py-4">
-                    <button className="flex flex-col justify-center items-center mx-auto mb-4">
+                    <button
+                      className="flex flex-col justify-center items-center mx-auto mb-4"
+                      onClick={() => {
+                        console.log(product.index);
+                        removeSelected(product.sku);
+                      }}
+                    >
                       <div>
                         <Image
                           src="/icons/Remove.svg"
@@ -167,14 +173,7 @@ export default function CataloguePage() {
                           height="48"
                         />
                       </div>
-                      <span
-                        onClick={() => {
-                          console.log(product.index);
-                          removeSelected(product.sku);
-                        }}
-                      >
-                        Remove
-                      </span>
+                      <span>Remove</span>
                     </button>
                   </div>
                 </div>
