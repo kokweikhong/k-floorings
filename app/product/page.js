@@ -16,11 +16,13 @@ export default function ProductPage() {
           />
         </div>
         <div className="text-[#fff] max-w-[500px] flex flex-col items-center justify-center h-full text-center mx-auto px-[15px]">
-          <h1 className="tracking-wider uppercase">product page</h1>
+          <h1 className="text-[64px] leading-[68px] font-bold lg:font-black uppercase">
+            our product
+          </h1>
 
           <span className="w-full h-[1px] bg-[#fff] my-8"></span>
 
-          <p>
+          <p className="text-[18px] leading-[22px] lg:leading-[28px] lg:text-[24px] font-medium">
             Wooden timber with a cross-grain composition, making our boards
             highly resilient and adaptable to environmental changes. Our
             beautiful natural patterns and wide range of colours make our timber
@@ -53,33 +55,53 @@ export default function ProductPage() {
       <section className="container mx-auto mt-[50px]">
         <div className="text-center text-primary flex flex-col gap-4">
           <div className="flex justify-center items-center gap-2">
-            <div>
-              <Image src="/icons/FSC.svg" alt="FSC" width="52" height="52" />
+            <div className="w-[38px] h-[38px]">
+              <Image
+                src="/icons/FSC.svg"
+                alt="FSC"
+                width="52"
+                height="52"
+                className="w-full h-full"
+              />
             </div>
-            <div className="flex items-center">
-              <div>
-                <Image src="/icons/EN.svg" alt="EN" width="52" height="52" />
+            <div className="flex items-center w-[110px] h-[38px]">
+              <div className="w-[38px] h-[38px]">
+                <Image
+                  src="/icons/EN.svg"
+                  alt="EN"
+                  width="52"
+                  height="52"
+                  className="w-full h-full"
+                />
               </div>
-              <h3 className="leading-[1] text-[14px]">
+              <h3 className="leading-[1] text-[12px]">
                 EUROPEAN <br />
                 STANDARDS
               </h3>
             </div>
-            <div>
-              <Image src="/icons/CE.svg" alt="CE" width="52" height="52" />
+            <div className="w-[38px] h-[38px]">
+              <Image
+                src="/icons/CE.svg"
+                alt="CE"
+                width="52"
+                height="52"
+                className="w-full h-full"
+              />
             </div>
           </div>
-          <h2 className="uppercase">sustainably and ethically sourced</h2>
+          <h2 className="uppercase text-[32px] font-semibold leading-[39px]">
+            sustainably and ethically sourced
+          </h2>
         </div>
       </section>
 
       {/* products */}
       <section className="container mx-auto text-center mt-[50px] px-[15px]">
-        <div className="grid grid-cols-2 gap-[15px] md:grid-cols-3 xl:grid-cols-4">
+        <div className="grid grid-cols-2 gap-x-[20px] gap-y-[25px] md:grid-cols-3 xl:grid-cols-4">
           {productsData.map((product, index) => {
             return (
               <div key={index} className="relative">
-                <div className="w-full h-[350px]">
+                <div className="w-full h-[250px] md:h-[335px]">
                   <Link href={`/product/${product.index}`}>
                     <Image
                       src={`/products/${product.sku}/${product.thumbnail}`}
@@ -96,8 +118,9 @@ export default function ProductPage() {
                       <Image
                         src={`/product patterns/${product.pattern.src}`}
                         alt=""
-                        width="48"
-                        height="48"
+                        width="42"
+                        height="42"
+                        className="mx-auto"
                       />
                     </div>
                     <p
@@ -105,7 +128,7 @@ export default function ProductPage() {
                         product.patternColor === "white"
                           ? "text-[#fff]"
                           : "text-[#000]"
-                      } text-[12px] break-all`}
+                      } text-[12px] leading-[15px] break-all`}
                     >
                       {product.pattern.name}
                     </p>
@@ -115,8 +138,9 @@ export default function ProductPage() {
                       <Image
                         src={`/product grains/${product.grain.src}`}
                         alt=""
-                        width="48"
-                        height="48"
+                        width="42"
+                        height="42"
+                        className="mx-auto"
                       />
                     </div>
                     <p
@@ -124,7 +148,7 @@ export default function ProductPage() {
                         product.patternColor === "white"
                           ? "text-[#fff]"
                           : "text-[#000]"
-                      } text-[12px] break-all`}
+                      } text-[12px] leading-[15px] break-all`}
                     >
                       {product.grain.name}
                     </p>
@@ -139,6 +163,10 @@ export default function ProductPage() {
                     get free sample
                   </Link>
                 </div>
+
+                <div>
+                  <p className="text-base">{product.name}</p>
+                </div>
               </div>
             );
           })}
@@ -147,7 +175,7 @@ export default function ProductPage() {
 
       <section className="mt-[50px]">
         <div className="border-top border-t-[#D9D9D9] border py-2">
-          <p className="text-center uppercase text-secondary">{`${productsData.length} of ${productsData.length} shown`}</p>
+          <p className="text-center text-base leading-[19px] uppercase text-secondary">{`${productsData.length} of ${productsData.length} shown`}</p>
         </div>
         <div className="bg-primary text-center py-3">
           <h3 className="text-[#fff] tracking-widest flex justify-center items-center gap-2">
