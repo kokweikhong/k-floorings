@@ -124,8 +124,9 @@ export default function AboutPage() {
               KANDINSKY® wood is a top-quality flooring option that has been
               rigorously tested and certified for safety, making it a great
               choice for households with children and pets. Not only is it fire
-              resistant, but it's also suitable for installation over underfloor
-              heating, making it a versatile option for a range of homes.{" "}
+              resistant, but it&apos;s also suitable for installation over
+              underfloor heating, making it a versatile option for a range of
+              homes.{" "}
             </p>
           </div>
           <div className="grid grid-cols-[1fr_2fr_1fr_1fr_1fr] gap-[25px] mt-[30px]">
