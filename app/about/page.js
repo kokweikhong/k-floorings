@@ -1,5 +1,8 @@
 import Image from "next/image";
 
+import ProjectSlider from "@/components/ProjectSlider";
+import TestimonialSlider from "@/components/TestimonialSlider";
+
 import heroImage from "../../public/images/about/about_hero_image.jpg";
 import svgDissection from "../../public/images/K-Floor dissection.svg";
 
@@ -7,6 +10,12 @@ import svgPetFriendly from "../../public/icons/pet friendly.svg";
 import svgKidFriendly from "../../public/icons/Kid friendly.svg";
 import svgSGBC from "../../public/icons/SGBC.svg";
 import svgStats from "../../public/icons/STAT.svg";
+
+import svgFSC from "../../public/icons/FSC-black.svg";
+import svgEuropeanStandards from "../../public/icons/european standards-black.svg";
+import svgCE from "../../public/icons/CE-black.svg";
+import svgTUV from "../../public/icons/TUV-black.svg";
+import svg15YearsWarranty from "../../public/icons/15 year warranty.svg";
 
 const IconHolder = ({ svgImage, imgAlt, desc }) => {
   return (
@@ -19,10 +28,18 @@ const IconHolder = ({ svgImage, imgAlt, desc }) => {
   );
 };
 
+const svgs = [
+  { src: svgFSC, alt: "FSC" },
+  { src: svgEuropeanStandards, alt: "European Standards" },
+  { src: svgCE, alt: "CE" },
+  { src: svgTUV, alt: "TUV" },
+  { src: svg15YearsWarranty, alt: "15 Years Warranty" },
+];
+
 export default function AboutPage() {
-  const svgImages = [svgPetFriendly, svgKidFriendly, svgSGBC, svgStats];
   return (
     <main>
+      {/* hero section */}
       <section className="relative flex items-center justify-center w-full h-screen">
         <div className="after:z-[0] w-full h-full after:h-full after:w-full after:absolute after:top-0 after:left-0 after:bg-black/40">
           <Image
@@ -45,6 +62,7 @@ export default function AboutPage() {
         </div>
       </section>
 
+      {/* product introduction */}
       <section className="container mx-auto px-[15px] mt-[50px]">
         <div className="flex flex-col items-center gap-4">
           <div>
@@ -92,6 +110,53 @@ export default function AboutPage() {
             desc="STATS certified"
           />
         </div>
+      </section>
+
+      {/* project section */}
+      <section className="mt-[50px] py-[40px] bg-[#F3F3F3]">
+        <ProjectSlider />
+      </section>
+
+      <section className="container mx-auto px-[15px] mt-[50px]">
+        <div className="lg:max-w-[900px] flex flex-col items-center mx-auto">
+          <div>
+            <p className="font-medium">
+              KANDINSKY® wood is a top-quality flooring option that has been
+              rigorously tested and certified for safety, making it a great
+              choice for households with children and pets. Not only is it fire
+              resistant, but it's also suitable for installation over underfloor
+              heating, making it a versatile option for a range of homes.{" "}
+            </p>
+          </div>
+          <div className="grid grid-cols-[1fr_2fr_1fr_1fr_1fr] gap-[25px] mt-[30px]">
+            {svgs.map((svg, index) => {
+              return (
+                <div
+                  key={index}
+                  className="w-full h-[50px] md:h-[75px] lg:h-[100px]"
+                >
+                  <Image
+                    src={svg.src}
+                    alt={svg.alt}
+                    className="w-full h-full"
+                  />
+                </div>
+              );
+            })}
+          </div>
+          <div className="font-medium mt-[30px]">
+            <p>
+              KANDINSKY® wood products come with a 15-year limited warranty for
+              added peace of mind and protection.*
+            </p>
+            <p className="text-[#999] mt-[20px]">Terms and Conditions apply*</p>
+          </div>
+        </div>
+      </section>
+
+      <section className="mt-[50px] py-[40px] bg-[#F3F3F3]">
+        <h2 className="px-[15px] mb-[20px]">Testimonials Gallery</h2>
+        <TestimonialSlider />
       </section>
     </main>
   );

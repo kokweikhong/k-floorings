@@ -13,8 +13,7 @@ const GeneralInfo = ({ label, value }) => {
   return (
     <Body
       style={{
-        margin: 0,
-        padding: "10px 0",
+        marginTop: "5px",
       }}
     >
       <Text
@@ -30,7 +29,7 @@ const GeneralInfo = ({ label, value }) => {
       <Text
         style={{
           margin: 0,
-          marginTop: "5px",
+          marginTop: "2px",
           fontSize: "24px",
           fontWeight: "500",
           color: "#806840",
@@ -76,7 +75,11 @@ export default function SampleEmailTemplate({ data }) {
             return (
               <Body
                 key={key}
-                style={{ padding: "10px 0", borderBottom: "1px solid #D9D9D9" }}
+                style={{
+                  paddingTop: "3px",
+                  paddingBottom: "3px",
+                  borderBottom: "1px solid #D9D9D9",
+                }}
               >
                 <GeneralInfo label="Name / SKU" value={key} />
                 <GeneralInfo
