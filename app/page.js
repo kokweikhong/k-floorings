@@ -5,9 +5,9 @@ import ProjectReferenceSlider from "@/components/ProjectReferenceSlider";
 
 import heroImage from "../public/images/home/hero_image_1.jpg";
 
-import cert1 from "../public/images/home/SGBC.svg";
-import cert2 from "../public/images/home/STAT.svg";
-import cert3 from "../public/images/home/TUV.svg";
+import cert1 from "../public/icons/SGBC.svg";
+import cert2 from "../public/icons/STAT.svg";
+import cert3 from "../public/icons/TUV.svg";
 
 import applicationCeiling from "../public/images/home/application_ceiling.jpg";
 import applicationFloor from "../public/images/home/application_floor.jpg";
