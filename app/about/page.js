@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 
 import ProjectSlider from "@/components/ProjectSlider";
 import TestimonialSlider from "@/components/TestimonialSlider";
@@ -22,6 +23,10 @@ import teamSC from "../../public/images/teams/SC.png";
 import teamIrene from "../../public/images/teams/Irene.png";
 import teamHo from "../../public/images/teams/Ho.png";
 import teamKyosti from "../../public/images/teams/Kyosti.png";
+
+import svgBizSafe from "../../public/icons/Bizsafe.svg";
+import svgDelivery from "../../public/icons/Delivery.svg";
+import svgSelfCollection from "../../public/icons/Self Collection.svg";
 
 const IconHolder = ({ svgImage, imgAlt, desc }) => {
   return (
@@ -58,6 +63,35 @@ const svgs = [
   { src: svgCE, alt: "CE" },
   { src: svgTUV, alt: "TUV" },
   { src: svg15YearsWarranty, alt: "15 Years Warranty" },
+];
+
+const faqs = [
+  {
+    question: "Are all samples free?",
+    answer: [
+      "Yes, they are! Our dedicated team of experts are ready to help you advise on your next design or build.",
+    ],
+  },
+  {
+    question: "Where can I visit KANDINSKY?",
+    answer: [
+      "KANDINSKY is a Singaporean brand that's now also available in Malaysia. Visit our showrooms in Johor and Singapore's Senko for a closer look.",
+    ],
+  },
+  {
+    question: "When will i receive my sample?",
+    answer: [
+      "We'll call you to confirm your delivery details before delivering to your preferred time slot.",
+      "If you prefer to pick up your order in Singapore, our showroom is open on weekdays from 9:30 am to 6:30 pm, and on Saturdays from 10 am to 2 pm.",
+      "For pick up in Malaysia, please contact us at +60 16-778 5788 to arrange your preferred time slot.",
+    ],
+  },
+  {
+    question: "Is there a company profile?",
+    answer: [
+      "Certainly, you can find our company profile on the About Us page. It includes our project portfolio, material specifications, and product information",
+    ],
+  },
 ];
 
 export default function AboutPage() {
@@ -188,11 +222,11 @@ export default function AboutPage() {
 
       {/* our team section */}
       <section className="mt-[50px] px-[15px] mx-auto container">
-        <div className="text-center font-inter">
+        <div className="text-center">
           <h2 className="px-[15px] mb-[20px] font-bold text-[26px]">
             Our Team
           </h2>
-          <h3 className="text-base font-medium">
+          <h3 className="text-base font-medium font-inter">
             Meet the creative minds behind every piece of wood.
           </h3>
         </div>
@@ -226,14 +260,76 @@ export default function AboutPage() {
       </section>
 
       {/* FAQs section */}
-      <section>
-        <h2>FAQs</h2>
-        <div></div>
+      <section className="mt-[50px] container mx-auto px-[15px]">
+        <h2 className="pb-8 text-center border-b border-b-[#767676]">FAQs</h2>
+        <div className="flex items-center justify-center gap-[10px] mt-[30px]">
+          <div className="w-[65px] h-[65px]">
+            <Image src={svgBizSafe} alt="biz safe" className="w-full h-full" />
+          </div>
+          <div className="w-[65px] h-[65px]">
+            <Image
+              src={svgDelivery}
+              alt="free delivery"
+              className="w-full h-full"
+            />
+          </div>
+          <div className="w-[65px] h-[65px]">
+            <Image
+              src={svgSelfCollection}
+              alt="self collection"
+              className="w-full h-full"
+            />
+          </div>
+        </div>
         <div>
-          <ol>
-            <li>asdad</li>
-            <li>asda</li>
-          </ol>
+          <ul className="text-[20px]">
+            {faqs.map((faq, index) => {
+              return (
+                <li key={index} className="mt-[25px]">
+                  <h3 className="font-inter text-[20px] font-medium">{`${
+                    index + 1
+                  }. ${faq.question}`}</h3>
+                  {faq.answer.map((ans, idx) => {
+                    return (
+                      <p
+                        key={idx}
+                        className="pl-[25px] text-[20px] font-medium mt-[15px] text-[#767676]"
+                      >
+                        {ans}
+                      </p>
+                    );
+                  })}
+                </li>
+              );
+            })}
+          </ul>
+        </div>
+
+        <div className="flex flex-col items-center justify-center gap-2 mt-[50px]">
+          <p className="text-[10px] leading-[12px]">or contact us at</p>
+          <div className="flex gap-10">
+            <div className="w-[45px] h-[45px]">
+              <Image
+                src="/icons/whatsapp.svg"
+                alt="whatsapp icon"
+                width="52"
+                height="52"
+                className="w-full h-full"
+              />
+            </div>
+            <div className="w-[45px] h-[45px]">
+              <Image
+                src="/icons/phone.svg"
+                alt="phone icon"
+                width="52"
+                height="52"
+                className="w-full h-full"
+              />
+            </div>
+          </div>
+          <p className="text-[10px] leading-[12px]">
+            to better understand your needs
+          </p>
         </div>
       </section>
     </main>

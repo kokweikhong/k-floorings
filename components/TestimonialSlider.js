@@ -13,7 +13,7 @@ import ImageGridLayout from "./ImageGridLayout";
 const Testimonial = ({ testimonial }) => {
   return (
     <div className="flex flex-col items-center">
-      <div className="px-[15px]">
+      <div className="px-[15px] w-full">
         <ImageGridLayout
           images={[
             testimonial.images.one,
