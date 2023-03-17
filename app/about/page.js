@@ -17,6 +17,12 @@ import svgCE from "../../public/icons/CE-black.svg";
 import svgTUV from "../../public/icons/TUV-black.svg";
 import svg15YearsWarranty from "../../public/icons/15 year warranty.svg";
 
+import teamRaziq from "../../public/images/teams/Raziq.png";
+import teamSC from "../../public/images/teams/SC.png";
+import teamIrene from "../../public/images/teams/Irene.png";
+import teamHo from "../../public/images/teams/Ho.png";
+import teamKyosti from "../../public/images/teams/Kyosti.png";
+
 const IconHolder = ({ svgImage, imgAlt, desc }) => {
   return (
     <div className="flex flex-col items-center text-center">
@@ -24,6 +30,24 @@ const IconHolder = ({ svgImage, imgAlt, desc }) => {
         <Image src={svgImage} alt={imgAlt} />
       </div>
       <span className="text-base font-medium">{desc}</span>
+    </div>
+  );
+};
+
+const TeamCard = ({ avatar, name, position }) => {
+  return (
+    <div className="text-center">
+      <div className="w-[150px] h-[150px]">
+        <Image src={avatar.src} alt={avatar.alt} className="w-full h-full" />
+      </div>
+      <div className="mt-2">
+        <h3 className="text-[11px] text-[#488791] font-medium uppercase">
+          {name}
+        </h3>
+      </div>
+      <div>
+        <h4 className="font-normal text-[10px]">{position}</h4>
+      </div>
     </div>
   );
 };
@@ -117,6 +141,7 @@ export default function AboutPage() {
         <ProjectSlider />
       </section>
 
+      {/* introduction section */}
       <section className="container mx-auto px-[15px] mt-[50px]">
         <div className="lg:max-w-[900px] flex flex-col items-center mx-auto">
           <div>
@@ -155,9 +180,61 @@ export default function AboutPage() {
         </div>
       </section>
 
+      {/* testimonial section */}
       <section className="mt-[50px] py-[40px] bg-[#F3F3F3]">
         <h2 className="px-[15px] mb-[20px]">Testimonials Gallery</h2>
         <TestimonialSlider />
+      </section>
+
+      {/* our team section */}
+      <section className="mt-[50px] px-[15px] mx-auto container">
+        <div className="text-center font-inter">
+          <h2 className="px-[15px] mb-[20px] font-bold text-[26px]">
+            Our Team
+          </h2>
+          <h3 className="text-base font-medium">
+            Meet the creative minds behind every piece of wood.
+          </h3>
+        </div>
+        <div className="flex flex-wrap items-center justify-center gap-4 mt-[30px]">
+          <TeamCard
+            avatar={{ src: teamRaziq, alt: "operations team" }}
+            name="Muhamed Raziq"
+            position="opertaions"
+          />
+          <TeamCard
+            avatar={{ src: teamSC, alt: "operations team" }}
+            name="sheng chuan"
+            position="Project QAQC"
+          />
+          <TeamCard
+            avatar={{ src: teamIrene, alt: "sales team" }}
+            name="Irene Lee"
+            position="Sales & Marketing"
+          />
+          <TeamCard
+            avatar={{ src: teamHo, alt: "production team" }}
+            name="Uncle Ho"
+            position="Production"
+          />
+          <TeamCard
+            avatar={{ src: teamKyosti, alt: "business development" }}
+            name="Kyosti Kurkela"
+            position="Research & Business Development"
+          />
+        </div>
+      </section>
+
+      {/* FAQs section */}
+      <section>
+        <h2>FAQs</h2>
+        <div></div>
+        <div>
+          <ol>
+            <li>asdad</li>
+            <li>asda</li>
+          </ol>
+        </div>
       </section>
     </main>
   );
