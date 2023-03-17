@@ -826,6 +826,10 @@ video {
   margin-top: 50px;
 }
 
+.mb-2 {
+  margin-bottom: 0.5rem;
+}
+
 .block {
   display: block;
 }
@@ -954,6 +958,30 @@ video {
   height: 100vh;
 }
 
+.h-\[48px\] {
+  height: 48px;
+}
+
+.h-\[25px\] {
+  height: 25px;
+}
+
+.h-\[53px\] {
+  height: 53px;
+}
+
+.h-auto {
+  height: auto;
+}
+
+.h-\[35px\] {
+  height: 35px;
+}
+
+.h-\[15px\] {
+  height: 15px;
+}
+
 .max-h-\[150px\] {
   max-height: 150px;
 }
@@ -964,6 +992,10 @@ video {
 
 .max-h-\[600px\] {
   max-height: 600px;
+}
+
+.max-h-\[35px\] {
+  max-height: 35px;
 }
 
 .min-h-\[20px\] {
@@ -1108,6 +1140,26 @@ video {
 
 .max-w-full {
   max-width: 100%;
+}
+
+.max-w-\[110px\] {
+  max-width: 110px;
+}
+
+.max-w-\[250px\] {
+  max-width: 250px;
+}
+
+.max-w-\[350px\] {
+  max-width: 350px;
+}
+
+.max-w-\[180px\] {
+  max-width: 180px;
+}
+
+.max-w-\[200px\] {
+  max-width: 200px;
 }
 
 .grow {
@@ -1435,6 +1487,18 @@ video {
   padding: 1.25rem;
 }
 
+.p-\[30px\] {
+  padding: 30px;
+}
+
+.p-\[50px\] {
+  padding: 50px;
+}
+
+.p-3 {
+  padding: 0.75rem;
+}
+
 .px-1 {
   padding-left: 0.25rem;
   padding-right: 0.25rem;
@@ -1555,6 +1619,11 @@ video {
   padding-bottom: 80px;
 }
 
+.py-\[18px\] {
+  padding-top: 18px;
+  padding-bottom: 18px;
+}
+
 .pb-8 {
   padding-bottom: 2rem;
 }
@@ -1669,6 +1738,11 @@ video {
   line-height: 1.5rem;
 }
 
+.text-4xl {
+  font-size: 2.25rem;
+  line-height: 2.5rem;
+}
+
 .font-bold {
   font-weight: 700;
 }
@@ -1757,6 +1831,14 @@ video {
   line-height: 68px;
 }
 
+.leading-9 {
+  line-height: 2.25rem;
+}
+
+.leading-10 {
+  line-height: 2.5rem;
+}
+
 .tracking-\[2px\] {
   letter-spacing: 2px;
 }
@@ -1813,6 +1895,11 @@ video {
 .text-secondary {
   --tw-text-opacity: 1;
   color: rgb(72 135 145 / var(--tw-text-opacity));
+}
+
+.text-blue-500 {
+  --tw-text-opacity: 1;
+  color: rgb(59 130 246 / var(--tw-text-opacity));
 }
 
 .underline {
@@ -2630,12 +2717,24 @@ h5 {
     grid-row-start: 1;
   }
 
+  .xl\:flex {
+    display: flex;
+  }
+
   .xl\:grid {
     display: grid;
   }
 
   .xl\:w-\[160px\] {
     width: 160px;
+  }
+
+  .xl\:w-1\/2 {
+    width: 50%;
+  }
+
+  .xl\:basis-1\/2 {
+    flex-basis: 50%;
   }
 
   .xl\:grid-cols-1 {
@@ -2648,6 +2747,38 @@ h5 {
 
   .xl\:grid-cols-4 {
     grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+
+  .xl\:flex-row {
+    flex-direction: row;
+  }
+
+  .xl\:items-start {
+    align-items: flex-start;
+  }
+
+  .xl\:items-center {
+    align-items: center;
+  }
+
+  .xl\:justify-start {
+    justify-content: flex-start;
+  }
+
+  .xl\:justify-center {
+    justify-content: center;
+  }
+
+  .xl\:justify-around {
+    justify-content: space-around;
+  }
+
+  .xl\:self-start {
+    align-self: flex-start;
+  }
+
+  .xl\:text-left {
+    text-align: left;
   }
 
   .xl\:text-base {

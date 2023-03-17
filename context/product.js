@@ -11,6 +11,7 @@ const actions = {
   INIT_ITEM: "INIT_ITEM",
   ADD_SELECTED_ITEM: "ADD_SELECTED_ITEM",
   REMOVE_SELECTED_ITEM: "REMOVE_SELECTED_ITEM",
+  RESET_SELECTED_ITEM: "RESET_SELECTED_ITEM",
 };
 
 const reducer = (state, action) => {
@@ -37,6 +38,13 @@ const reducer = (state, action) => {
           return ele.sku === action.sku ? { ...ele, isSelected: false } : ele;
         }),
       };
+    case actions.RESET_SELECTED_ITEM:
+      return {
+        ...state,
+        products: state.products.map((ele) => {
+          return { ...ele, isSelected: false };
+        }),
+      };
     default:
       return state;
   }
@@ -56,6 +64,9 @@ export const ProductProvider = ({ children }) => {
     },
     removeSelected: (sku) => {
       dispatch({ type: actions.REMOVE_SELECTED_ITEM, sku });
+    },
+    resetSelected: () => {
+      dispatch({ type: actions.RESET_SELECTED_ITEM });
     },
   };
   return (

@@ -20,6 +20,9 @@ import certEuropeanStandard from "../public/icons/european standards.svg";
 
 import imgGoogleReviews from "../public/testimonials/google reviews.png";
 
+import logoKandinskyWhite from "../public/kandinsky_logo_white.svg";
+import logoKandinskyLiteWhite from "../public/kandinsky lite_logo3.svg";
+
 const certs = [
   {
     src: cert1,
@@ -162,22 +165,25 @@ export default function Home() {
             />
           </div>
           <div className="grid grid-cols-2">
-            <div className="flex items-center justify-center">
-              <div className="text-left">
-                <h3>
-                  <span className="uppercase text-[#fff] tracking-widest">
-                    kandinsky
-                  </span>
-                </h3>
-                <span className="uppercase bg-[#fff] px-3">lite</span>
+            <div className="flex items-center justify-center w-full">
+              <div className="w-[150px] h-[35px]">
+                <Image
+                  src={logoKandinskyLiteWhite}
+                  alt="kandinksy logo"
+                  className="w-full h-full"
+                />
               </div>
             </div>
-            <div className="bg-black text-[#fff] flex justify-center items-center">
-              <div className="text-left">
-                <h3>
-                  <span className="tracking-widest uppercase">kandinsky</span>
-                </h3>
-                <span className="w-full uppercase">coming soon</span>
+            <div className="bg-black text-[#fff] flex flex-col justify-center items-center py-[20px]">
+              <div>
+                <div className="h-[15px] w-[150px] mb-1">
+                  <Image
+                    src={logoKandinskyWhite}
+                    alt="kandinksy logo"
+                    className="w-full h-full"
+                  />
+                </div>
+                <span className="uppercase">coming soon</span>
               </div>
             </div>
           </div>
@@ -200,7 +206,7 @@ export default function Home() {
 
             <div className="hidden lg:block">
               <Link
-                href="#"
+                href="/about"
                 className="bg-[#fff] font-semibold uppercase text-[16px] py-[24px] px-[32px] rounded-[40px]"
               >
                 find out more
@@ -215,8 +221,8 @@ export default function Home() {
 
       {/* testimonial section */}
       <section className="mt-[50px]">
-        <div>
-          <div className="px-[15px] flex flex-col items-start">
+        <div className="xl:flex xl:justify-center xl:items-center">
+          <div className="px-[15px] flex flex-col items-start xl:basis-1/2">
             <h4 className="relative pr-[60px] text-primary text-[26px] font-bold lg:after:hidden lg:mx-auto after:content-[''] after:w-[35px] after:h-[2px] after:bg-primary after:absolute after:top-1/2 after:right-0">
               Reviews
             </h4>
@@ -231,8 +237,16 @@ export default function Home() {
               // className="w-full h-full"
             />
           </div>
-          <div>
-            <TestimonialReferenceSlider />
+        </div>
+        <div>
+          <TestimonialReferenceSlider />
+          <div className="flex items-center justify-center mt-[50px]">
+            <Link
+              href="/about"
+              className="uppercase bg-secondary text-[#fff] text-base font-semibold px-[32px] py-[24px] rounded-[40px] shadow-[0px_15px_20px_rgba(0,0,0,0.2)]"
+            >
+              find out more
+            </Link>
           </div>
         </div>
       </section>

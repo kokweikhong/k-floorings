@@ -4,6 +4,10 @@ import Link from "next/link";
 import heroImage from "../../public/images/home/Sustainability.jpeg";
 import productsData from "../../data/product.json";
 
+import logoKandinskyWhite from "../../public/kandinsky_logo_white.svg";
+import logoKandinskyLiteWhite from "../../public/kandinsky lite_logo1.svg";
+import logoKandinskyLiteWhiteHoz from "../../public/kandinsky lite_logo2.svg";
+
 export default function ProductPage() {
   return (
     <main>
@@ -33,6 +37,29 @@ export default function ProductPage() {
 
       <section>
         <div className="grid grid-cols-2">
+          <div className="flex items-center justify-center w-full">
+            <div className="max-w-[180px] max-h-[35px]">
+              <Image
+                src={logoKandinskyLiteWhite}
+                alt="kandinksy logo"
+                className="w-full h-full"
+              />
+            </div>
+          </div>
+          <div className="bg-black text-[#fff] flex flex-col justify-center items-center py-[20px]">
+            <div>
+              <div className="h-[15px] max-w-[180px] mb-1">
+                <Image
+                  src={logoKandinskyWhite}
+                  alt="kandinksy logo"
+                  className="w-full h-full"
+                />
+              </div>
+              <span className="uppercase">coming soon</span>
+            </div>
+          </div>
+        </div>
+        {/* <div className="grid grid-cols-2">
           <div className="flex items-center justify-center py-2">
             <div className="text-left">
               <h3>
@@ -49,7 +76,7 @@ export default function ProductPage() {
               <span className="w-full uppercase">coming soon</span>
             </div>
           </div>
-        </div>
+        </div> */}
       </section>
 
       <section className="container mx-auto mt-[50px]">
@@ -176,13 +203,12 @@ export default function ProductPage() {
         <div className="border-top border-t-[#D9D9D9] border py-2">
           <p className="text-center text-base leading-[19px] uppercase text-secondary">{`${productsData.length} of ${productsData.length} shown`}</p>
         </div>
-        <div className="py-3 text-center bg-primary">
-          <h3 className="text-[#fff] tracking-widest flex justify-center items-center gap-2">
-            <span>KANDINSKY</span>
-            <span className="text-[#000] bg-[#fff] font-semibold font-inter tracking-widest text-[1.4rem] px-1">
-              LITE
-            </span>
-          </h3>
+        <div className="flex items-center justify-center w-full p-3 bg-primary h-[70px]">
+          <Image
+            src={logoKandinskyLiteWhiteHoz}
+            alt="kandinsky lite logo"
+            className="max-w-[200px] h-auto"
+          />
         </div>
       </section>
     </main>

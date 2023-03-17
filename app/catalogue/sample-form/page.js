@@ -1,8 +1,9 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import { useForm } from "react-hook-form";
-import { useContext } from "react";
+import { useContext, useEffect, useState } from "react";
 
 import SelectedFormItem from "@/components/SelectedFormItem";
 import { ProductContext } from "@/context/product";
@@ -32,12 +33,36 @@ const Input = ({
   </div>
 );
 
+const NotProductIsSelected = () => {
+  return (
+    <div className="w-full px-[15px] container mx-auto mt-[50px] text-center font-semibold text-[20px] text-primary leading-10">
+      <p>
+        Please select at least{" "}
+        <span className="text-4xl font-bold text-blue-500 underline uppercase">
+          1
+        </span>{" "}
+        product to request sample, visit{" "}
+        <Link
+          href="/product"
+          className="text-4xl font-bold text-blue-500 underline uppercase"
+        >
+          our product page
+        </Link>{" "}
+        to find out more.
+      </p>
+    </div>
+  );
+};
+
 export default function SampleFormPage() {
-  const { products, removeSelected } = useContext(ProductContext);
+  const { products, removeSelected, resetSelected } =
+    useContext(ProductContext);
+  const [sumSelected, setSumSelected] = useState(0);
   let number = 0;
   const {
     register,
     handleSubmit,
+    reset,
     formState: { errors },
   } = useForm();
   const onSubmit = async (data) => {
@@ -48,9 +73,23 @@ export default function SampleFormPage() {
       },
       body: JSON.stringify(data),
     });
+    reset();
+    resetSelected();
+
     console.log(res.json());
     console.log(data);
   };
+
+  useEffect(() => {
+    setSumSelected(
+      products.reduce((a, b) => {
+        return b.isSelected ? (a += 1) : a;
+      }, 0)
+    );
+    console.log(sumSelected);
+  }, [products, sumSelected]);
+
+  if (sumSelected < 1) return <NotProductIsSelected />;
 
   return (
     <main>

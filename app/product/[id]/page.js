@@ -2,12 +2,15 @@
 
 import Image from "next/image";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { useContext, useEffect, useState } from "react";
 import { ProductContext } from "@/context/product";
 import Breadcrumb from "@/components/Breadcrumb";
+
+import logoKandinskyLiteWhiteHoz from "../../../public/kandinsky lite_logo2.svg";
 
 function NextArrow(props) {
   const { className, style, onClick } = props;
@@ -54,6 +57,7 @@ export default function IndividualProductPage({ params }) {
   const { products, initProducts, addSelected, removeSelected } =
     useContext(ProductContext);
   const [product, setProduct] = useState();
+  const router = useRouter();
 
   useEffect(() => {
     if (products.length < 1) {
@@ -75,6 +79,13 @@ export default function IndividualProductPage({ params }) {
       addSelected(product.sku);
     }
     console.log(product.isSelected);
+  };
+
+  const handleGetFreeSample = () => {
+    if (!product.isSelected) {
+      addSelected(product.sku);
+    }
+    router.push("/catalogue");
   };
 
   if (products.length < 1 || product === undefined)
@@ -276,12 +287,12 @@ export default function IndividualProductPage({ params }) {
                 </span>
               </button>
               {/* <div className="h-full text-center"> */}
-              <Link
-                href="/catalogue"
+              <button
+                onClick={handleGetFreeSample}
                 className="uppercase rounded-[40px] bg-primary text-[#fff] text-[14px] px-[18px] py-[14px] mx-auto shadow-xl"
               >
                 get your free sample now
-              </Link>
+              </button>
               {/* </div> */}
             </div>
           </div>
@@ -289,7 +300,13 @@ export default function IndividualProductPage({ params }) {
       </section>
 
       <section className="w-full mt-[50px]">
-        <div className="h-[70px] w-full bg-primary"></div>
+        <div className="flex items-center justify-center w-full p-3 bg-primary h-[70px]">
+          <Image
+            src={logoKandinskyLiteWhiteHoz}
+            alt="kandinsky lite logo"
+            className="max-w-[200px] h-auto"
+          />
+        </div>
       </section>
     </main>
   );
