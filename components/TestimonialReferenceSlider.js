@@ -61,16 +61,16 @@ export default function TestimonialReferenceSlider() {
   return (
     <div>
       <Slider {...settings}>
-        <div className="relative h-full px-2">
-          <div className="h-full relative after:absolute after:h-full after:w-full after:top-0 after:left-0 after:bg-black/50 after:rounded-[15px]">
+        <div className="px-[15px] h-full relative">
+          <div className="relative h-full after:absolute after:h-full after:w-full after:top-0 after:left-0 after:bg-black/50 after:rounded-[15px]">
             <Image
               src={imgTestimonial1}
               alt="google review"
-              className="w-full h-full max-h-[600px] rounded-[15px] object-cover"
+              className="w-full h-full rounded-[15px] object-cover"
             />
           </div>
-          <div className="absolute w-full left-5 top-5">
-            <div className="relative left-0">
+          <div className=" absolute top-5 flex items-center justify-center w-full gap-1 text-[#eee] z-10">
+            <div className="absolute top-0 left-3">
               <Image src={svgGoogle} alt="mothership review" />
             </div>
             <div className="absolute top-0 -translate-x-1/2 left-1/2 h-[36px] flex items-center">
@@ -79,7 +79,7 @@ export default function TestimonialReferenceSlider() {
               </p>
             </div>
           </div>
-          <div className=" p-[15px] text-[#fff] text-center absolute gap-3 bottom-0 left-0 flex flex-col justify-center w-full">
+          <div className="px-[50px] py-[30px] absolute bottom-0 left-0 flex flex-col gap-2 items-center justify-center w-full text-[#eee] z-10">
             <div className="flex items-center justify-center w-full gap-2">
               <div>
                 <Image
@@ -117,16 +117,16 @@ export default function TestimonialReferenceSlider() {
           </div>
         </div>
 
-        <div className="relative h-full px-2">
-          <div className="h-full relative after:absolute after:h-full after:w-full after:top-0 after:left-0 after:bg-black/50 after:rounded-[15px]">
+        <div className="px-[15px] h-full relative">
+          <div className="relative h-full after:absolute after:h-full after:w-full after:top-0 after:left-0 after:bg-black/50 after:rounded-[15px]">
             <Image
               src={imgTestimonial2}
               alt="google review"
-              className="w-full h-full max-h-[600px] rounded-[15px] object-cover"
+              className="h-full w-full rounded-[15px] object-cover"
             />
           </div>
-          <div className="absolute w-full left-5 top-5">
-            <div className="relative left-0">
+          <div className="absolute top-5 flex items-center justify-center w-full gap-1 text-[#eee] z-10">
+            <div className="absolute top-0 left-3">
               <Image src={svgMothership} alt="mothership review" />
             </div>
             <div className="absolute top-0 -translate-x-1/2 left-1/2 h-[36px] flex items-center">
@@ -135,10 +135,12 @@ export default function TestimonialReferenceSlider() {
               </p>
             </div>
           </div>
-          <div className=" p-[15px] text-[#fff] text-center absolute bottom-0 left-0 flex flex-col justify-center w-full">
-            <h3 className="text-base font-bold font-inter">
-              Mothership Article
-            </h3>
+          <div className="px-[50px] py-[30px] absolute bottom-0 left-0 flex flex-col gap-2 items-center justify-center w-full text-[#eee] z-10">
+            <div className="flex items-center justify-center w-full gap-2">
+              <h3 className="text-base font-bold font-inter">
+                Mothership Article
+              </h3>
+            </div>
             <p className="text-[10px]">
               August 17, 2022 - Calvary Carpentry, a Singapore-based carpentry
               firm. The company is praised for its commitment to quality
@@ -148,7 +150,7 @@ export default function TestimonialReferenceSlider() {
           </div>
         </div>
 
-        <div className="relative w-full h-full px-2">
+        <div className="relative h-full px-[15px]">
           <div className="h-full relative after:absolute after:h-full after:w-full after:top-0 after:left-0 after:bg-black/50 after:rounded-[15px]">
             <Image
               src={imgTestimonial3}
@@ -166,7 +168,7 @@ export default function TestimonialReferenceSlider() {
               </p>
             </div>
           </div>
-          <div className=" p-[15px] text-[#fff] text-center absolute gap-3 bottom-0 left-0 flex flex-col justify-center w-full">
+          <div className="px-[50px] py-[30px] text-[#fff] text-center absolute gap-3 bottom-0 left-0 flex flex-col justify-center w-full">
             <div className="flex items-center justify-center w-full gap-2">
               <div>
                 <Image

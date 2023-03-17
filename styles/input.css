@@ -126,6 +126,16 @@ h5 {
   color: #000 !important;
 } */
 
-.testimonial-references-slider .slick-slide {
-  height: 100%
+.testimonial-references-slider .slick-track {
+  display: flex !important;
 }
+
+.testimonial-references-slider .slick-slide {
+  height: inherit !important;
+}
+
+.testimonial-references-slider .slick-slide > div {
+  height: 100% !important;
+  max-height: 700px;
+}
+
