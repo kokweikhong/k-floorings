@@ -1,95 +1,215 @@
-import { render } from "@react-email/render";
 import {
   Html,
   Head,
   Body,
-  Container,
-  Section,
   Text,
   Preview,
+  Section,
+  Row,
+  Column,
+  Link,
+  Container,
 } from "@react-email/components";
 
-const GeneralInfo = ({ label, value }) => {
-  return (
-    <Body
-      style={{
-        marginTop: "5px",
-      }}
-    >
-      <Text
-        style={{
-          textTransform: "uppercase",
-          margin: 0,
-          fontSize: "16px",
-          fontWeight: "300",
-        }}
-      >
-        {label}:{" "}
-      </Text>
-      <Text
-        style={{
-          margin: 0,
-          marginTop: "2px",
-          fontSize: "24px",
-          fontWeight: "500",
-          color: "#806840",
-          textTransform: "uppercase",
-        }}
-      >
-        {value}
-      </Text>
-    </Body>
-  );
+const informationTable = {
+  borderCollapse: "collapse",
+  borderSpacing: "0px",
+  color: "rgb(51,51,51)",
+  backgroundColor: "rgb(250,250,250)",
+  borderRadius: "3px",
+  fontSize: "12px",
+};
+
+const informationTableRow = {
+  height: "46px",
+};
+
+const informationTableColumn = {
+  paddingLeft: "20px",
+  borderStyle: "solid",
+  borderColor: "white",
+  borderWidth: "0px 1px 1px 0px",
+  height: "44px",
+};
+
+const resetText = {
+  margin: "0",
+  padding: "0",
+  lineHeight: 1.4,
+};
+
+const informationTableLabel = {
+  ...resetText,
+  color: "rgb(102,102,102)",
+  fontSize: "10px",
+  textTransform: "uppercase",
+};
+
+const informationTableValue = {
+  fontSize: "12px",
+  margin: "0",
+  padding: "0",
+  lineHeight: 1.4,
+};
+
+const main = {
+  fontFamily: '"Helvetica Neue",Helvetica,Arial,sans-serif',
+  backgroundColor: "#ffffff",
+};
+
+const container = {
+  margin: "0",
+  padding: "20px 0 48px",
+  width: "660px",
+};
+
+const tableCell = { display: "table-cell" };
+
+const heading = {
+  fontSize: "24px",
+  fontWeight: "300",
+  lineHeight: 1.5,
+  color: "#888888",
 };
 
 export default function SampleEmailTemplate({ data }) {
+  console.log(data.products);
   return (
     <Html lang="en">
       <Head />
       <Preview>New Request From k-floorings.com</Preview>
-      <Body style={{ color: "#000" }}>
-        <Body
-          style={{
-            backgroundColor: "#ffffff",
-            padding: "15px",
-          }}
-        >
-          <Text style={{ fontSize: "30px" }}>General Information</Text>
-          <GeneralInfo label="name" value={data.name} />
-          <GeneralInfo label="company" value={data.company} />
-          <GeneralInfo label="email" value={data.email} />
-          <GeneralInfo label="phone" value={data.phone} />
-          <GeneralInfo label="remarks" value={data.remarks} />
-          <GeneralInfo label="mailing" value={data.mailing} />
-          <GeneralInfo label="delivery / pickup" value={data.delivery} />
-        </Body>
+      <Body style={main}>
+        <Container style={container}>
+          <Section>
+            <Column align="left" style={tableCell}>
+              <Text style={heading}>
+                New Sample Request From k-floorings.com
+              </Text>
+            </Column>
+          </Section>
+          <Section style={informationTable}>
+            <Row style={informationTableRow}>
+              <Column colSpan={2}>
+                <Row>
+                  <Column style={informationTableColumn}>
+                    <Text style={informationTableLabel}>NAME</Text>
+                    <Text style={informationTableValue}>{data.name}</Text>
+                  </Column>
+                </Row>
+                <Row>
+                  <Column style={informationTableColumn}>
+                    <Text style={informationTableLabel}>COMPANY</Text>
+                    <Text style={informationTableValue}>{data.company}</Text>
+                  </Column>
+                </Row>
+                <Row>
+                  <Column style={informationTableColumn}>
+                    <Text style={informationTableLabel}>EMAIL ADDRESS</Text>
+                    <Link
+                      style={{
+                        ...informationTableValue,
+                        color: "#15c",
+                        textDecoration: "underline",
+                      }}
+                    >
+                      {data.email}
+                    </Link>
+                  </Column>
+                </Row>
+                <Row>
+                  <Column style={informationTableColumn}>
+                    <Text style={informationTableLabel}>PHONE</Text>
+                    <Text style={informationTableValue}>{data.phone}</Text>
+                  </Column>
+                </Row>
 
-        <Body
-          style={{
-            backgroundColor: "#ffffff",
-            padding: "15px",
-          }}
-        >
-          <Text style={{ fontSize: "30px" }}>Sample Request Information</Text>
-          {Object.entries(data?.products)?.map(([key, value]) => {
+                <Row>
+                  <Column style={informationTableColumn}>
+                    <Text style={informationTableLabel}>DELIVERY / PICKUP</Text>
+                    <Text style={informationTableValue}>{data.delivery}</Text>
+                  </Column>
+                </Row>
+
+                <Row>
+                  <Column style={informationTableColumn}>
+                    <Text style={informationTableLabel}>REMARKS</Text>
+                    <Text style={informationTableValue}>{data.remarks}</Text>
+                  </Column>
+                </Row>
+
+                <Row>
+                  <Column style={informationTableColumn}>
+                    <Text style={informationTableLabel}>ADDRESS LINE 1</Text>
+                    <Text style={informationTableValue}>{data.address1}</Text>
+                  </Column>
+                </Row>
+
+                <Row>
+                  <Column style={informationTableColumn}>
+                    <Text style={informationTableLabel}>ADDRESS LINE 2</Text>
+                    <Text style={informationTableValue}>{data.address2}</Text>
+                  </Column>
+                </Row>
+
+                <Row>
+                  <Column style={informationTableColumn}>
+                    <Text style={informationTableLabel}>CITY</Text>
+                    <Text style={informationTableValue}>{data.city}</Text>
+                  </Column>
+                </Row>
+
+                <Row>
+                  <Column style={informationTableColumn}>
+                    <Text style={informationTableLabel}>POSTCODE</Text>
+                    <Text style={informationTableValue}>{data.postcode}</Text>
+                  </Column>
+                </Row>
+
+                <Row>
+                  <Column style={informationTableColumn}>
+                    <Text style={informationTableLabel}>MAILING</Text>
+                    <Text style={informationTableValue}>{data.mailing}</Text>
+                  </Column>
+                </Row>
+              </Column>
+            </Row>
+          </Section>
+
+          <Section>
+            <Column align="left" style={tableCell}>
+              <Text style={heading}>Sample Request Information</Text>
+            </Column>
+          </Section>
+          {Object.entries(data.products).map(([key, value]) => {
             return (
-              <Body
+              <Section
+                style={{ ...informationTable, margin: 0, marginBottom: "20px" }}
                 key={key}
-                style={{
-                  paddingTop: "3px",
-                  paddingBottom: "3px",
-                  borderBottom: "1px solid #D9D9D9",
-                }}
               >
-                <GeneralInfo label="Name / SKU" value={key} />
-                <GeneralInfo
-                  label="Applications"
-                  value={value?.application?.join()}
-                />
-              </Body>
+                <Row style={informationTableRow}>
+                  <Column>
+                    <Row>
+                      <Column style={informationTableColumn}>
+                        <Text style={informationTableLabel}>
+                          PRODUCT NAME / SKU
+                        </Text>
+                        <Text style={informationTableValue}>{key}</Text>
+                      </Column>
+                    </Row>
+                    <Row>
+                      <Column style={informationTableColumn}>
+                        <Text style={informationTableLabel}>APPLICATIONS</Text>
+                        <Text style={informationTableValue}>
+                          {value?.application?.join()}
+                        </Text>
+                      </Column>
+                    </Row>
+                  </Column>
+                </Row>
+              </Section>
             );
           })}
-        </Body>
+        </Container>
       </Body>
     </Html>
   );

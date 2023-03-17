@@ -2,6 +2,7 @@ import "../styles/main.css";
 import { Inter, Raleway } from "@/utils/fonts";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import ScrollToTop from "@/components/ScrollToTop";
 import { ProductProvider } from "@/context/product";
 
 export const metadata = {
@@ -16,6 +17,7 @@ export default function RootLayout({ children }) {
         <ProductProvider>
           <Header />
           {children}
+          <ScrollToTop />
           <Footer />
         </ProductProvider>
       </body>

@@ -14,8 +14,20 @@ export default function ContactPage() {
     register,
     formState: { errors },
     handleSubmit,
+    reset,
   } = useForm();
-  const onSubmit = (data) => console.log(data);
+  const onSubmit = async (data) => {
+    console.log(data);
+    const res = await fetch("/api/contactus-email", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(data),
+    });
+    console.log(res);
+    reset();
+  };
   return (
     <main>
       {/* national logos */}
