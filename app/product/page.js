@@ -53,8 +53,8 @@ export default function ProductPage() {
       </section>
 
       <section className="container mx-auto mt-[50px]">
-        <div className="text-center text-primary flex flex-col gap-4">
-          <div className="flex justify-center items-center gap-2">
+        <div className="flex flex-col gap-4 text-center text-primary">
+          <div className="flex items-center justify-center gap-2">
             <div className="w-[38px] h-[38px]">
               <Image
                 src="/icons/FSC.svg"
@@ -113,7 +113,7 @@ export default function ProductPage() {
                   </Link>
                   <div className="z-10">
                     <Link
-                      href="#"
+                      href={`/product/${product.index}`}
                       className="absolute bottom-0 left-0 w-full text-center uppercase text-[#fff] font-semibold text-[12px] p-2 cursor-pointer"
                     >
                       get free sample
@@ -176,7 +176,7 @@ export default function ProductPage() {
         <div className="border-top border-t-[#D9D9D9] border py-2">
           <p className="text-center text-base leading-[19px] uppercase text-secondary">{`${productsData.length} of ${productsData.length} shown`}</p>
         </div>
-        <div className="bg-primary text-center py-3">
+        <div className="py-3 text-center bg-primary">
           <h3 className="text-[#fff] tracking-widest flex justify-center items-center gap-2">
             <span>KANDINSKY</span>
             <span className="text-[#000] bg-[#fff] font-semibold font-inter tracking-widest text-[1.4rem] px-1">
