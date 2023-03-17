@@ -55,13 +55,6 @@ export default function ProjectReferenceSlider() {
           centerPadding: "0px",
         },
       },
-      //   {
-      //     breakpoint: 480,
-      //     settings: {
-      //       slidesToShow: 1,
-      //       slidesToScroll: 1
-      //     }
-      //   }
     ],
   };
   return (

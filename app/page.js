@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 
 import ProjectReferenceSlider from "@/components/ProjectReferenceSlider";
+import TestimonialReferenceSlider from "@/components/TestimonialReferenceSlider";
 
 import heroImage from "../public/images/home/hero_image_1.jpg";
 
@@ -16,6 +17,8 @@ import applicationWall from "../public/images/home/application_wall.jpg";
 
 import callToActionImage from "../public/images/home/Sustainability.jpeg";
 import certEuropeanStandard from "../public/icons/european standards.svg";
+
+import imgGoogleReviews from "../public/testimonials/google reviews.png";
 
 const certs = [
   {
@@ -209,6 +212,30 @@ export default function Home() {
 
       {/* project references */}
       <ProjectReferenceSlider />
+
+      {/* testimonial section */}
+      <section className="mt-[50px]">
+        <div>
+          <div className="px-[15px] flex flex-col items-start">
+            <h4 className="relative pr-[60px] text-primary text-[26px] font-bold lg:after:hidden lg:mx-auto after:content-[''] after:w-[35px] after:h-[2px] after:bg-primary after:absolute after:top-1/2 after:right-0">
+              Reviews
+            </h4>
+            <h2 className="text-[42px] font-extrabold lg:mx-auto">
+              Testimonials
+            </h2>
+          </div>
+          <div className="flex items-center justify-center w-full">
+            <Image
+              src={imgGoogleReviews}
+              alt="google reviews summary"
+              // className="w-full h-full"
+            />
+          </div>
+          <div>
+            <TestimonialReferenceSlider />
+          </div>
+        </div>
+      </section>
     </main>
   );
 }

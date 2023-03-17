@@ -125,3 +125,7 @@ h5 {
 .product-slider .slick-active {
   color: #000 !important;
 } */
+
+.testimonial-references-slider .slick-slide {
+  height: 100%
+}
