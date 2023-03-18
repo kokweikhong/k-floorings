@@ -126,11 +126,13 @@ h5 {
   color: #000 !important;
 } */
 
-.testimonial-references-slider .slick-track {
+.testimonial-references-slider .slick-track,
+.product-slider .slick-track {
   display: flex !important;
 }
 
-.testimonial-references-slider .slick-slide {
+.testimonial-references-slider .slick-slide,
+.product-slider .slick-slide {
   height: inherit !important;
 }
 
@@ -139,3 +141,7 @@ h5 {
   max-height: 700px;
 }
 
+.product-slider .slick-slide > div {
+  height: 100% !important;
+  max-height: 550px !important;
+}

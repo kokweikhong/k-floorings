@@ -12,6 +12,10 @@ import Breadcrumb from "@/components/Breadcrumb";
 
 import logoKandinskyLiteWhiteHoz from "../../../public/kandinsky lite_logo2.svg";
 
+import LightboxGallery from "@/components/LightboxGallery";
+
+import svgOpenLightbox from "../../../public/icons/arrows_open_lightbox.svg";
+
 function NextArrow(props) {
   const { className, style, onClick } = props;
   return (
@@ -58,6 +62,7 @@ export default function IndividualProductPage({ params }) {
     useContext(ProductContext);
   const [product, setProduct] = useState();
   const router = useRouter();
+  const [open, setOpen] = useState(false);
 
   useEffect(() => {
     if (products.length < 1) {
@@ -104,21 +109,40 @@ export default function IndividualProductPage({ params }) {
   return (
     <main>
       <section>
-        <Slider {...settings}>
-          {product?.images.map((img, index) => {
-            return (
-              <div key={index} className="max-h-[550px]">
-                <Image
-                  src={`/products/${product.sku}/${img}`}
-                  alt=""
-                  width="1980"
-                  height="1280"
-                  className="object-cover w-full h-full"
-                />
-              </div>
-            );
+        <div className="relative">
+          <Slider {...settings}>
+            {product?.images.map((img, index) => {
+              return (
+                <div key={index} className="h-[500px]">
+                  <Image
+                    src={`/products/${product.sku}/${img}`}
+                    alt=""
+                    width="500"
+                    height="500"
+                    className="object-cover w-full h-full"
+                  />
+                </div>
+              );
+            })}
+          </Slider>
+          <button
+            onClick={() => setOpen(true)}
+            className="w-[40px] h-[40px] absolute bottom-3 right-3 cursor-pointer z-20"
+          >
+            <Image
+              src={svgOpenLightbox}
+              alt="arrows to open lightbox icon"
+              className="w-full h-full"
+            />
+          </button>
+        </div>
+        <LightboxGallery
+          images={product.images.map((img) => {
+            return `/products/${product.sku}/${img}`;
           })}
-        </Slider>
+          open={open}
+          setOpen={setOpen}
+        />
       </section>
 
       {/* breadcrumb */}

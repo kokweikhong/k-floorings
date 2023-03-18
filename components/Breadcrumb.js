@@ -31,21 +31,19 @@ export default function Breadcrumb({ props }) {
           </Link>
         </li>
         {props?.links?.map((link, index) => {
-          return (
-            <>
-              <li key={index} className="flex items-center">
-                <ArrowLeft />
-              </li>
-              <li key={`navlinks-${index}`} className="flex items-center">
-                <Link
-                  href={link.url}
-                  className="text-[12px] md:text-[15px] font-semibold leading-[15px]"
-                >
-                  {link.object}
-                </Link>
-              </li>
-            </>
-          );
+          return [
+            <li key={index} className="flex items-center">
+              <ArrowLeft />
+            </li>,
+            <li key={`navlinks-${index}`} className="flex items-center">
+              <Link
+                href={link.url}
+                className="text-[12px] md:text-[15px] font-semibold leading-[15px]"
+              >
+                {link.object}
+              </Link>
+            </li>,
+          ];
         })}
       </ul>
     </div>

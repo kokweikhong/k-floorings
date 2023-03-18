@@ -7,7 +7,7 @@ export async function POST(request) {
   console.log(body);
   const emailTemplate = render(<SampleEmailTemplate data={body} />);
   await sendEmail({
-    to: "kokweikhong@gmail.com",
+    to: process.env.TO_EMAIL,
     subject: "New Sample Request From k-floorings",
     html: emailTemplate,
   });
