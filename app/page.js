@@ -60,6 +60,13 @@ const applications = [
   },
 ];
 
+export const metadata = {
+  title:
+    "Kandinsky | Experience the Beauty of Timber Wood with Our Flooring, Stairs, Wall, and Ceiling Services in Malaysia and Singapore",
+  description:
+    "Discover the natural beauty of timber wood with our expert services. Whether you need new flooring, stairs, walls, or ceilings, our team in Malaysia and Singapore has you covered.",
+};
+
 // TODO : hero image alt
 
 export default function Home() {
