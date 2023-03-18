@@ -2,6 +2,8 @@
 
 import Image from "next/image";
 import { useForm } from "react-hook-form";
+import { useState, useEffect } from "react";
+import { useRouter } from "next/navigation";
 
 import svgSingapore from "../../public/icons/Singapore.svg";
 import svgMalaysia from "../../public/icons/Malaysia.svg";
@@ -9,7 +11,15 @@ import svgMalaysia from "../../public/icons/Malaysia.svg";
 import svgPhone from "../../public/icons/phone.svg";
 import svgMail from "../../public/icons/mail.svg";
 
+import SendingEmail from "@/components/SendingEmail";
+import EmailHasSubmitted from "@/components/EmailHasSubmitted";
+import FailedToSubmitRequestEmail from "@/components/FailedToSubmitRequestEmail";
+
 export default function ContactPage() {
+  const [isFailToSubmit, setIsFailToSubmit] = useState(false);
+  const [isSubmit, setIsSubmit] = useState(false);
+  const [isSendingRequest, setIsSendingRequest] = useState(false);
+  const router = useRouter();
   const {
     register,
     formState: { errors },
@@ -18,16 +28,43 @@ export default function ContactPage() {
   } = useForm();
   const onSubmit = async (data) => {
     console.log(data);
-    const res = await fetch("/api/contactus-email", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(data),
-    });
-    console.log(res);
-    reset();
+    setIsSendingRequest(true);
+    try {
+      const res = await fetch("/api/contactus-email", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(data),
+      });
+      console.log(res);
+      reset();
+      setIsSubmit(true);
+    } catch (e) {
+      console.log(e);
+      setIsFailToSubmit(true);
+    }
   };
+  useEffect(() => {
+    setIsSendingRequest(false);
+    let isRedirect;
+    if (isSubmit) {
+      isRedirect = true;
+    }
+
+    setTimeout(() => {
+      setIsFailToSubmit(false);
+      setIsSubmit(false);
+      setIsSendingRequest(false);
+      if (isRedirect) {
+        router.push("/");
+      }
+    }, 5000);
+  }, [isFailToSubmit, isSubmit]);
+
+  if (isSendingRequest) return <SendingEmail />;
+  if (isSubmit) return <EmailHasSubmitted />;
+  if (isFailToSubmit) return <FailedToSubmitRequestEmail />;
   return (
     <main>
       {/* national logos */}
@@ -190,7 +227,7 @@ export default function ContactPage() {
               <input
                 type="submit"
                 value="Submit enquiry"
-                className="uppercase text-[13px] font-semibold bg-[#488791] text-[#fff] px-[30px] py-[13px] rounded-[40px]"
+                className="cursor-pointer uppercase text-[13px] font-semibold bg-[#488791] text-[#fff] px-[30px] py-[13px] rounded-[40px]"
               />
             </div>
           </form>
