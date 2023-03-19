@@ -138,12 +138,8 @@ export default function Home() {
               Testimonials
             </h2>
           </div>
-          <div className="flex items-center justify-center w-full">
-            <Image
-              src={imgGoogleReviews}
-              alt="google reviews summary"
-              // className="w-full h-full"
-            />
+          <div className="relative flex items-center justify-center w-full">
+            <Image src={imgGoogleReviews} alt="google reviews summary" />
           </div>
         </div>
         <div>
