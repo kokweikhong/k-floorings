@@ -102,7 +102,9 @@ export default function AboutPage() {
           <Image
             src={heroImage}
             alt=""
-            className="object-cover w-full h-full"
+            fill
+            className="object-cover"
+            priority
           />
         </div>
         <div className="text-[#fff] px-[30px] z-10 absolute top-0 left-0 flex flex-col justify-center items-center text-center w-full h-full">

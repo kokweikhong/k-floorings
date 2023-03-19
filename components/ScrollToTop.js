@@ -39,14 +39,10 @@ export default function ScrollToTop() {
       onClick={scrollToTop}
       className={`${
         visible ? "inline" : "hidden"
-      } bg-[#fff] border border-[#000] fixed bottom-10 z-10 cursor-pointer p-2 right-3 animate-bounce shadow-2xl flex flex-col items-center justify-center`}
+      } bg-[#fff] border border-[#000] fixed bottom-10 z-50 cursor-pointer p-2 right-3 animate-bounce shadow-2xl flex flex-col items-center justify-center`}
     >
-      <div className="w-[35px] h-[35px]">
-        <Image
-          src={svgDoubleArrowUp}
-          alt="double arrow up icon"
-          className="w-full h-full"
-        />
+      <div className="relative w-[35px] h-[35px]">
+        <Image src={svgDoubleArrowUp} alt="double arrow up icon" fill />
       </div>
       <span className="text-[10px] text-center">Back to top</span>
     </button>

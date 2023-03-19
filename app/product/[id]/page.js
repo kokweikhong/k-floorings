@@ -108,7 +108,7 @@ export default function IndividualProductPage({ params }) {
   };
   return (
     <main>
-      <section>
+      <section className="w-full">
         <div className="relative">
           <Slider {...settings}>
             {product?.images.map((img, index) => {

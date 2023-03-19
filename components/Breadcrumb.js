@@ -17,7 +17,7 @@ const ArrowLeft = () => {
 
 export default function Breadcrumb({ props }) {
   return (
-    <div className="w-full max-w-full mx-[15px] border-b border-b-[#D9D9D9] py-[20px]">
+    <div className="w-full max-w-full px-[15px] border-b border-b-[#D9D9D9] py-[20px]">
       <ul className="flex gap-[5px] items-stretch min-h-[20px]">
         <li className="flex items-center">
           <Link href="/" className="w-[12px] h-[12px] md:h-[18px] md:w-[18px]">

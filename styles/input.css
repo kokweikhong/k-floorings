@@ -127,18 +127,21 @@ h5 {
 } */
 
 .testimonial-references-slider .slick-track,
+.project-references-slider .slick-track,
 .product-slider .slick-track {
   display: flex !important;
 }
 
 .testimonial-references-slider .slick-slide,
+.project-references-slider .slick-slide,
 .product-slider .slick-slide {
   height: inherit !important;
 }
 
+.project-references-slider .slick-slide > div,
 .testimonial-references-slider .slick-slide > div {
   height: 100% !important;
-  max-height: 700px;
+  max-height: 700px !important;
 }
 
 .product-slider .slick-slide > div {
