@@ -37,25 +37,31 @@ export default function ProductPage() {
 
       <section>
         <div className="grid grid-cols-2">
-          <div className="flex items-center justify-center w-full">
-            <div className="max-w-[180px] max-h-[35px]">
+          <div className="flex items-center justify-center w-full px-[15px]">
+            <div className="max-w-[180px] w-full h-[35px] relative">
               <Image
                 src={logoKandinskyLiteWhite}
                 alt="kandinksy logo"
-                className="w-full h-full"
+                fill
+                // className="object-cover"
+                // className="w-full h-full"
               />
             </div>
           </div>
-          <div className="bg-black text-[#fff] flex flex-col justify-center items-center py-[20px]">
-            <div>
-              <div className="h-[15px] max-w-[180px] mb-1">
+          <div className="bg-black text-[#fff] flex flex-col justify-center items-center w-full py-[15px]">
+            <div className="px-[15px] w-full flex flex-col items-center">
+              <div className="relative h-[20px] w-full max-w-[180px] mb-1">
                 <Image
                   src={logoKandinskyWhite}
                   alt="kandinksy logo"
-                  className="w-full h-full"
+                  fill
+                  // className="object-fill"
+                  // className="w-full h-full"
                 />
               </div>
-              <span className="uppercase">coming soon</span>
+              <span className="uppercase w-full max-w-[180px]">
+                coming soon
+              </span>
             </div>
           </div>
         </div>

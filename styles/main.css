@@ -659,18 +659,6 @@ video {
   top: 1.25rem;
 }
 
-.right-5 {
-  right: 1.25rem;
-}
-
-.right-8 {
-  right: 2rem;
-}
-
-.right-12 {
-  right: 3rem;
-}
-
 .-z-\[1\] {
   z-index: -1;
 }
@@ -729,11 +717,6 @@ video {
 
 .m-auto {
   margin: auto;
-}
-
-.mx-\[15px\] {
-  margin-left: 15px;
-  margin-right: 15px;
 }
 
 .mx-auto {
@@ -1026,10 +1009,6 @@ video {
   height: 100vh;
 }
 
-.h-\[300px\] {
-  height: 300px;
-}
-
 .max-h-\[150px\] {
   max-height: 150px;
 }
@@ -1164,6 +1143,10 @@ video {
 
 .w-full {
   width: 100%;
+}
+
+.w-\[180px\] {
+  width: 180px;
 }
 
 .min-w-full {
@@ -1554,6 +1537,11 @@ video {
      object-fit: cover;
 }
 
+.object-fill {
+  -o-object-fit: fill;
+     object-fit: fill;
+}
+
 .p-1 {
   padding: 0.25rem;
 }
@@ -1685,9 +1673,14 @@ video {
   padding-bottom: 80px;
 }
 
-.px-\[0px\] {
-  padding-left: 0px;
-  padding-right: 0px;
+.py-\[5px\] {
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+.py-\[15px\] {
+  padding-top: 15px;
+  padding-bottom: 15px;
 }
 
 .pb-8 {
@@ -1803,6 +1796,11 @@ video {
 .text-xl {
   font-size: 1.25rem;
   line-height: 1.75rem;
+}
+
+.text-sm {
+  font-size: 0.875rem;
+  line-height: 1.25rem;
 }
 
 .font-bold {
@@ -2829,10 +2827,6 @@ h5 {
 
   .xl\:w-\[160px\] {
     width: 160px;
-  }
-
-  .xl\:min-w-\[1200px\] {
-    min-width: 1200px;
   }
 
   .xl\:basis-1\/2 {
