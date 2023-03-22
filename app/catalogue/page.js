@@ -203,7 +203,7 @@ export default function CataloguePage() {
         <div className="flex flex-col items-center justify-center gap-2">
           <p className="text-[10px] leading-[12px]">or contact us at</p>
           <div className="flex gap-10">
-            <div className="w-[45px] h-[45px]">
+            <Link href="https://wa.me/6587767837" className="w-[45px] h-[45px]">
               <Image
                 src="/icons/whatsapp.svg"
                 alt="whatsapp icon"
@@ -211,8 +211,8 @@ export default function CataloguePage() {
                 height="52"
                 className="w-full h-full"
               />
-            </div>
-            <div className="w-[45px] h-[45px]">
+            </Link>
+            <Link href="tel:6566844012" className="w-[45px] h-[45px]">
               <Image
                 src="/icons/phone.svg"
                 alt="phone icon"
@@ -220,7 +220,7 @@ export default function CataloguePage() {
                 height="52"
                 className="w-full h-full"
               />
-            </div>
+            </Link>
           </div>
           <p className="text-[10px] leading-[12px]">
             to better understand your needs

@@ -112,7 +112,7 @@ export default function Footer() {
           </div>
           <div className="grid grid-cols-3 gap-3">
             <Link
-              href="#"
+              href="tel:6566844012"
               className="w-[52px] h-[52px] p-1 border border-black"
             >
               <Image
@@ -123,7 +123,7 @@ export default function Footer() {
             </Link>
 
             <Link
-              href="#"
+              href="https://wa.me/6587767837"
               className="w-[52px] h-[52px] p-1 border border-black"
             >
               <Image
@@ -134,7 +134,7 @@ export default function Footer() {
             </Link>
 
             <Link
-              href="#"
+              href="https://www.linkedin.com/company/calvary-carpentry/"
               className="w-[52px] h-[52px] p-1 border border-black"
             >
               <Image
@@ -145,7 +145,7 @@ export default function Footer() {
             </Link>
 
             <Link
-              href="#"
+              href="https://goo.gl/maps/cD2nUGF7Go32EhRcA"
               className="w-[52px] h-[52px] p-1 border border-black"
             >
               <Image
@@ -156,7 +156,7 @@ export default function Footer() {
             </Link>
 
             <Link
-              href="#"
+              href="https://www.youtube.com/@calvarycarpentry"
               className="w-[52px] h-[52px] p-1 border border-black"
             >
               <Image
@@ -167,7 +167,7 @@ export default function Footer() {
             </Link>
 
             <Link
-              href="#"
+              href="https://www.facebook.com/calvarycarpentry/"
               className="w-[52px] h-[52px] p-1 border border-black"
             >
               <Image
@@ -199,7 +199,7 @@ export default function Footer() {
 
         {/* description */}
         <div className="md:col-span-full">
-          <p className="text-center text-base">
+          <p className="text-base text-center">
             KANDINSKY Engineered Wood is handcrafted with European oak. To
             ensure maximum structural stability with minimum movement between
             the timber boards, the softwood core grains are laid and glued
@@ -209,7 +209,7 @@ export default function Footer() {
 
         {/* copyright */}
         <div className="md:col-span-full">
-          <p className="text-center text-base">201407349E ©2023 k-floorings</p>
+          <p className="text-base text-center">201407349E ©2023 k-floorings</p>
         </div>
       </div>
     </footer>
