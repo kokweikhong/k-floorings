@@ -1,3 +1,4 @@
+import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -28,7 +29,11 @@ import svgBizSafe from "../../public/icons/Bizsafe.svg";
 import svgDelivery from "../../public/icons/Delivery.svg";
 import svgSelfCollection from "../../public/icons/Self Collection.svg";
 
-const IconHolder = ({ svgImage, imgAlt, desc }) => {
+const IconHolder: React.FC<{
+  svgImage: string;
+  imgAlt: string;
+  desc: string;
+}> = ({ svgImage, imgAlt, desc }) => {
   return (
     <div className="flex flex-col items-center text-center">
       <div className="w-[55px] h-[55px]">
@@ -39,7 +44,11 @@ const IconHolder = ({ svgImage, imgAlt, desc }) => {
   );
 };
 
-const TeamCard = ({ avatar, name, position }) => {
+const TeamCard: React.FC<{
+  avatar: any;
+  name: string;
+  position: string;
+}> = ({ avatar, name, position }) => {
   return (
     <div className="text-center">
       <div className="w-[150px] h-[150px]">
@@ -57,7 +66,7 @@ const TeamCard = ({ avatar, name, position }) => {
   );
 };
 
-const svgs = [
+const svgs: { src: any; alt: string }[] = [
   { src: svgFSC, alt: "FSC" },
   { src: svgEuropeanStandards, alt: "European Standards" },
   { src: svgCE, alt: "CE" },
@@ -65,7 +74,7 @@ const svgs = [
   { src: svg15YearsWarranty, alt: "15 Years Warranty" },
 ];
 
-const faqs = [
+const faqs: { question: string; answer: string[] }[] = [
   {
     question: "Are all samples free?",
     answer: [

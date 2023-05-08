@@ -1,3 +1,4 @@
+import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -15,7 +16,14 @@ const ArrowLeft = () => {
   );
 };
 
-export default function Breadcrumb({ props }) {
+const Breadcrumb: React.FC<{
+  props: {
+    links?: {
+      url: string;
+      object: any;
+    }[];
+  };
+}> = ({ props }) => {
   return (
     <div className="w-full max-w-full px-[15px] border-b border-b-[#D9D9D9] py-[20px]">
       <ul className="flex gap-[5px] items-stretch min-h-[20px]">
@@ -48,4 +56,6 @@ export default function Breadcrumb({ props }) {
       </ul>
     </div>
   );
-}
+};
+
+export default Breadcrumb;

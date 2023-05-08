@@ -2,11 +2,11 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { useContext, useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { usePathname } from "next/navigation";
 import { ProductContext } from "@/context/product";
 
-const NavLink = ({ href, text }) => {
+const NavLink: React.FC<{ href: string; text: string }> = ({ href, text }) => {
   return (
     <li className="text-[12px] font-medium">
       <Link
@@ -19,7 +19,7 @@ const NavLink = ({ href, text }) => {
   );
 };
 
-export default function Header() {
+const Header: React.FC = () => {
   const [isBurgerMenuClose, setIsBurgerMenuClose] = useState(false);
   const [isMenuOverlay, setIsMenuOverlay] = useState(false);
   const [isHeaderHide, setIsHeaderHide] = useState(false);
@@ -129,4 +129,6 @@ export default function Header() {
       </nav>
     </header>
   );
-}
+};
+
+export default Header;

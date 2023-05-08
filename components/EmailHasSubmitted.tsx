@@ -1,4 +1,6 @@
-export default function EmailHasSubmitted() {
+import React from "react";
+
+const EmailHasSubmitted: React.FC = () => {
   return (
     <section className="container mx-auto px-[15px] mt-[50px]">
       <div className="flex flex-col items-center justify-center text-[20px] h-screen">
@@ -8,4 +10,6 @@ export default function EmailHasSubmitted() {
       </div>
     </section>
   );
-}
+};
+
+export default EmailHasSubmitted;

@@ -11,11 +11,11 @@ import svgFacebook from "../public/icons/facebook.svg";
 import svgLinkedin from "../public/icons/linkedin.svg";
 import svgWhatsapp from "../public/icons/whatsapp.svg";
 import svgYoutube from "../public/icons/youtube.svg";
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 
-export default function Footer() {
-  const [margin, setMargin] = useState("mb-0");
-  const pathname = usePathname();
+const Footer: React.FC = () => {
+  const [margin, setMargin] = useState<string>("mb-0");
+  const pathname: string = usePathname();
 
   useEffect(() => {
     console.log(pathname.match("/product/(....)"));
@@ -214,4 +214,6 @@ export default function Footer() {
       </div>
     </footer>
   );
-}
+};
+
+export default Footer;
