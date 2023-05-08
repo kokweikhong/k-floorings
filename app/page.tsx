@@ -2,16 +2,10 @@ import Image from "next/image";
 import Link from "next/link";
 import dynamic from "next/dynamic";
 
-// import ProjectReferenceSlider from "@/components/ProjectReferenceSlider";
-// import TestimonialReferenceSlider from "@/components/TestimonialReferenceSlider";
-// import Application from "@/components/home/Application";
-// const ProjectReferenceSlider = dynamic(() =>
-//   import("../components/ProjectReferenceSlider")
-// );
 import TestimonialReferenceSlider from "@/components/home/TestimonialReferenceSlider";
 
-const ProjectReferenceSlider = dynamic(() =>
-  import("../components/home/ProjectReferenceSlider")
+const ProjectReferenceSlider = dynamic(
+  () => import("../components/home/ProjectReferenceSlider")
 );
 const Application = dynamic(() => import("../components/home/Application"));
 

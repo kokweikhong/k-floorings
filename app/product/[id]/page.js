@@ -234,12 +234,32 @@ export default function IndividualProductPage({ params }) {
               />
             </div>
 
-            {/* dimension */}
+            {/* dimensions */}
             <div>
-              <ProductDetail
-                label="dimension"
-                value={product.specification.dimension}
-              />
+              {product.specification.dimensions.length < 2 ? (
+                <div>
+                  <ProductDetail
+                    label="dimension"
+                    value={product.specification.dimensions}
+                  />
+                </div>
+              ) : (
+                <div>
+                  <h5 className="text-[#767676] uppercase text-[16px] leading-[20px]">
+                    dimension
+                  </h5>
+                  <div className="flex flex-col justify-center items-start gap-2">
+                    {product.specification.dimensions.map((dim, idx) => (
+                      <h3
+                        key={idx}
+                        className="p-2 rounded-[15px] font-normal text-[24px] leading-[32px] uppercase font-inter bg-primary text-[#fff]"
+                      >
+                        {dim}
+                      </h3>
+                    ))}
+                  </div>
+                </div>
+              )}
             </div>
 
             {/* grain */}

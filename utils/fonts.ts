@@ -1,7 +1,7 @@
 import localFont from "next/font/local";
 // Inter-VariableFont_slnt,wght.ttf
 export const Inter = localFont({
-  subsets: ["latin"],
+  // subsets: ["latin"],
   variable: "--font-inter",
   src: [
     {
@@ -105,7 +105,7 @@ export const Inter = localFont({
 // });
 
 export const Raleway = localFont({
-  subsets: ["latin"],
+  // subsets: ["latin"],
   variable: "--font-raleway",
   src: [
     {

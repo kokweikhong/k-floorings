@@ -8,7 +8,7 @@
     "description": "Natural Oak (Chevron) boasts a beautiful mix of straight and large wood grains, creating a natural and timeless look. With its warm brown tones and organic patterns, it adds a touch of understated elegance to any space.",
     "specification": {
       "species": "European Oak",
-      "dimension": "92 mm (w) * 510 mm (l)",
+      "dimensions": ["92 mm (w) * 510 mm (l)"],
       "thickness": "15 mm",
       "grain": "Natural"
     },
@@ -33,7 +33,7 @@
     "description": "The deep and dark tones of this flooring option add drama and sophistication to any interior. Its chevron pattern gives a modern and refined touch, making it a perfect choice for contemporary spaces.",
     "specification": {
       "species": "European Oak",
-      "dimension": "127 mm (w) * 780 mm (l)",
+      "dimensions": ["127 mm (w) * 780 mm (l)"],
       "thickness": "15 mm",
       "grain": "Natural"
     },
@@ -57,7 +57,7 @@
     "description": "With its 80% of straight grain and 20% of natural grains, this flooring option gives a modern and clean look to any room. Its light and youthful color gives a sense of freshness and airiness to the space, creating an inviting and cozy atmosphere.",
     "specification": {
       "species": "European Oak",
-      "dimension": "163 mm (w) * 1210 mm (l)",
+      "dimensions": ["163 mm (w) * 1210 mm (l)"],
       "thickness": "15 mm",
       "grain": "Straight"
     },
@@ -82,7 +82,7 @@
     "description": "Alabaster Oak derives its name from the mineral known for its pure white color. Its warm white hue and short provides a clean and minimalistic look that can make any interior space feel more spacious and open. The versatility of the color complements a wide range of interior design styles, making it a popular choice among architects and interior designers.",
     "specification": {
       "species": "European Oak",
-      "dimension": "163 mm (w) * 1210 mm (l)",
+      "dimensions": ["163 mm (w) * 1210 mm (l)"],
       "thickness": "15 mm",
       "grain": "Straight"
     },
@@ -108,7 +108,7 @@
     "description": "Made from American Black Walnut Herringbone, the clean and understated grain pattern of this flooring option adds a sense of tranquility and peacefulness to any interior. Its light brown color creates a soft and inviting atmosphere, perfect for creating a cozy and warm atmosphere.",
     "specification": {
       "species": "American Walnut",
-      "dimension": "92 mm (w) * 600 mm (l)",
+      "dimensions": ["92 mm (w) * 600 mm (l)"],
       "thickness": "15 mm",
       "grain": "Natural"
     },
@@ -133,7 +133,7 @@
     "description": "Oak Herringbone, The rich and bronze color of this flooring option brings a sense of warmth and depth to any space. Its mixed grain pattern adds texture and interest to the flooring, making it a perfect choice for creating a unique and stylish interior.",
     "specification": {
       "species": "European Oak",
-      "dimension": "92 mm (w) * 600 mm (l)",
+      "dimensions": ["92 mm (w) * 600 mm (l)"],
       "thickness": "15 mm",
       "grain": "Natural"
     },
@@ -158,7 +158,7 @@
     "description": "The warm and inviting olive color with a slight hint of green of this flooring option adds a touch of natural beauty to any space. Its white wood grain creates a sense of health and vitality, making it a great choice for creating a refreshing and rejuvenating interior.",
     "specification": {
       "species": "European Oak",
-      "dimension": "163 mm (w) * 1210 mm (l)",
+      "dimensions": ["163 mm (w) * 1210 mm (l)"],
       "thickness": "15 mm",
       "grain": "Natural"
     },
@@ -182,7 +182,7 @@
     "description": "The rich and mature tones of this American Black Walnut flooring option create a sense of classic elegance in any space. Its dark blue grain pattern adds depth and interest to the flooring, making it a perfect choice for creating a sophisticated and refined interior.",
     "specification": {
       "species": "American Walnut",
-      "dimension": "163 mm (w) * 1210 mm (l)",
+      "dimensions": ["163 mm (w) * 1210 mm (l)"],
       "thickness": "15 mm",
       "grain": "Natural"
     },
@@ -206,7 +206,7 @@
     "description": "Creme Oak features a variation of mixed wood grain pattern, creating a natural and authentic look. Its warm and inviting color adds a touch of elegance to any space, while its versatile style makes it a great choice for a wide range of interiors.",
     "specification": {
       "species": "European Oak",
-      "dimension": "163 mm (w) * 1210 mm (l)",
+      "dimensions": ["163 mm (w) * 1210 mm (l)"],
       "thickness": "15 mm",
       "grain": "Natural"
     },
@@ -231,7 +231,7 @@
     "description": "The light and airy brown color of this flooring option gives a sense of freshness and natural beauty to any space. Its rustic and organic wood grain pattern adds texture and interest, making it a great choice for creating a cozy and inviting interior.",
     "specification": {
       "species": "European Oak",
-      "dimension": "163 mm (w) * 1210 mm (l)",
+      "dimensions": ["163 mm (w) * 1210 mm (l)"],
       "thickness": "15 mm",
       "grain": "Natural"
     },
@@ -255,7 +255,7 @@
     "description": "The mixed wood grain pattern of this flooring option adds warmth and character to any space. Its warm brown tones create a cozy and inviting atmosphere, making it a great choice for creating a comfortable and relaxing atmosphere.",
     "specification": {
       "species": "European Walnut",
-      "dimension": "168 mm (w) * 1210 mm (l)",
+      "dimensions": ["168 mm (w) * 1210 mm (l)"],
       "thickness": "15 mm",
       "grain": "Natural"
     },
@@ -279,7 +279,7 @@
     "description": "Glacier Ash is named for its resemblance to the pristine white color of a glacier. The wood's incredibly pale and bright tone makes it the whitest color option available. Its subtle wood grain adds texture and depth to the flooring, making it a versatile choice for any interior design style. The cool white color of Glacier Ash can bring a refreshing and airy atmosphere to a space, while also providing a modern and sleek aesthetic.",
     "specification": {
       "species": "European Ash",
-      "dimension": "163 mm (w) * 1210 mm (l)",
+      "dimensions": ["163 mm (w) * 1210 mm (l)"],
       "thickness": "15 mm",
       "grain": "Natural"
     },
@@ -305,7 +305,7 @@
     "description": "The mixed wood grain pattern of this flooring option creates a sense of aristocracy and classic elegance. Its bronze complexion adds warmth and depth to the flooring, making it a great choice for creating a stylish and sophisticated interior.",
     "specification": {
       "species": "European Oak",
-      "dimension": "163 mm (w) * 1210 mm (l)",
+      "dimensions": ["163 mm (w) * 1210 mm (l)"],
       "thickness": "15 mm",
       "grain": "Natural"
     },

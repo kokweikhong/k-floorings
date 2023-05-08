@@ -3,7 +3,7 @@ import { Inter, Raleway } from "@/utils/fonts";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import ScrollToTop from "@/components/ScrollToTop";
-import { ProductProvider } from "@/context/product";
+import { ProductProvider } from "../context/product";
 
 export default function RootLayout({ children }) {
   return (

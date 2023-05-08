@@ -151,9 +151,14 @@ export default function CataloguePage() {
                     <h4 className="uppercase font-normal text-[16px] text-[#767676]">
                       dimension
                     </h4>
-                    <h3 className="uppercase font-inter font-normal text-[16px]">
-                      {product.specification.dimension}
-                    </h3>
+                    {product.specification.dimensions.map((dim, idx) => (
+                      <h3
+                        key={idx}
+                        className="uppercase font-inter font-normal text-[16px]"
+                      >
+                        {dim}
+                      </h3>
+                    ))}
                   </div>
                   {/* grain */}
                   <div>

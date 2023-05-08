@@ -2,9 +2,27 @@
 
 import { createContext, useContext, useReducer } from "react";
 import data from "../data/product.json";
+import { IProduct } from "@/types/product";
+
+export interface IProductContext {
+  products: IProduct[];
+  initProducts: () => void;
+  addSelected: (sku: string) => void;
+  removeSelected: (sku: string) => void;
+  resetSelected: () => void;
+}
+
+export interface IAction {
+  type: string;
+  sku?: string;
+}
 
 const initialState = {
   products: [],
+  initProducts: () => {},
+  addSelected: (sku: string) => {},
+  removeSelected: (sku: string) => {},
+  resetSelected: () => {},
 };
 
 const actions = {
@@ -14,7 +32,7 @@ const actions = {
   RESET_SELECTED_ITEM: "RESET_SELECTED_ITEM",
 };
 
-const reducer = (state, action) => {
+const reducer = (state: IProductContext, action: IAction) => {
   switch (action.type) {
     case actions.INIT_ITEM:
       return {
@@ -50,7 +68,7 @@ const reducer = (state, action) => {
   }
 };
 
-export const ProductContext = createContext();
+export const ProductContext = createContext<IProductContext>(initialState);
 
 export const ProductProvider = ({ children }) => {
   const [state, dispatch] = useReducer(reducer, initialState);
@@ -59,10 +77,10 @@ export const ProductProvider = ({ children }) => {
     initProducts: () => {
       dispatch({ type: actions.INIT_ITEM });
     },
-    addSelected: (sku) => {
+    addSelected: (sku: string) => {
       dispatch({ type: actions.ADD_SELECTED_ITEM, sku });
     },
-    removeSelected: (sku) => {
+    removeSelected: (sku: string) => {
       dispatch({ type: actions.REMOVE_SELECTED_ITEM, sku });
     },
     resetSelected: () => {
