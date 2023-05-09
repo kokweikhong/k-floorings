@@ -91,7 +91,21 @@ export default function CataloguePage() {
                           name
                         </h4>
                         <h3 className="font-inter uppercase text-[16px] text-[#000] font-normal">
-                          {product.name}
+                          {`${product.name} ${
+                            products
+                              ?.slice(0, index)
+                              .filter((ele) => ele.isSelected)
+                              .filter((ele) => ele.name === product.name)
+                              .length > 0
+                              ? `(${
+                                  products
+                                    ?.slice(0, index)
+                                    .filter((ele) => ele.isSelected)
+                                    .filter((ele) => ele.name === product.name)
+                                    .length + 1
+                                })`
+                              : ""
+                          }`}
                         </h3>
                       </div>
                     </div>

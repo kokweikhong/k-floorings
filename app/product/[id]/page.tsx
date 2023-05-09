@@ -96,8 +96,10 @@ export default function IndividualProductPage({ params }) {
     console.log(product.isSelected);
     if (product.isSelected) {
       removeSelected(product.sku);
+      similarProducts.forEach((ele) => removeSelected(ele.sku));
     } else if (!product.isSelected) {
       addSelected(product.sku);
+      similarProducts.forEach((ele) => addSelected(ele.sku));
     }
     console.log(product.isSelected);
   };
@@ -105,6 +107,7 @@ export default function IndividualProductPage({ params }) {
   const handleGetFreeSample = () => {
     if (!product.isSelected) {
       addSelected(product.sku);
+      similarProducts.forEach((ele) => addSelected(ele.sku));
     }
     router.push("/catalogue");
   };
