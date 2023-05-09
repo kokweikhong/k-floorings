@@ -6,15 +6,17 @@ import { useRouter } from "next/navigation";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import { useContext, useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { ProductContext } from "@/context/product";
 import Breadcrumb from "@/components/Breadcrumb";
+import { NextPage } from "next";
 
 import logoKandinskyLiteWhiteHoz from "../../../public/kandinsky lite_logo2.svg";
 
 import LightboxGallery from "@/components/LightboxGallery";
 
 import svgOpenLightbox from "../../../public/icons/arrows_open_lightbox.svg";
+import { IProduct } from "@/types/product";
 
 function NextArrow(props) {
   const { className, style, onClick } = props;
@@ -38,7 +40,11 @@ function PrevArrow(props) {
   );
 }
 
-const ProductDetail = ({ label, value, isBold }) => {
+const ProductDetail: React.FC<{
+  label: string;
+  value: string;
+  isBold?: boolean;
+}> = ({ label, value, isBold }) => {
   return (
     <>
       <h5 className="text-[#767676] uppercase text-[16px] leading-[20px]">
@@ -60,9 +66,10 @@ const ProductDetail = ({ label, value, isBold }) => {
 export default function IndividualProductPage({ params }) {
   const { products, initProducts, addSelected, removeSelected } =
     useContext(ProductContext);
-  const [product, setProduct] = useState();
+  const [product, setProduct] = useState<IProduct>();
   const router = useRouter();
-  const [open, setOpen] = useState(false);
+  const [open, setOpen] = useState<boolean>(false);
+  const [similarProducts, setSimilarProducts] = useState<IProduct[]>([]);
 
   useEffect(() => {
     if (products.length < 1) {
@@ -75,6 +82,15 @@ export default function IndividualProductPage({ params }) {
     setProduct(Array.from(products).find((ele) => ele.index === params.id));
     console.log(product);
   }, [products, params.id, product]);
+
+  useEffect(() => {
+    if (product !== undefined) {
+      const filtered = products.filter(
+        (ele) => ele.sku !== product.sku && ele.name === product.name
+      );
+      setSimilarProducts(filtered);
+    }
+  }, [product]);
 
   const handleAddCatalogue = () => {
     console.log(product.isSelected);
@@ -138,7 +154,11 @@ export default function IndividualProductPage({ params }) {
         </div>
         <LightboxGallery
           images={product.images.map((img) => {
-            return `/products/${product.sku}/${img}`;
+            return {
+              src: `/products/${product.sku}/${img}`,
+              height: 500,
+              width: 500,
+            };
           })}
           open={open}
           setOpen={setOpen}
@@ -179,15 +199,21 @@ export default function IndividualProductPage({ params }) {
 
       <section className="container mx-auto mt-[50px] px-[15px] text-primary">
         <div className="grid grid-cols-3 gap-6 relative md:pb-[160px] lg:pb-0">
-          <div className="grid grid-cols-2 gap-[20px] col-span-full md:col-span-2">
+          <div className="grid grid-cols-2 gap-[20px] col-span-full md:col-span-2 max-w-[400px]">
             {/* name */}
             <div className="col-span-full">
               <ProductDetail label="name" value={product.name} isBold />
             </div>
 
             {/* sku */}
-            <div className="uppercase col-span-full md:col-span-1">
-              <ProductDetail label="sku" value={product.sku} isBold />
+            <div className="uppercase col-span-full max-w-[400px]">
+              <ProductDetail
+                label="sku"
+                value={`${product.sku} ${similarProducts?.map(
+                  (ele) => ` | ${ele.sku}`
+                )}`}
+                isBold
+              />
             </div>
 
             {/* click to view pdf */}
@@ -236,30 +262,22 @@ export default function IndividualProductPage({ params }) {
 
             {/* dimensions */}
             <div>
-              {product.specification.dimensions.length < 2 ? (
-                <div>
-                  <ProductDetail
-                    label="dimension"
-                    value={product.specification.dimensions}
-                  />
-                </div>
-              ) : (
-                <div>
-                  <h5 className="text-[#767676] uppercase text-[16px] leading-[20px]">
-                    dimension
-                  </h5>
-                  <div className="flex flex-col justify-center items-start gap-2">
-                    {product.specification.dimensions.map((dim, idx) => (
-                      <h3
-                        key={idx}
-                        className="p-2 rounded-[15px] font-normal text-[24px] leading-[32px] uppercase font-inter bg-primary text-[#fff]"
-                      >
-                        {dim}
-                      </h3>
-                    ))}
-                  </div>
-                </div>
-              )}
+              <div>
+                <ProductDetail
+                  label="dimension"
+                  value={product.specification.dimension}
+                />
+              </div>
+              <div className="flex flex-col gap-1">
+                {similarProducts?.map((ele, idx) => (
+                  <h3
+                    key={idx}
+                    className="font-normal text-[24px] leading-[32px] uppercase font-inter bg-primary text-white rounded-[15px] p-2 mt-2"
+                  >
+                    {ele.specification.dimension}
+                  </h3>
+                ))}
+              </div>
             </div>
 
             {/* grain */}

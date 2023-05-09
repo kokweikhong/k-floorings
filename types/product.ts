@@ -13,7 +13,7 @@ export interface IProduct {
   description: string;
   specification: {
     species: string;
-    dimensions: string[];
+    dimension: string;
     thickness: string;
     grain: string;
   };

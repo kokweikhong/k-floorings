@@ -8,6 +8,8 @@ import NextJsImage from "./NextJsImage";
 export interface ILightboxGalleryProps {
   images: {
     src: string;
+    width?: number;
+    height?: number;
   }[];
   open: boolean;
   setOpen: Dispatch<SetStateAction<boolean>>;
