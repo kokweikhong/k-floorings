@@ -271,6 +271,30 @@
     ]
   },
   {
+    "index": "KL-8609",
+    "sku": "KL.8609",
+    "name": "Natural Walnut",
+    "pattern": { "name": "Straight", "src": "Straight - White.svg" },
+    "grain": { "name": "Natural Grains", "src": "Natural Grains - White.svg" },
+    "description": "The mixed wood grain pattern of this flooring option adds warmth and character to any space. Its warm brown tones create a cozy and inviting atmosphere, making it a great choice for creating a comfortable and relaxing atmosphere.",
+    "specification": {
+      "species": "European Walnut",
+      "dimension": "190 mm (w) * 1900 mm (l)",
+      "thickness": "15 mm",
+      "grain": "Natural"
+    },
+    "showcase": "Natural Walnut_Kandinsky lite product showcase.pdf",
+    "patternColor": "white",
+    "thumbnail": "Thumbnails_KL.8609.jpg",
+    "images": [
+      "KL.8609-1.jpg",
+      "KL.8609-2.jpg",
+      "KL.8609-3.jpg",
+      "KL.8609-4.jpg",
+      "KL.8609-5.jpg"
+    ]
+  },
+  {
     "index": "KL-F356",
     "sku": "KL.F356",
     "name": "Glacier Ash",
@@ -294,6 +318,32 @@
       "KL.F356-5.jpg",
       "KL.F356-6.jpg",
       "KL.F356-7.jpg"
+    ]
+  },
+  {
+    "index": "KL-F8621",
+    "sku": "KL.F8621",
+    "name": "Glacier Ash",
+    "pattern": { "name": "Straight", "src": "Straight.svg" },
+    "grain": { "name": "Natural Grains", "src": "Natural Grains.svg" },
+    "description": "Glacier Ash is named for its resemblance to the pristine white color of a glacier. The wood's incredibly pale and bright tone makes it the whitest color option available. Its subtle wood grain adds texture and depth to the flooring, making it a versatile choice for any interior design style. The cool white color of Glacier Ash can bring a refreshing and airy atmosphere to a space, while also providing a modern and sleek aesthetic.",
+    "specification": {
+      "species": "European Ash",
+      "dimension": "190 mm (w) * 1900 mm (l)",
+      "thickness": "15 mm",
+      "grain": "Natural"
+    },
+    "showcase": "Glacier Ash_Kandinsky lite product showcase.pdf",
+    "patternColor": "black",
+    "thumbnail": "Thumbnails_KL.F8621.jpg",
+    "images": [
+      "KL.F8621-1.jpg",
+      "KL.F8621-2.jpg",
+      "KL.F8621-3.jpg",
+      "KL.F8621-4.jpg",
+      "KL.F8621-5.jpg",
+      "KL.F8621-6.jpg",
+      "KL.F8621-7.jpg"
     ]
   },
   {
@@ -345,6 +395,162 @@
       "KL.C.1092-4.jpg",
       "KL.C.1092-5.jpg",
       "KL.C.1092-6.jpg"
+    ]
+  },
+  {
+    "index": "KL-C-1090",
+    "sku": "KL.C.1090",
+    "name": "Limewash Oak",
+    "pattern": { "name": "Chevron", "src": "Chevron.svg" },
+    "grain": { "name": "Natural Grains", "src": "Natural Grains.svg" },
+    "description": "Ticked Oak offers a subtle, natural beauty that enhances any room. The knots and distinctive grain patterns lend a touch of rustic charm and texture to your floors, adding a unique character to your home.",
+    "specification": {
+      "species": "European Oak",
+      "dimension": "127 mm (w) * 780 mm (l)",
+      "thickness": "15 mm",
+      "grain": "Natural"
+    },
+    "showcase": "Limewash Oak_Kandinsky lite product showcase.pdf",
+    "patternColor": "black",
+    "thumbnail": "Thumbnails_KL.C.1090.jpg",
+    "images": [
+      "KL.C.1090-1.jpg",
+      "KL.C.1090-2.jpg",
+      "KL.C.1090-3.jpg",
+      "KL.C.1090-4.jpg",
+      "KL.C.1090-5.jpg",
+      "KL.C.1090-6.jpg",
+      "KL.C.1090-7.jpg"
+    ]
+  },
+  {
+    "index": "KL-C-1052",
+    "sku": "KL.C.1052",
+    "name": "Limewash Oak",
+    "pattern": { "name": "Chevron", "src": "Chevron.svg" },
+    "grain": { "name": "Natural Grains", "src": "Natural Grains.svg" },
+    "description": "Ticked Oak offers a subtle, natural beauty that enhances any room. The knots and distinctive grain patterns lend a touch of rustic charm and texture to your floors, adding a unique character to your home.",
+    "specification": {
+      "species": "European Oak",
+      "dimension": "92 mm (w) * 510 mm (l)",
+      "thickness": "15 mm",
+      "grain": "Natural"
+    },
+    "showcase": "Limewash Oak_Kandinsky lite product showcase.pdf",
+    "patternColor": "black",
+    "thumbnail": "Thumbnails_KL.C.1052.jpg",
+    "images": [
+      "KL.C.1052-1.jpg",
+      "KL.C.1052-2.jpg",
+      "KL.C.1052-3.jpg",
+      "KL.C.1052-4.jpg",
+      "KL.C.1052-5.jpg",
+      "KL.C.1052-6.jpg",
+      "KL.C.1052-7.jpg"
+    ]
+  },
+  {
+    "index": "KL-C-1072",
+    "sku": "KL.C.1072",
+    "name": "Natural Teak (Chevron)",
+    "pattern": { "name": "Chevron", "src": "Chevron - White.svg" },
+    "grain": { "name": "Natural Grains", "src": "Natural Grains - White.svg" },
+    "description": "The natural golden hue of teak wood flooring creates a warm, inviting feel in your home, making it the perfect choice for those seeking a cozy and comfortable living space. The chevron pattern adds a touch of elegance and sophistication, making it a stylish addition to any home.",
+    "specification": {
+      "species": "European Teak",
+      "dimension": "92 mm (w) * 510 mm (l)",
+      "thickness": "15 mm",
+      "grain": "Natural"
+    },
+    "showcase": "Natural Teak (Chevron)_Kandinsky lite product showcase.pdf",
+    "patternColor": "white",
+    "thumbnail": "Thumbnails_KL.C.1072.jpg",
+    "images": [
+      "KL.C.1072-1.jpg",
+      "KL.C.1072-2.jpg",
+      "KL.C.1072-3.jpg",
+      "KL.C.1072-4.jpg",
+      "KL.C.1072-5.jpg",
+      "KL.C.1072-6.jpg"
+    ]
+  },
+  {
+    "index": "KL-H-1012",
+    "sku": "KL.H.1012",
+    "name": "Natural Walnut (Herringbone)",
+    "pattern": { "name": "Herringbone", "src": "Herringbone - White.svg" },
+    "grain": { "name": "Natural Grains", "src": "Natural Grains - White.svg" },
+    "description": "Natural Walnut's Herringbone pattern adds a striking visual element to your space, making it the perfect choice for those seeking a unique and eye-catching flooring option. The natural color of the walnut adds warmth and richness to your decor.",
+    "specification": {
+      "species": "European Walnut",
+      "dimension": "75 mm (w) * 450 mm (l)",
+      "thickness": "15 mm",
+      "grain": "Natural"
+    },
+    "showcase": "Natural Walnut (herringbone)_Kandinsky lite product showcase.pdf",
+    "patternColor": "white",
+    "thumbnail": "Thumbnails_KL.H.1012.jpg",
+    "images": [
+      "KL.H.1012-1.jpg",
+      "KL.H.1012-2.jpg",
+      "KL.H.1012-3.jpg",
+      "KL.H.1012-4.jpg",
+      "KL.H.1012-5.jpg",
+      "KL.H.1012-6.jpg"
+    ]
+  },
+  {
+    "index": "KL-8601",
+    "sku": "KL.8601",
+    "name": "Natural Oak",
+    "pattern": { "name": "Herringbone", "src": "Herringbone.svg" },
+    "grain": { "name": "Natural Grains", "src": "Natural Grains.svg" },
+    "description": "Bring the beauty of nature into your home with our Natural Oak flooring. With its clean and consistent grain pattern and light, natural color, this classic flooring choice offers timeless elegance and versatility for any space. Natural Oak's warm and inviting tone creates a cozy and welcoming atmosphere for your family and guests to enjoy.",
+    "specification": {
+      "species": "European Oak",
+      "dimension": "190 mm (w) * 1900 mm (l)",
+      "thickness": "15 mm",
+      "grain": "Natural"
+    },
+    "showcase": "Natural Oak_Kandinsky lite product showcase.pdf",
+    "patternColor": "black",
+    "thumbnail": "Thumbnails_KL.8601.jpg",
+    "images": [
+      "KL.8601-1.jpg",
+      "KL.8601-2.jpg",
+      "KL.8601-3.jpg",
+      "KL.8601-4.jpg",
+      "KL.8601-5.jpg",
+      "KL.8601-6.jpg",
+      "KL.8601-7.jpg",
+      "KL.8601-8.jpg"
+    ]
+  },
+  {
+    "index": "KL-8619",
+    "sku": "KL.8619",
+    "name": "Swiss Oak",
+    "pattern": { "name": "Herringbone", "src": "Herringbone.svg" },
+    "grain": { "name": "Natural Grains", "src": "Natural Grains.svg" },
+    "description": "Experience the warmth and timeless beauty of our oak flooring. The golden-brown tones evoke a classic and sophisticated look that infuses your space with character and charm. With its durable and long-lasting features, it's a flooring choice that will stay with you for years to come.",
+    "specification": {
+      "species": "European Oak",
+      "dimension": "190 mm (w) * 1900 mm (l)",
+      "thickness": "15 mm",
+      "grain": "Natural"
+    },
+    "showcase": "Swiss Oak_Kandinsky lite product showcase.pdf",
+    "patternColor": "black",
+    "thumbnail": "Thumbnails_KL.8619.jpg",
+    "images": [
+      "KL.8619-1.jpg",
+      "KL.8619-2.jpg",
+      "KL.8619-3.jpg",
+      "KL.8619-4.jpg",
+      "KL.8619-5.jpg",
+      "KL.8619-6.jpg",
+      "KL.8619-7.jpg",
+      "KL.8619-8.jpg"
     ]
   }
 ]

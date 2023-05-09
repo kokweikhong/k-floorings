@@ -197,7 +197,18 @@ export default function ProductPage() {
                 </div>
 
                 <div>
-                  <p className="text-base">{product.name}</p>
+                  <p className="text-base">{`${product.name} ${
+                    productsData
+                      ?.slice(0, index)
+                      .filter((ele) => ele.name === product.name).length > 0
+                      ? `(${
+                          productsData
+                            ?.slice(0, index)
+                            .filter((ele) => ele.name === product.name).length +
+                          1
+                        })`
+                      : ""
+                  }`}</p>
                 </div>
               </div>
             );
