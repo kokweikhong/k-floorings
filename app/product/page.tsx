@@ -2,13 +2,15 @@ import Image from "next/image";
 import Link from "next/link";
 
 import heroImage from "../../public/images/home/Sustainability.jpeg";
-import productsData from "../../data/product.json";
 
 import logoKandinskyWhite from "../../public/kandinsky_logo_white.svg";
 import logoKandinskyLiteWhite from "../../public/kandinsky lite_logo1.svg";
 import logoKandinskyLiteWhiteHoz from "../../public/kandinsky lite_logo2.svg";
 
+import { categories } from "@/data/productCategory";
+
 export default function ProductPage() {
+  const imageBaseURL = "/product/category_images";
   return (
     <main>
       <section className="h-screen w-full relative after:h-full after:w-full after:bg-black/40 after:absolute after:top-0 after:left-0 after:-z-[1]">
@@ -65,24 +67,6 @@ export default function ProductPage() {
             </div>
           </div>
         </div>
-        {/* <div className="grid grid-cols-2">
-          <div className="flex items-center justify-center py-2">
-            <div className="text-left">
-              <h3>
-                <span className="tracking-widest uppercase">kandinsky</span>
-              </h3>
-              <span className="uppercase bg-[#000] text-[#fff] px-3">lite</span>
-            </div>
-          </div>
-          <div className="bg-black text-[#fff] flex justify-center items-center py-2">
-            <div className="text-left">
-              <h3>
-                <span className="tracking-widest uppercase">kandinsky</span>
-              </h3>
-              <span className="w-full uppercase">coming soon</span>
-            </div>
-          </div>
-        </div> */}
       </section>
 
       <section className="container mx-auto mt-[50px]">
@@ -128,16 +112,16 @@ export default function ProductPage() {
         </div>
       </section>
 
-      {/* products */}
+      {/* product categories */}
       <section className="container mx-auto text-center mt-[50px] px-[15px]">
         <div className="grid grid-cols-2 gap-x-[20px] gap-y-[25px] md:grid-cols-3 xl:grid-cols-4">
-          {productsData.map((product, index) => {
+          {categories.map((category, index) => {
             return (
               <div key={index} className="relative">
                 <div className="w-full h-[250px] md:h-[335px] relative">
-                  <Link href={`/product/${product.index}`}>
+                  <Link href={`/product/${category.index}`}>
                     <Image
-                      src={`/products/${product.sku}/${product.thumbnail}`}
+                      src={`${imageBaseURL}/${category.productId}/${category.image.thumbnail}`}
                       alt=""
                       width="500"
                       height="500"
@@ -146,7 +130,7 @@ export default function ProductPage() {
                   </Link>
                   <div className="z-10">
                     <Link
-                      href={`/product/${product.index}`}
+                      href={`/product/${category.index}`}
                       className="absolute bottom-0 left-0 w-full text-center uppercase text-[#fff] font-semibold text-[12px] p-2 cursor-pointer"
                     >
                       get free sample
@@ -157,7 +141,7 @@ export default function ProductPage() {
                   <div>
                     <div>
                       <Image
-                        src={`/product patterns/${product.pattern.src}`}
+                        src={`/product patterns/${category.image.pattern.src}`}
                         alt=""
                         width="42"
                         height="42"
@@ -166,18 +150,18 @@ export default function ProductPage() {
                     </div>
                     <p
                       className={`${
-                        product.patternColor === "white"
+                        category.patternColor === "white"
                           ? "text-[#fff]"
                           : "text-[#000]"
                       } text-[12px] leading-[15px] break-all`}
                     >
-                      {product.pattern.name}
+                      {category.image.pattern.name}
                     </p>
                   </div>
                   <div>
                     <div>
                       <Image
-                        src={`/product grains/${product.grain.src}`}
+                        src={`/product grains/${category.image.grain.src}`}
                         alt=""
                         width="42"
                         height="42"
@@ -186,29 +170,18 @@ export default function ProductPage() {
                     </div>
                     <p
                       className={`${
-                        product.patternColor === "white"
+                        category.patternColor === "white"
                           ? "text-[#fff]"
                           : "text-[#000]"
                       } text-[12px] leading-[15px] break-all`}
                     >
-                      {product.grain.name}
+                      {category.image.grain.name}
                     </p>
                   </div>
                 </div>
 
                 <div>
-                  <p className="text-base">{`${product.name} ${
-                    productsData
-                      ?.slice(0, index)
-                      .filter((ele) => ele.name === product.name).length > 0
-                      ? `(${
-                          productsData
-                            ?.slice(0, index)
-                            .filter((ele) => ele.name === product.name).length +
-                          1
-                        })`
-                      : ""
-                  }`}</p>
+                  <p className="text-base">{category.name}</p>
                 </div>
               </div>
             );
@@ -218,7 +191,7 @@ export default function ProductPage() {
 
       <section className="mt-[50px]">
         <div className="border-top border-t-[#D9D9D9] border py-2">
-          <p className="text-center text-base leading-[19px] uppercase text-secondary">{`${productsData.length} of ${productsData.length} shown`}</p>
+          <p className="text-center text-base leading-[19px] uppercase text-secondary">{`${categories.length} of ${categories.length} shown`}</p>
         </div>
         <div className="flex items-center justify-center w-full p-3 bg-primary h-[70px]">
           <Image

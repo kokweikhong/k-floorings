@@ -7,7 +7,8 @@ import { ProductContext } from "@/context/product";
 import { useContext } from "react";
 
 export default function CataloguePage() {
-  const { products, removeSelected } = useContext(ProductContext);
+  const { categories, products, removeSelected, removeCategory } =
+    useContext(ProductContext);
   return (
     <main>
       <section className="mt-[50px]">
@@ -46,7 +47,7 @@ export default function CataloguePage() {
       </section>
 
       <section className="text-primary mt-[50px] container mx-auto px-[15px]">
-        {products.length === 0 ? (
+        {categories.length === 0 ? (
           <div>
             <p className="text-center">
               Your catalogue is empty, add some product to request for free
@@ -54,18 +55,18 @@ export default function CataloguePage() {
             </p>
           </div>
         ) : (
-          products.map((product, index) => {
+          categories.map((category, index) => {
             return (
-              product.isSelected && (
+              category.isSelected && (
                 <div
                   key={index}
                   className="relative grid grid-cols-2 gap-[15px] border-t border-t-[#D9D9D9] pt-[30px]"
                 >
                   <div className="flex col-span-full gap-[15px]">
-                    {/* product thumbnail */}
+                    {/* category thumbnail */}
                     <div className="max-w-[150px] max-h-[150px]">
                       <Image
-                        src={`/products/${product.sku}/${product.thumbnail}`}
+                        src={`/product/category_images/${category.productId}/${category.image.thumbnail}`}
                         alt=""
                         width="500"
                         height="500"
@@ -81,7 +82,7 @@ export default function CataloguePage() {
                           sku
                         </h4>
                         <h3 className="uppercase font-inter font-normal text-[16px]">
-                          {product.sku}
+                          {category.productId}
                         </h3>
                       </div>
 
@@ -91,21 +92,7 @@ export default function CataloguePage() {
                           name
                         </h4>
                         <h3 className="font-inter uppercase text-[16px] text-[#000] font-normal">
-                          {`${product.name} ${
-                            products
-                              ?.slice(0, index)
-                              .filter((ele) => ele.isSelected)
-                              .filter((ele) => ele.name === product.name)
-                              .length > 0
-                              ? `(${
-                                  products
-                                    ?.slice(0, index)
-                                    .filter((ele) => ele.isSelected)
-                                    .filter((ele) => ele.name === product.name)
-                                    .length + 1
-                                })`
-                              : ""
-                          }`}
+                          {category.name}
                         </h3>
                       </div>
                     </div>
@@ -115,7 +102,7 @@ export default function CataloguePage() {
                       <div className="w-full max-w-[60px] flex flex-col items-center">
                         <div className="w-[42px] h-[42px]">
                           <Image
-                            src={`/product patterns/${product.pattern.name} - Primary.svg`}
+                            src={`/product patterns/${category.image.pattern.name} - Primary.svg`}
                             alt=""
                             width="48"
                             height="48"
@@ -123,13 +110,13 @@ export default function CataloguePage() {
                           />
                         </div>
                         <p className="text-center text-[12px]">
-                          {product.pattern.name}
+                          {category.image.pattern.name}
                         </p>
                       </div>
                       <div className="w-full h-full max-w-[60px] flex flex-col items-center">
                         <div className="w-[42px] h-[42px]">
                           <Image
-                            src={`/product grains/${product.grain.name} - Primary.svg`}
+                            src={`/product grains/${category.image.grain.name} - Primary.svg`}
                             alt=""
                             width="48"
                             height="48"
@@ -137,7 +124,7 @@ export default function CataloguePage() {
                           />
                         </div>
                         <p className="text-center text-[12px]">
-                          {product.grain.name}
+                          {category.image.grain.name}
                         </p>
                       </div>
                     </div>
@@ -148,7 +135,7 @@ export default function CataloguePage() {
                       material
                     </h4>
                     <h3 className="uppercase font-inter font-normal text-[16px]">
-                      {product.specification.species}
+                      {category.species}
                     </h3>
                   </div>
                   {/* thickness */}
@@ -157,7 +144,7 @@ export default function CataloguePage() {
                       thickness
                     </h4>
                     <h3 className="uppercase font-inter font-normal text-[16px]">
-                      {product.specification.thickness}
+                      {category.thickness}
                     </h3>
                   </div>
                   {/* dimension */}
@@ -165,17 +152,24 @@ export default function CataloguePage() {
                     <h4 className="uppercase font-normal text-[16px] text-[#767676]">
                       dimension
                     </h4>
-                    <h3 className="uppercase font-inter font-normal text-[16px]">
-                      {product.specification.dimension}
-                    </h3>
+                    {products.map((ele, idx) => {
+                      return (
+                        ele.productId === category.productId && (
+                          <h3 className="uppercase font-inter font-normal text-[16px]">
+                            {ele.dimension}
+                          </h3>
+                        )
+                      );
+                    })}
                   </div>
+
                   {/* grain */}
                   <div>
                     <h4 className="uppercase font-normal text-[16px] text-[#767676]">
                       grain
                     </h4>
                     <h3 className="uppercase font-inter font-normal text-[16px]">
-                      {product.specification.grain}
+                      {category.grain}
                     </h3>
                   </div>
 
@@ -183,8 +177,7 @@ export default function CataloguePage() {
                     <button
                       className="flex flex-col items-center justify-center mx-auto mb-4"
                       onClick={() => {
-                        console.log(product.index);
-                        removeSelected(product.sku);
+                        removeCategory(category.productId);
                       }}
                     >
                       <div>
@@ -211,7 +204,7 @@ export default function CataloguePage() {
           className="bg-secondary uppercase text-[#fff] rounded-[40px] text-[13px] leading-[16px] tracking-[2px] px-[32px] py-[24px] font-semibold"
         >
           {`Request for free sample (${
-            products.filter((ele) => ele.isSelected).length
+            categories.filter((ele) => ele.isSelected).length
           })`}
         </Link>
         <div className="flex flex-col items-center justify-center gap-2">

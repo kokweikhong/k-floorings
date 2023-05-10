@@ -25,7 +25,7 @@ const Header: React.FC = () => {
   const [isHeaderHide, setIsHeaderHide] = useState(false);
   const [lastScrollY, setLastScrollY] = useState(300);
   const pathname = usePathname();
-  const { products } = useContext(ProductContext);
+  const { categories } = useContext(ProductContext);
 
   useEffect(() => {
     setIsBurgerMenuClose(false);
@@ -119,7 +119,7 @@ const Header: React.FC = () => {
             <NavLink
               href="/catalogue"
               text={`Catalogue (${
-                products.filter((ele) => ele.isSelected).length
+                categories.filter((ele) => ele.isSelected).length
               })`}
             />
             <NavLink href="/about" text="About Us" />

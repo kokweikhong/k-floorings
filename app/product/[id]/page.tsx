@@ -17,6 +17,7 @@ import LightboxGallery from "@/components/LightboxGallery";
 
 import svgOpenLightbox from "../../../public/icons/arrows_open_lightbox.svg";
 import { IProduct } from "@/types/product";
+import { IProductCategory } from "@/types/productCategory";
 
 function NextArrow(props) {
   const { className, style, onClick } = props;
@@ -64,12 +65,22 @@ const ProductDetail: React.FC<{
 };
 
 export default function IndividualProductPage({ params }) {
-  const { products, initProducts, addSelected, removeSelected } =
-    useContext(ProductContext);
+  const imageBaseURL = "/product/category_images";
+  const {
+    categories,
+    products,
+    initProducts,
+    addSelected,
+    removeSelected,
+    removeCategory,
+    addCategory,
+  } = useContext(ProductContext);
   const [product, setProduct] = useState<IProduct>();
+  const [filteredProducts, setFilteredProducts] = useState<IProduct[]>();
+  const [category, setCategory] = useState<IProductCategory>();
+  // const [productsByCategory, setProductByCategory] = useState<IProduct[]>();
   const router = useRouter();
   const [open, setOpen] = useState<boolean>(false);
-  const [similarProducts, setSimilarProducts] = useState<IProduct[]>([]);
 
   useEffect(() => {
     if (products.length < 1) {
@@ -78,41 +89,38 @@ export default function IndividualProductPage({ params }) {
   }, [initProducts, products.length]);
 
   useEffect(() => {
-    console.log(products.length);
-    setProduct(Array.from(products).find((ele) => ele.index === params.id));
-    console.log(product);
-  }, [products, params.id, product]);
-
-  useEffect(() => {
-    if (product !== undefined) {
+    console.log(categories);
+    const findCategory = categories.find((ele) => ele.index === params.id);
+    console.log(findCategory);
+    if (findCategory !== undefined) {
+      setCategory(findCategory);
       const filtered = products.filter(
-        (ele) => ele.sku !== product.sku && ele.name === product.name
+        (ele) => ele.productId === findCategory.productId
       );
-      setSimilarProducts(filtered);
+      setFilteredProducts(filtered);
     }
-  }, [product]);
+  }, [params.id, category]);
 
   const handleAddCatalogue = () => {
-    console.log(product.isSelected);
-    if (product.isSelected) {
-      removeSelected(product.sku);
-      similarProducts.forEach((ele) => removeSelected(ele.sku));
-    } else if (!product.isSelected) {
-      addSelected(product.sku);
-      similarProducts.forEach((ele) => addSelected(ele.sku));
+    if (category.isSelected) {
+      removeCategory(category.productId);
+      setCategory({ ...category, isSelected: false });
+    } else if (!category.isSelected) {
+      addCategory(category.productId);
+      setCategory({ ...category, isSelected: true });
     }
-    console.log(product.isSelected);
+    console.log(category);
   };
 
   const handleGetFreeSample = () => {
-    if (!product.isSelected) {
-      addSelected(product.sku);
-      similarProducts.forEach((ele) => addSelected(ele.sku));
+    if (!category.isSelected) {
+      addCategory(category.productId);
+      setCategory(category);
     }
     router.push("/catalogue");
   };
 
-  if (products.length < 1 || product === undefined)
+  if (filteredProducts?.length < 1 || category === undefined)
     return <div>Loading...</div>;
 
   const settings = {
@@ -130,11 +138,11 @@ export default function IndividualProductPage({ params }) {
       <section className="w-full">
         <div className="relative">
           <Slider {...settings}>
-            {product?.images.map((img, index) => {
+            {category?.image.filenames.map((img, index) => {
               return (
                 <div key={index} className="h-[500px]">
                   <Image
-                    src={`/products/${product.sku}/${img}`}
+                    src={`${imageBaseURL}/${category.productId}/${img}`}
                     alt=""
                     width="500"
                     height="500"
@@ -156,9 +164,9 @@ export default function IndividualProductPage({ params }) {
           </button>
         </div>
         <LightboxGallery
-          images={product.images.map((img) => {
+          images={category.image.filenames.map((img) => {
             return {
-              src: `/products/${product.sku}/${img}`,
+              src: `${imageBaseURL}/${category.productId}/${img}`,
               height: 500,
               width: 500,
             };
@@ -188,10 +196,10 @@ export default function IndividualProductPage({ params }) {
                 ),
               },
               {
-                url: `/product/${product.index}`,
+                url: `/product/${category.index}`,
                 object: (
                   <span className="text-[12px] md:text-[15px] font-semibold align-middle">
-                    {`${product.sku}`}
+                    {`${category.productId}`}
                   </span>
                 ),
               },
@@ -205,15 +213,15 @@ export default function IndividualProductPage({ params }) {
           <div className="grid grid-cols-2 gap-[20px] col-span-full md:col-span-2 max-w-[400px]">
             {/* name */}
             <div className="col-span-full">
-              <ProductDetail label="name" value={product.name} isBold />
+              <ProductDetail label="name" value={category.name} isBold />
             </div>
 
             {/* sku */}
             <div className="uppercase col-span-full max-w-[400px]">
               <ProductDetail
                 label="sku"
-                value={`${product.sku} ${similarProducts?.map(
-                  (ele) => ` | ${ele.sku}`
+                value={`${filteredProducts?.map(
+                  (ele, idx) => `${idx > 0 ? " | " : ""}${ele.sku}`
                 )}`}
                 isBold
               />
@@ -222,7 +230,7 @@ export default function IndividualProductPage({ params }) {
             {/* click to view pdf */}
             <div className="flex items-end cursor-pointer col-span-full">
               <Link
-                href={`/product showcase/${product.showcase}`}
+                href={`/product showcase/${category.pdfShowcase}`}
                 download
                 rel="noopener noreferrer"
                 className="underline text-[#1128F8] text-[24px] leading-[15px] self-center md:text-[1.3rem] lg:text-[1.7rem]"
@@ -243,24 +251,18 @@ export default function IndividualProductPage({ params }) {
             {/* product description */}
             <div className="col-span-full">
               <p className="text-[24px] leading-[33px]">
-                {product.description}
+                {category.description}
               </p>
             </div>
 
             {/* material */}
             <div>
-              <ProductDetail
-                label="Material"
-                value={product.specification.species}
-              />
+              <ProductDetail label="Material" value={category.species} />
             </div>
 
             {/* thickness */}
             <div>
-              <ProductDetail
-                label="thickness"
-                value={product.specification.thickness}
-              />
+              <ProductDetail label="thickness" value={category.thickness} />
             </div>
 
             {/* dimensions */}
@@ -268,30 +270,22 @@ export default function IndividualProductPage({ params }) {
               <h5 className="text-[#767676] uppercase text-[16px] leading-[20px]">
                 dimension
               </h5>
-              <h3
-                className={`font-normal text-[24px] leading-[32px] uppercase font-inter ${
-                  similarProducts?.length > 0 &&
-                  "bg-primary text-white rounded-[15px] p-2"
-                }`}
-              >
-                {product.specification.dimension}
-              </h3>
-              {similarProducts?.map((ele, idx) => (
+              {filteredProducts?.map((ele, idx) => (
                 <h3
                   key={idx}
-                  className="font-normal text-[24px] leading-[32px] uppercase font-inter bg-primary text-white rounded-[15px] p-2 mt-2"
+                  className={`font-normal text-[24px] leading-[32px] uppercase font-inter ${
+                    filteredProducts?.length > 1 &&
+                    "bg-primary text-white rounded-[15px] p-2 mt-2"
+                  }`}
                 >
-                  {ele.specification.dimension}
+                  {ele.dimension}
                 </h3>
               ))}
             </div>
 
             {/* grain */}
             <div>
-              <ProductDetail
-                label="grain"
-                value={product.specification.grain}
-              />
+              <ProductDetail label="grain" value={category.grain} />
             </div>
           </div>
 
@@ -300,7 +294,7 @@ export default function IndividualProductPage({ params }) {
               <div className="flex flex-col items-center justify-start">
                 <div>
                   <Image
-                    src={`/product patterns/${product.pattern.name} - Primary.svg`}
+                    src={`/product patterns/${category.image.pattern.name} - Primary.svg`}
                     alt=""
                     width="38"
                     height="38"
@@ -308,13 +302,13 @@ export default function IndividualProductPage({ params }) {
                   />
                 </div>
                 <p className="text-[12px] md:text-[14px] lg:text-[18px]">
-                  {product.pattern.name}
+                  {category.image.pattern.name}
                 </p>
               </div>
               <div className="flex flex-col items-center justify-start">
                 <div>
                   <Image
-                    src={`/product grains/${product.grain.name} - Primary.svg`}
+                    src={`/product grains/${category.image.grain.name} - Primary.svg`}
                     alt=""
                     width="38"
                     height="38"
@@ -322,7 +316,7 @@ export default function IndividualProductPage({ params }) {
                   />
                 </div>
                 <p className="text-[12px] md:text-[14px] lg:text-[18px]">
-                  {product.grain.name}
+                  {category.image.grain.name}
                 </p>
               </div>
             </div>
@@ -334,7 +328,7 @@ export default function IndividualProductPage({ params }) {
                 className="flex items-center justify-center text-center"
               >
                 <div>
-                  {product.isSelected ? (
+                  {category.isSelected ? (
                     <Image
                       src="/icons/Star Activated.svg"
                       alt=""
