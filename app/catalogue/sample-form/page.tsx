@@ -89,11 +89,7 @@ export interface ISampleForm {
   name: string;
   phone: string;
   postcode: string;
-  products?: {
-    applications: string[];
-    category: IProductCategory;
-    items: IProduct[];
-  }[];
+  products?: IProduct[] | string[];
   remarks?: string;
 }
 
@@ -110,16 +106,19 @@ export default function SampleFormPage() {
   const [isSubmit, setIsSubmit] = useState(false);
   const [isSendingRequest, setIsSendingRequest] = useState(false);
   const router = useRouter();
+  const applications: string[] = ["ceiling", "wall", "floor"]
   let number = 0;
 
   const {
     register,
     handleSubmit,
     reset,
+    setValue,
     formState: { errors },
   } = useForm<ISampleForm>();
 
-  const onSubmit = async (data) => {
+  const onSubmit = async (data: ISampleForm) => {
+    
     console.log(data);
     // setIsSendingRequest(true);
     // try {
@@ -140,11 +139,13 @@ export default function SampleFormPage() {
   };
 
   useEffect(() => {
+    setValue("products", products);
     setSumSelected(
       categories.reduce((a, b) => {
         return b.isSelected ? (a += 1) : a;
       }, 0)
     );
+
   }, [categories, sumSelected]);
 
   useEffect(() => {
@@ -162,7 +163,8 @@ export default function SampleFormPage() {
         router.push("/");
       }
     }, 5000);
-  }, [isFailToSubmit, isSubmit]);
+  }, [isFailToSubmit, isSubmit, router]);
+
 
   if (isSendingRequest) return <SendingEmail />;
   if (isSubmit) return <EmailHasSubmitted />;
@@ -212,70 +214,100 @@ export default function SampleFormPage() {
           onSubmit={handleSubmit(onSubmit)}
           className="flex flex-col items-center gap-6"
         >
-          {/* <div className="w-full">
-            {categories.map((category, index) => {
-              return (
-                category.isSelected && (
-                  <SelectedFormItem
-                    key={index}
-                    products={products}
-                    category={category}
-                    index={(number += 1)}
-                    register={register}
-                    errors={errors}
-                    removeCategory={removeCategory}
-                    options={{}}
-                  />
-                )
-              );
-            })}
-          </div> */}
+          <div>
+            {categories.map((category) => (
+              category.isSelected && (
+                <div key={category.productId}>
+                  <h2>{category.name}</h2>
+                  {products.map((product) => (
+                    product.productId === category.productId && (
+                      <div>
+                        <label>
+
+                          <input
+                            type="checkbox"
+                            value={product.sku}
+                            {...register("products", {
+                            })}
+                            className="bg-[#eee] text-[20px] font-medium p-2 rounded"
+                          />
+                          <span>{product.dimension}</span>
+                        </label>
+
+                      </div>
+                    )
+                  ))}
+                </div>
+              )
+            ))}
+
+          </div>
+
 
           <div className="flex flex-col w-full gap-[25px]">
-            <Input
-              label="Name:"
-              name="name"
-              register={register}
-              // options={{ required: "Name is required." }}
-              required="Name is required."
-              errors={errors}
-            />
-            <Input
-              label="Company:"
-              name="company"
-              register={register}
-              required="Company is required."
-              // options={{ required: "Name is required." }}
-              errors={errors}
-            />
-            <Input
-              label="Email Address:"
-              name="email"
-              type="email"
-              register={register}
-              // options={{ required: "Name is required." }}
-              errors={errors}
-              placeholder="Optional"
-            />
-            <Input
-              label="Phone:"
-              name="phone"
-              register={register}
-              // options={{ required: "Name is required." }}
-              required="Phone is required."
-              errors={errors}
-              placeholder="(+65)"
-            />
-            <Input
-              label="Remarks:"
-              name="remarks"
-              register={register}
-              // options={{ required: "Name is required." }}
-              errors={errors}
-              placeholder="Optional"
-            />
+
+            {/* name */}
+            <div className="flex flex-col gap-2">
+              <label className="text-[20px] font-medium text-[#767676]">
+                Name:
+              </label>
+              <input
+                {...register("name", { required: true })}
+                className="bg-[#eee] text-[20px] font-medium p-2"
+              />
+              {errors.name && <p role="alert">Name is required.</p>}
+            </div>
+
+            {/* company */}
+            <div className="flex flex-col gap-2">
+              <label className="text-[20px] font-medium text-[#767676]">
+                Company:
+              </label>
+              <input
+                {...register("company", { required: true })}
+                className="bg-[#eee] text-[20px] font-medium p-2"
+              />
+              {errors.company && <p role="alert">Company is required.</p>}
+            </div>
+
+            {/* email address */}
+            <div className="flex flex-col gap-2">
+              <label className="text-[20px] font-medium text-[#767676]">
+                Email Address:
+              </label>
+              <input
+                type="email"
+                {...register("email")}
+                className="bg-[#eee] text-[20px] font-medium p-2"
+              />
+            </div>
+
+            {/* phone */}
+            <div className="flex flex-col gap-2">
+              <label className="text-[20px] font-medium text-[#767676]">
+                Phone:
+              </label>
+              <input
+                {...register("phone", { required: true })}
+                className="bg-[#eee] text-[20px] font-medium p-2"
+              />
+              {errors.phone && <p role="alert">Phone is required.</p>}
+            </div>
+
+            {/* remarks */}
+            <div className="flex flex-col gap-2">
+              <label className="text-[20px] font-medium text-[#767676]">
+                Remarks:
+              </label>
+              <input
+                {...register("remarks")}
+                className="bg-[#eee] text-[20px] font-medium p-2"
+              />
+            </div>
+
+            {/* maillig address */}
             <div className="flex flex-col">
-              <label className="text-[20px] font-medium mb-[8px]">
+              <label className="text-[20px] font-medium mb-[8px] text-[#767676]">
                 Mailing Address:
               </label>
               <select
@@ -318,25 +350,31 @@ export default function SampleFormPage() {
               )}
             </div>
 
-            <Input
-              label="Address line 1"
-              name="address1"
-              labelColor="#767676"
-              register={register}
-              required="Address is required."
-              errors={errors}
-              placeholder="Example: 54 Senoko Rd"
-            />
+            {/* address1 */}
+            <div className="flex flex-col gap-2">
+              <label className="text-[20px] font-medium text-[#767676]">
+                Address Line 1
+              </label>
+              <input
+                placeholder="Example: 54 Senoko Rd"
+                {...register("address1", { required: true })}
+                className="bg-[#eee] text-[20px] font-medium p-2"
+              />
+              {errors.address1 && (<p role="alert">Address Line 1 is required.</p>)}
+            </div>
 
-            <Input
-              label="Address line 2 (Optional)"
-              name="address2"
-              labelColor="#767676"
-              register={register}
-              // options={{ required: "Name is required." }}
-              errors={errors}
-              placeholder="Example: Floor 1"
-            />
+            {/* address2 */}
+            <div className="flex flex-col gap-2">
+              <label className="text-[20px] font-medium text-[#767676]">
+                Address Line 2 (Optional)
+              </label>
+              <input
+                placeholder="Example: Floor 1"
+                {...register("address2")}
+                className="bg-[#eee] text-[20px] font-medium p-2"
+              />
+            </div>
+
 
             <Input
               label="City"
@@ -366,9 +404,8 @@ export default function SampleFormPage() {
           <div className="flex flex-col md:flex-row-reverse md:gap-10 md:justify-center md:items-center lg:flex-col gap-4 fixed lg:static bottom-0 bg-[#fff] z-10 w-full items-center py-[20px] shadow-[0px_-4px_5px_rgba(0,0,0,0.25)] lg:shadow-none">
             <input
               type="submit"
-              value={`Place request (${
-                products.filter((product) => product.isSelected).length
-              })`}
+              value={`Place request (${products.filter((product) => product.isSelected).length
+                })`}
               className="cursor-pointer rounded-[40px] px-[32px] py-[24px] bg-[#488791] text-[#fff] uppercase text-[13px] font-semibold tracking-[2px] shadow-[0px_15px_20px_rgba(0,0,0,0.2)]"
             />
             <div className="flex flex-col items-center justify-center gap-2">
