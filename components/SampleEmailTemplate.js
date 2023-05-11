@@ -180,7 +180,65 @@ export default function SampleEmailTemplate({ data }) {
               <Text style={heading}>Sample Request Information</Text>
             </Column>
           </Section>
-          {Object.entries(data.products).map(([key, value]) => {
+          {Array.from(
+            data?.products?.map((product, index) => {
+              return (
+                <Section
+                  style={{
+                    ...informationTable,
+                    margin: 0,
+                    marginBottom: "20px",
+                  }}
+                  key={index}
+                >
+                  <Column align="left" style={tableCell}>
+                    <Text style={`${heading} fontSize:22px;`}>{`${index + 1}) ${
+                      product.category.name
+                    } | ${product.category.productId}`}</Text>
+                    <Row>
+                      <Column style={informationTableColumn}>
+                        <Text style={informationTableLabel}>APPLICATIONS</Text>
+                        <Text style={informationTableValue}>
+                          {product?.applications?.application?.join()}
+                        </Text>
+                      </Column>
+                    </Row>
+                  </Column>
+                  <Row style={`${informationTableRow} marginLeft:10px;`}>
+                    {Array.from(
+                      product?.items?.map((item, idx) => {
+                        return (
+                          <Column key={idx}>
+                            <Row>
+                              <Column style={informationTableColumn}>
+                                <Text style={informationTableLabel}>
+                                  PRODUCT SKU
+                                </Text>
+                                <Text style={informationTableValue}>
+                                  {item.sku}
+                                </Text>
+                              </Column>
+                            </Row>
+                            <Row>
+                              <Column style={informationTableColumn}>
+                                <Text style={informationTableLabel}>
+                                  DIMENSION
+                                </Text>
+                                <Text style={informationTableValue}>
+                                  {item.dimension}
+                                </Text>
+                              </Column>
+                            </Row>
+                          </Column>
+                        );
+                      })
+                    )}
+                  </Row>
+                </Section>
+              );
+            })
+          )}
+          {/* {Array.from(data.products).map((product, index)) => {
             return (
               <Section
                 style={{ ...informationTable, margin: 0, marginBottom: "20px" }}
@@ -208,7 +266,7 @@ export default function SampleEmailTemplate({ data }) {
                 </Row>
               </Section>
             );
-          })}
+          })} */}
         </Container>
       </Body>
     </Html>

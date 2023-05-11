@@ -11,6 +11,7 @@ import SendingEmail from "@/components/SendingEmail";
 import EmailHasSubmitted from "@/components/EmailHasSubmitted";
 import FailedToSubmitRequestEmail from "@/components/FailedToSubmitRequestEmail";
 import { IProductCategory } from "@/types/productCategory";
+import { IProduct } from "@/types/product";
 
 const NotProductIsSelected = () => {
   return (
@@ -52,7 +53,7 @@ export interface ISampleForm {
 export interface ISelectedData {
   category: IProductCategory;
   applications: string[];
-  items: string[];
+  items: IProduct[];
 }
 
 export default function SampleFormPage() {
@@ -82,6 +83,7 @@ export default function SampleFormPage() {
   } = useForm<ISampleForm>({
     defaultValues: formData,
   });
+  const watchData = watch("data");
 
   const onSubmit = async (data: ISampleForm) => {
     console.log(data);
@@ -104,6 +106,10 @@ export default function SampleFormPage() {
   };
 
   useEffect(() => {
+    console.log(watch("data"));
+  }, [watch("data")]);
+
+  useEffect(() => {
     setSumSelected(
       categories.reduce((a, b) => {
         return b.isSelected ? (a += 1) : a;
@@ -116,7 +122,7 @@ export default function SampleFormPage() {
         newData.push({
           category: e,
           applications: [],
-          items: [],
+          items: products.filter((p) => p.productId === e.productId),
         })
       );
     });
@@ -255,7 +261,7 @@ export default function SampleFormPage() {
                       {errors.data?.at(index)?.items && (
                         <p role="alert">Please select at least 1 product.</p>
                       )}
-                      {products.map((product, idx) => {
+                      {item.items.map((product, idx) => {
                         return (
                           product.productId === item.category.productId && (
                             <div
@@ -266,17 +272,36 @@ export default function SampleFormPage() {
                                 <input
                                   type="checkbox"
                                   value={product.sku}
+                                  // onChange={(e) => {
+                                  //   console.log(e.target.checked);
+                                  //   if (e.target.checked) {
+                                  //     addSelected(e.target.value);
+                                  //   } else if (!e.target.checked) {
+                                  //     removeSelected(e.target.value);
+                                  //   }
+                                  // }}
+                                  // {...register(`data.${index}.items` as const, {
+                                  //   required: true,
+                                  // })}
+                                  {...register(
+                                    `data.${index}.items.${idx}` as const,
+                                    {
+                                      required: true,
+                                    }
+                                  )}
                                   onChange={(e) => {
-                                    console.log(e.target.checked);
                                     if (e.target.checked) {
-                                      addSelected(e.target.value);
+                                      setValue(
+                                        `data.${index}.items.${idx}.isSelected`,
+                                        true
+                                      );
                                     } else if (!e.target.checked) {
-                                      removeSelected(e.target.value);
+                                      setValue(
+                                        `data.${index}.items.${idx}.isSelected`,
+                                        false
+                                      );
                                     }
                                   }}
-                                  {...register(`data.${index}.items`, {
-                                    required: true,
-                                  })}
                                   className="bg-[#eee] text-[20px] font-medium p-2 rounded"
                                 />
                                 <span className="text-base font-medium capitalize">
@@ -488,7 +513,8 @@ export default function SampleFormPage() {
               // })`}
               value={`Place request (${
                 watch("data")?.reduce((a, b) => {
-                  return a + b?.items?.length ?? 0;
+                  console.log(a, b.items);
+                  return a + b?.items?.length || 0;
                 }, 0) ?? 0
               })`}
               className="cursor-pointer rounded-[40px] px-[32px] py-[24px] bg-[#488791] text-[#fff] uppercase text-[13px] font-semibold tracking-[2px] shadow-[0px_15px_20px_rgba(0,0,0,0.2)]"

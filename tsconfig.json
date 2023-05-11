@@ -31,7 +31,7 @@
     ".next/types/**/*.ts",
     "**/*.ts",
     "**/*.tsx"
-, "context/product.ts"  ],
+, "context/product.ts", "app/api/sample-email/route.js", "components/SampleEmailTemplate.js"  ],
   "exclude": [
     "node_modules"
   ]
