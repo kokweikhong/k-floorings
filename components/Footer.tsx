@@ -18,7 +18,6 @@ const Footer: React.FC = () => {
   const pathname: string = usePathname();
 
   useEffect(() => {
-    console.log(pathname.match("/product/(....)"));
     if (pathname.match("/product/(....)")) {
       setMargin("mb-[150px] md:mb-0");
     } else if (pathname.includes("catalogue")) {

@@ -2,59 +2,15 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import {
-  useForm,
-  UseFormRegister,
-  FieldValues,
-  FieldErrors,
-} from "react-hook-form";
+import { useForm } from "react-hook-form";
 import React, { useContext, useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 
-import SelectedFormItem from "@/components/SelectedFormItem";
 import { ProductContext } from "@/context/product";
 import SendingEmail from "@/components/SendingEmail";
 import EmailHasSubmitted from "@/components/EmailHasSubmitted";
 import FailedToSubmitRequestEmail from "@/components/FailedToSubmitRequestEmail";
 import { IProductCategory } from "@/types/productCategory";
-import { IProduct } from "@/types/product";
-
-interface IInputProps {
-  label: string;
-  name: string;
-  type?: string;
-  register: UseFormRegister<ISampleForm>;
-  options?: any;
-  required?: string;
-  errors: FieldErrors<ISampleForm>;
-  placeholder?: string;
-  labelColor?: string;
-}
-
-const Input: React.FC<IInputProps> = ({
-  label,
-  name,
-  type = "text",
-  register,
-  options,
-  required,
-  errors,
-  placeholder,
-  labelColor = "#000",
-}) => (
-  <div className="flex flex-col gap-2">
-    <label className={`text-[20px] font-medium text-[${labelColor}]`}>
-      {label}
-    </label>
-    <input
-      type={type}
-      placeholder={placeholder}
-      {...register(`${name}`, { required, ...options })}
-      className="bg-[#eee] text-[20px] font-medium p-2"
-    />
-    {errors[name] && <p role="alert">{required}</p>}
-  </div>
-);
 
 const NotProductIsSelected = () => {
   return (
@@ -89,14 +45,21 @@ export interface ISampleForm {
   name: string;
   phone: string;
   postcode: string;
-  products?: IProduct[] | string[];
   remarks?: string;
+  data: ISelectedData[];
+}
+
+export interface ISelectedData {
+  category: IProductCategory;
+  applications: string[];
+  items: string[];
 }
 
 export default function SampleFormPage() {
   const {
     products,
     removeSelected,
+    addSelected,
     resetSelected,
     removeCategory,
     categories,
@@ -105,20 +68,22 @@ export default function SampleFormPage() {
   const [isFailToSubmit, setIsFailToSubmit] = useState(false);
   const [isSubmit, setIsSubmit] = useState(false);
   const [isSendingRequest, setIsSendingRequest] = useState(false);
+  const [formData, setFormData] = useState<ISampleForm>();
   const router = useRouter();
-  const applications: string[] = ["ceiling", "wall", "floor"]
-  let number = 0;
+  const applications: string[] = ["ceiling", "wall", "floor"];
 
   const {
     register,
     handleSubmit,
     reset,
+    watch,
     setValue,
     formState: { errors },
-  } = useForm<ISampleForm>();
+  } = useForm<ISampleForm>({
+    defaultValues: formData,
+  });
 
   const onSubmit = async (data: ISampleForm) => {
-    
     console.log(data);
     // setIsSendingRequest(true);
     // try {
@@ -139,14 +104,25 @@ export default function SampleFormPage() {
   };
 
   useEffect(() => {
-    setValue("products", products);
     setSumSelected(
       categories.reduce((a, b) => {
         return b.isSelected ? (a += 1) : a;
       }, 0)
     );
-
-  }, [categories, sumSelected]);
+    let newData: ISelectedData[] = [];
+    categories.forEach((e) => {
+      return (
+        e.isSelected &&
+        newData.push({
+          category: e,
+          applications: [],
+          items: [],
+        })
+      );
+    });
+    setFormData((prev) => ({ ...prev, data: newData }));
+    reset(formData);
+  }, [categories]);
 
   useEffect(() => {
     setIsSendingRequest(false);
@@ -165,12 +141,11 @@ export default function SampleFormPage() {
     }, 5000);
   }, [isFailToSubmit, isSubmit, router]);
 
-
   if (isSendingRequest) return <SendingEmail />;
   if (isSubmit) return <EmailHasSubmitted />;
   if (isFailToSubmit) return <FailedToSubmitRequestEmail />;
   if (sumSelected < 1) return <NotProductIsSelected />;
-  console.log(isSubmit);
+
   return (
     <main>
       <section className="container mx-auto px-[15px] mt-[50px]">
@@ -209,43 +184,138 @@ export default function SampleFormPage() {
       </section>
 
       {/* sample form */}
-      <section className="mt-[50px] container mx-auto px-[15px]">
+      <section className="mt-[50px] container mx-auto px-[15px] max-w-[600px]">
         <form
           onSubmit={handleSubmit(onSubmit)}
           className="flex flex-col items-center gap-6"
         >
-          <div>
-            {categories.map((category) => (
-              category.isSelected && (
-                <div key={category.productId}>
-                  <h2>{category.name}</h2>
-                  {products.map((product) => (
-                    product.productId === category.productId && (
-                      <div>
-                        <label>
+          {formData?.data.map((item, index) => {
+            return (
+              <div
+                className="border-b border-b-[#979797] flex w-full"
+                key={index}
+              >
+                <div className="relative flex flex-col w-full gap-2 pb-8 mt-5 pr-14">
+                  <div>
+                    <h4 className="text-base font-normal uppercase text-[#999]">
+                      you are requesting for
+                    </h4>
+                    <h2 className="text-base font-normal">{`(${index + 1}) ${
+                      item.category.name
+                    }`}</h2>
+                  </div>
 
-                          <input
-                            type="checkbox"
-                            value={product.sku}
-                            {...register("products", {
-                            })}
-                            className="bg-[#eee] text-[20px] font-medium p-2 rounded"
-                          />
-                          <span>{product.dimension}</span>
-                        </label>
+                  {/* applications */}
+                  <div>
+                    <h3 className="uppercase text-base font-normal text-[#979797]">
+                      Area of Application (Optional)
+                    </h3>
 
-                      </div>
-                    )
-                  ))}
+                    <div>
+                      {errors.data?.at(index)?.applications && (
+                        <p role="alert">
+                          Please select at least 1 application.
+                        </p>
+                      )}
+                      {applications.map((app, idx) => {
+                        return (
+                          <div
+                            key={idx}
+                            className="relative flex items-center gap-3"
+                          >
+                            <label className="flex gap-2 cursor-pointer">
+                              <input
+                                type="checkbox"
+                                value={app}
+                                {...register(
+                                  `data.${index}.applications` as const,
+                                  {
+                                    required: true,
+                                  }
+                                )}
+                                className="bg-[#eee] text-[20px] font-medium p-2 rounded"
+                              />
+                              <span className="text-base font-medium capitalize">
+                                {app}
+                              </span>
+                            </label>
+                          </div>
+                        );
+                      })}
+                    </div>
+                  </div>
+                  {/* end applications */}
+
+                  {/* dimensions */}
+                  <div>
+                    <h3 className="uppercase text-base font-normal text-[#979797]">
+                      Dimension
+                    </h3>
+                    <div>
+                      {errors.data?.at(index)?.items && (
+                        <p role="alert">Please select at least 1 product.</p>
+                      )}
+                      {products.map((product, idx) => {
+                        return (
+                          product.productId === item.category.productId && (
+                            <div
+                              key={idx}
+                              className="relative flex items-center gap-3"
+                            >
+                              <label className="cursor-pointer flex gap-2">
+                                <input
+                                  type="checkbox"
+                                  value={product.sku}
+                                  onChange={(e) => {
+                                    console.log(e.target.checked);
+                                    if (e.target.checked) {
+                                      addSelected(e.target.value);
+                                    } else if (!e.target.checked) {
+                                      removeSelected(e.target.value);
+                                    }
+                                  }}
+                                  {...register(`data.${index}.items`, {
+                                    required: true,
+                                  })}
+                                  className="bg-[#eee] text-[20px] font-medium p-2 rounded"
+                                />
+                                <span className="text-base font-medium capitalize">
+                                  {product.dimension}
+                                </span>
+                              </label>
+                            </div>
+                          )
+                        );
+                      })}
+                    </div>
+                  </div>
+                  {/* end dimensions */}
+
+                  {/* cancel button */}
+                  <div className="absolute top-0 right-0">
+                    <button
+                      type="button"
+                      onClick={() => {
+                        removeCategory(item.category.productId);
+                      }}
+                      className="w-[20px] h-[20px]"
+                    >
+                      <Image
+                        src="/icons/cancel.svg"
+                        alt="cancel icon"
+                        width="28"
+                        height="28"
+                        className="w-full h-full"
+                      />
+                    </button>
+                  </div>
+                  {/* end cancel button */}
                 </div>
-              )
-            ))}
-
-          </div>
-
+              </div>
+            );
+          })}
 
           <div className="flex flex-col w-full gap-[25px]">
-
             {/* name */}
             <div className="flex flex-col gap-2">
               <label className="text-[20px] font-medium text-[#767676]">
@@ -360,7 +430,9 @@ export default function SampleFormPage() {
                 {...register("address1", { required: true })}
                 className="bg-[#eee] text-[20px] font-medium p-2"
               />
-              {errors.address1 && (<p role="alert">Address Line 1 is required.</p>)}
+              {errors.address1 && (
+                <p role="alert">Address Line 1 is required.</p>
+              )}
             </div>
 
             {/* address2 */}
@@ -375,26 +447,33 @@ export default function SampleFormPage() {
               />
             </div>
 
+            {/* city */}
+            <div className="flex flex-col gap-2">
+              <label className="text-[20px] font-medium text-[#767676]">
+                City
+              </label>
+              <input
+                placeholder="Example: Singapore"
+                {...register("city", { required: true })}
+                className="bg-[#eee] text-[20px] font-medium p-2"
+              />
+              {errors.city && <p role="alert">City is required.</p>}
+            </div>
 
-            <Input
-              label="City"
-              name="city"
-              labelColor="#767676"
-              register={register}
-              required="City is required."
-              errors={errors}
-              placeholder="Example: Singapore"
-            />
-
-            <Input
-              label="Zip / Postcode"
-              name="postcode"
-              labelColor="#767676"
-              register={register}
-              required="Zip or Postcode is required."
-              errors={errors}
-              placeholder="Example: 758118"
-            />
+            {/* Zip / Postcode */}
+            <div className="flex flex-col gap-2">
+              <label className="text-[20px] font-medium text-[#767676]">
+                Zip / Postcode
+              </label>
+              <input
+                placeholder="Example: 758118"
+                {...register("postcode", { required: true })}
+                className="bg-[#eee] text-[20px] font-medium p-2"
+              />
+              {errors.postcode && (
+                <p role="alert">Zip or Postcode is required.</p>
+              )}
+            </div>
           </div>
 
           <div className="lg:hidden">
@@ -404,8 +483,14 @@ export default function SampleFormPage() {
           <div className="flex flex-col md:flex-row-reverse md:gap-10 md:justify-center md:items-center lg:flex-col gap-4 fixed lg:static bottom-0 bg-[#fff] z-10 w-full items-center py-[20px] shadow-[0px_-4px_5px_rgba(0,0,0,0.25)] lg:shadow-none">
             <input
               type="submit"
-              value={`Place request (${products.filter((product) => product.isSelected).length
-                })`}
+              // value={`Place request (${
+              //   products.filter((product) => product.isSelected).length
+              // })`}
+              value={`Place request (${
+                watch("data")?.reduce((a, b) => {
+                  return a + b?.items?.length ?? 0;
+                }, 0) ?? 0
+              })`}
               className="cursor-pointer rounded-[40px] px-[32px] py-[24px] bg-[#488791] text-[#fff] uppercase text-[13px] font-semibold tracking-[2px] shadow-[0px_15px_20px_rgba(0,0,0,0.2)]"
             />
             <div className="flex flex-col items-center justify-center gap-2">

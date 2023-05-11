@@ -1181,6 +1181,10 @@ video {
   max-width: 100%;
 }
 
+.max-w-\[600px\] {
+  max-width: 600px;
+}
+
 .grow {
   flex-grow: 1;
 }

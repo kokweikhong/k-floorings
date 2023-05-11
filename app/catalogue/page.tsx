@@ -155,7 +155,10 @@ export default function CataloguePage() {
                     {products.map((ele, idx) => {
                       return (
                         ele.productId === category.productId && (
-                          <h3 className="uppercase font-inter font-normal text-[16px]">
+                          <h3
+                            key={idx}
+                            className="uppercase font-inter font-normal text-[16px]"
+                          >
                             {ele.dimension}
                           </h3>
                         )
