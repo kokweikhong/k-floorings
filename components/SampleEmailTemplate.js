@@ -205,41 +205,43 @@ export default function SampleEmailTemplate({ data }) {
                       <Column style={informationTableColumn}>
                         <Text style={informationTableLabel}>APPLICATIONS</Text>
                         <Text style={informationTableValue}>
-                          {product?.applications?.application?.join()}
+                          {product?.applications?.join()}
                         </Text>
                       </Column>
                     </Row>
                   </Column>
-                  <Row style={{ ...informationTableRow, paddingLeft: "50px" }}>
-                    {Array.from(
-                      product?.items?.map((item, idx) => {
-                        return (
-                          <Column key={idx}>
-                            <Row>
-                              <Column style={informationTableColumn}>
-                                <Text style={informationTableLabel}>
-                                  PRODUCT SKU
-                                </Text>
-                                <Text style={informationTableValue}>
-                                  {item.sku}
-                                </Text>
-                              </Column>
-                            </Row>
-                            <Row>
-                              <Column style={informationTableColumn}>
-                                <Text style={informationTableLabel}>
-                                  DIMENSION
-                                </Text>
-                                <Text style={informationTableValue}>
-                                  {item.dimension}
-                                </Text>
-                              </Column>
-                            </Row>
-                          </Column>
-                        );
-                      })
-                    )}
-                  </Row>
+                  <Section style={informationTable}>
+                    <Row style={informationTableRow}>
+                      {Array.from(
+                        product?.items?.map((item, idx) => {
+                          return (
+                            <Column key={idx}>
+                              <Row>
+                                <Column style={informationTableColumn}>
+                                  <Text style={informationTableLabel}>
+                                    PRODUCT SKU
+                                  </Text>
+                                  <Text style={informationTableValue}>
+                                    {item.sku}
+                                  </Text>
+                                </Column>
+                              </Row>
+                              <Row>
+                                <Column style={informationTableColumn}>
+                                  <Text style={informationTableLabel}>
+                                    DIMENSION
+                                  </Text>
+                                  <Text style={informationTableValue}>
+                                    {item.dimension}
+                                  </Text>
+                                </Column>
+                              </Row>
+                            </Column>
+                          );
+                        })
+                      )}
+                    </Row>
+                  </Section>
                 </Section>
               );
             })
