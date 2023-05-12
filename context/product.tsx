@@ -25,8 +25,8 @@ export interface IAction {
 }
 
 const initialState = {
-  categories: categories,
-  products: products,
+  categories: categories.map((e) => ({ ...e, isSelected: false })),
+  products: products.map((e) => ({ ...e, isSelected: false })),
   addCategory: (productID: string) => {},
   removeCategory: (productID: string) => {},
   initProducts: () => {},
@@ -63,6 +63,9 @@ const reducer = (state: IProductContext, action: IAction) => {
     case actions.INIT_ITEM:
       return {
         ...state,
+        categories: categories.map((ele) => {
+          return { ...ele, isSelected: false };
+        }),
         products: products.map((ele) => {
           return { ...ele, isSelected: false };
         }),
@@ -85,6 +88,9 @@ const reducer = (state: IProductContext, action: IAction) => {
     case actions.RESET_SELECTED_ITEM:
       return {
         ...state,
+        categories: categories.map((ele) => {
+          return { ...ele, isSelected: false };
+        }),
         products: state.products.map((ele) => {
           return { ...ele, isSelected: false };
         }),

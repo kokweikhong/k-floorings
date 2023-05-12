@@ -66,19 +66,10 @@ const ProductDetail: React.FC<{
 
 export default function IndividualProductPage({ params }) {
   const imageBaseURL = "/product/category_images";
-  const {
-    categories,
-    products,
-    initProducts,
-    addSelected,
-    removeSelected,
-    removeCategory,
-    addCategory,
-  } = useContext(ProductContext);
-  const [product, setProduct] = useState<IProduct>();
+  const { categories, products, initProducts, removeCategory, addCategory } =
+    useContext(ProductContext);
   const [filteredProducts, setFilteredProducts] = useState<IProduct[]>();
   const [category, setCategory] = useState<IProductCategory>();
-  // const [productsByCategory, setProductByCategory] = useState<IProduct[]>();
   const router = useRouter();
   const [open, setOpen] = useState<boolean>(false);
 
@@ -89,9 +80,7 @@ export default function IndividualProductPage({ params }) {
   }, [initProducts, products.length]);
 
   useEffect(() => {
-    console.log(categories);
     const findCategory = categories.find((ele) => ele.index === params.id);
-    console.log(findCategory);
     if (findCategory !== undefined) {
       setCategory(findCategory);
       const filtered = products.filter(
@@ -109,7 +98,6 @@ export default function IndividualProductPage({ params }) {
       addCategory(category.productId);
       setCategory({ ...category, isSelected: true });
     }
-    console.log(category);
   };
 
   const handleGetFreeSample = () => {

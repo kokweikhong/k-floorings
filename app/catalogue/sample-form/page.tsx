@@ -78,15 +78,24 @@ export default function SampleFormPage() {
     handleSubmit,
     reset,
     watch,
-    setValue,
     formState: { errors },
   } = useForm<ISampleForm>({
     defaultValues: formData,
   });
-  const watchData = watch("data");
 
   const onSubmit = async (data: ISampleForm) => {
+    console.log(products.filter((e) => e.isSelected).length);
+    const arragedData = data.data.map((e) => {
+      return {
+        ...e,
+        items: products.filter(
+          (p) => p.isSelected && p.productId === e.category?.productId
+        ),
+      };
+    });
+
     console.log(data);
+    console.log(arragedData);
     // setIsSendingRequest(true);
     // try {
     //   const res = await fetch("/api/sample-email", {
@@ -106,10 +115,6 @@ export default function SampleFormPage() {
   };
 
   useEffect(() => {
-    console.log(watch("data"));
-  }, [watch("data")]);
-
-  useEffect(() => {
     setSumSelected(
       categories.reduce((a, b) => {
         return b.isSelected ? (a += 1) : a;
@@ -122,7 +127,7 @@ export default function SampleFormPage() {
         newData.push({
           category: e,
           applications: [],
-          items: products.filter((p) => p.productId === e.productId),
+          items: [],
         })
       );
     });
@@ -146,6 +151,14 @@ export default function SampleFormPage() {
       }
     }, 5000);
   }, [isFailToSubmit, isSubmit, router]);
+
+  function handleProductChange(e: React.ChangeEvent<HTMLInputElement>) {
+    if (e.target.checked) {
+      addSelected(e.target.value);
+    } else if (!e.target.checked) {
+      removeSelected(e.target.value);
+    }
+  }
 
   if (isSendingRequest) return <SendingEmail />;
   if (isSubmit) return <EmailHasSubmitted />;
@@ -261,7 +274,7 @@ export default function SampleFormPage() {
                       {errors.data?.at(index)?.items && (
                         <p role="alert">Please select at least 1 product.</p>
                       )}
-                      {item.items.map((product, idx) => {
+                      {products.map((product, idx) => {
                         return (
                           product.productId === item.category.productId && (
                             <div
@@ -272,36 +285,11 @@ export default function SampleFormPage() {
                                 <input
                                   type="checkbox"
                                   value={product.sku}
-                                  // onChange={(e) => {
-                                  //   console.log(e.target.checked);
-                                  //   if (e.target.checked) {
-                                  //     addSelected(e.target.value);
-                                  //   } else if (!e.target.checked) {
-                                  //     removeSelected(e.target.value);
-                                  //   }
-                                  // }}
-                                  // {...register(`data.${index}.items` as const, {
-                                  //   required: true,
-                                  // })}
-                                  {...register(
-                                    `data.${index}.items.${idx}` as const,
-                                    {
-                                      required: true,
-                                    }
-                                  )}
-                                  onChange={(e) => {
-                                    if (e.target.checked) {
-                                      setValue(
-                                        `data.${index}.items.${idx}.isSelected`,
-                                        true
-                                      );
-                                    } else if (!e.target.checked) {
-                                      setValue(
-                                        `data.${index}.items.${idx}.isSelected`,
-                                        false
-                                      );
-                                    }
-                                  }}
+                                  checked={product.isSelected || false}
+                                  {...register(`data.${index}.items`, {
+                                    required: true,
+                                  })}
+                                  onChange={(e) => handleProductChange(e)}
                                   className="bg-[#eee] text-[20px] font-medium p-2 rounded"
                                 />
                                 <span className="text-base font-medium capitalize">
@@ -508,14 +496,8 @@ export default function SampleFormPage() {
           <div className="flex flex-col md:flex-row-reverse md:gap-10 md:justify-center md:items-center lg:flex-col gap-4 fixed lg:static bottom-0 bg-[#fff] z-10 w-full items-center py-[20px] shadow-[0px_-4px_5px_rgba(0,0,0,0.25)] lg:shadow-none">
             <input
               type="submit"
-              // value={`Place request (${
-              //   products.filter((product) => product.isSelected).length
-              // })`}
               value={`Place request (${
-                watch("data")?.reduce((a, b) => {
-                  console.log(a, b.items);
-                  return a + b?.items?.length || 0;
-                }, 0) ?? 0
+                products.filter((e) => e.isSelected).length
               })`}
               className="cursor-pointer rounded-[40px] px-[32px] py-[24px] bg-[#488791] text-[#fff] uppercase text-[13px] font-semibold tracking-[2px] shadow-[0px_15px_20px_rgba(0,0,0,0.2)]"
             />

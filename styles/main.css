@@ -1173,16 +1173,16 @@ video {
   max-width: 550px;
 }
 
+.max-w-\[600px\] {
+  max-width: 600px;
+}
+
 .max-w-\[60px\] {
   max-width: 60px;
 }
 
 .max-w-full {
   max-width: 100%;
-}
-
-.max-w-\[600px\] {
-  max-width: 600px;
 }
 
 .grow {
@@ -1929,11 +1929,6 @@ video {
 .text-primary {
   --tw-text-opacity: 1;
   color: rgb(128 104 64 / var(--tw-text-opacity));
-}
-
-.text-red-500 {
-  --tw-text-opacity: 1;
-  color: rgb(239 68 68 / var(--tw-text-opacity));
 }
 
 .text-secondary {

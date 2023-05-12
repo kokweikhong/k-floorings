@@ -181,7 +181,7 @@ export default function SampleEmailTemplate({ data }) {
             </Column>
           </Section>
           {Array.from(
-            data?.products?.map((product, index) => {
+            data?.data?.map((product, index) => {
               return (
                 <Section
                   style={{
