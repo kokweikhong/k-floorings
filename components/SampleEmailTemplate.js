@@ -210,38 +210,34 @@ export default function SampleEmailTemplate({ data }) {
                       </Column>
                     </Row>
                   </Column>
-                  <Section style={informationTable}>
-                    <Row style={informationTableRow}>
-                      {Array.from(
-                        product?.items?.map((item, idx) => {
-                          return (
-                            <Column key={idx}>
-                              <Row>
-                                <Column style={informationTableColumn}>
-                                  <Text style={informationTableLabel}>
-                                    PRODUCT SKU
-                                  </Text>
-                                  <Text style={informationTableValue}>
-                                    {item.sku}
-                                  </Text>
-                                </Column>
-                              </Row>
-                              <Row>
-                                <Column style={informationTableColumn}>
-                                  <Text style={informationTableLabel}>
-                                    DIMENSION
-                                  </Text>
-                                  <Text style={informationTableValue}>
-                                    {item.dimension}
-                                  </Text>
-                                </Column>
-                              </Row>
+                  {Array.from(
+                    product?.items?.map((item, idx) => {
+                      return (
+                        <Column key={idx} align="left" style={tableCell}>
+                          <Row>
+                            <Column style={informationTableColumn}>
+                              <Text style={informationTableLabel}>
+                                PRODUCT SKU
+                              </Text>
+                              <Text style={informationTableValue}>
+                                {item.sku}
+                              </Text>
                             </Column>
-                          );
-                        })
-                      )}
-                    </Row>
-                  </Section>
+                          </Row>
+                          <Row>
+                            <Column style={informationTableColumn}>
+                              <Text style={informationTableLabel}>
+                                DIMENSION
+                              </Text>
+                              <Text style={informationTableValue}>
+                                {item.dimension}
+                              </Text>
+                            </Column>
+                          </Row>
+                        </Column>
+                      );
+                    })
+                  )}
                 </Section>
               );
             })

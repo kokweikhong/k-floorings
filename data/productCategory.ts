@@ -357,7 +357,7 @@ export const categories: IProductCategory[] = [
     productId: "KL9.C",
     name: "Limewash Oak",
     description:
-      "Ticked Oak offers a subtle, natural beauty that enhances any room. The knots and distinctive grain patterns lend a touch of rustic charm and texture to your floors, adding a unique character to your home.",
+      "Limewash Oak offers a subtle, natural beauty that enhances any room. The knots and distinctive grain patterns lend a touch of rustic charm and texture to your floors, adding a unique character to your home. Available in two sizes.",
     species: "European Oak",
     thickness: "15 mm",
     grain: "Natural",
@@ -447,7 +447,7 @@ export const categories: IProductCategory[] = [
     pdfShowcase: "Natural Oak_Kandinsky lite product showcase.pdf",
     patternColor: "black",
     image: {
-      pattern: { name: "Herringbone", src: "Herringbone.svg" },
+      pattern: { name: "Straight", src: "Straight.svg" },
       grain: { name: "Natural Grains", src: "Natural Grains.svg" },
       thumbnail: "Thumbnails_KL1.jpg",
       filenames: [
