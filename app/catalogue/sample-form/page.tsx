@@ -96,22 +96,22 @@ export default function SampleFormPage() {
 
     console.log(data);
     console.log(arragedData);
-    // setIsSendingRequest(true);
-    // try {
-    //   const res = await fetch("/api/sample-email", {
-    //     method: "POST",
-    //     headers: {
-    //       "Content-Type": "application/json",
-    //     },
-    //     body: JSON.stringify(data),
-    //   });
-    //   console.log(res);
-    //   reset();
-    //   resetSelected();
-    //   setIsSubmit(true);
-    // } catch (e) {
-    //   setIsFailToSubmit(true);
-    // }
+    setIsSendingRequest(true);
+    try {
+      const res = await fetch("/api/sample-email", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(arragedData),
+      });
+      console.log(res);
+      reset();
+      resetSelected();
+      setIsSubmit(true);
+    } catch (e) {
+      setIsFailToSubmit(true);
+    }
   };
 
   useEffect(() => {
