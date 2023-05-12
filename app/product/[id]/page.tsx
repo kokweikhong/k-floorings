@@ -202,7 +202,7 @@ export default function IndividualProductPage({ params }) {
 
       <section className="container mx-auto mt-[50px] px-[15px] text-primary">
         <div className="grid grid-cols-3 gap-6 relative md:pb-[160px] lg:pb-0">
-          <div className="grid grid-cols-2 gap-[20px] col-span-full md:col-span-2 max-w-[400px]">
+          <div className="grid grid-cols-2 gap-[20px] col-span-full md:col-span-2">
             {/* name */}
             <div className="col-span-full">
               <ProductDetail label="name" value={category.name} isBold />
