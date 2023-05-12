@@ -12,6 +12,7 @@ import Breadcrumb from "@/components/Breadcrumb";
 import { NextPage } from "next";
 
 import logoKandinskyLiteWhiteHoz from "../../../public/kandinsky lite_logo2.svg";
+import logoKandinskyWhite from "../../../public/kandinsky_logo_white.svg";
 
 import LightboxGallery from "@/components/LightboxGallery";
 
@@ -356,7 +357,11 @@ export default function IndividualProductPage({ params }) {
       <section className="w-full mt-[50px]">
         <div className="flex items-center justify-center w-full p-3 bg-primary h-[70px]">
           <Image
-            src={logoKandinskyLiteWhiteHoz}
+            src={
+              category.category === "KL"
+                ? logoKandinskyLiteWhiteHoz
+                : logoKandinskyWhite
+            }
             alt="kandinsky lite logo"
             className="max-w-[200px] h-auto"
           />
