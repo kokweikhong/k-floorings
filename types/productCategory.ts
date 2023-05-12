@@ -21,4 +21,5 @@ export interface IProductCategory {
     };
   };
   isSelected?: boolean;
+  category: "KL" | "K";
 }

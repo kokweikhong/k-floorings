@@ -2,7 +2,6 @@ export interface IProduct {
   sku: string;
   productId: string;
   dimension: string;
-  category: "KL" | "K";
   isSelected?: boolean;
 }
 
