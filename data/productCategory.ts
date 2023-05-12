@@ -521,7 +521,7 @@ export const categories: IProductCategory[] = [
     species: "Oak",
     thickness: "15 mm",
     grain: "Natural",
-    pdfShowcase: "Swiss Oak_Kandinsky lite product showcase.pdf",
+    pdfShowcase: "#",
     patternColor: "black",
     image: {
       pattern: { name: "Random", src: "Random.svg" },
@@ -542,7 +542,7 @@ export const categories: IProductCategory[] = [
     species: "Oak",
     thickness: "15 mm",
     grain: "Natural",
-    pdfShowcase: "Swiss Oak_Kandinsky lite product showcase.pdf",
+    pdfShowcase: "#",
     patternColor: "white",
     image: {
       pattern: { name: "Random", src: "Random - White.svg" },
@@ -563,7 +563,7 @@ export const categories: IProductCategory[] = [
     species: "Oak",
     thickness: "15 mm",
     grain: "Natural",
-    pdfShowcase: "Swiss Oak_Kandinsky lite product showcase.pdf",
+    pdfShowcase: "#",
     patternColor: "white",
     image: {
       pattern: { name: "Random", src: "Random - White.svg" },
@@ -584,7 +584,7 @@ export const categories: IProductCategory[] = [
     species: "Oak",
     thickness: "15 mm",
     grain: "Natural",
-    pdfShowcase: "Swiss Oak_Kandinsky lite product showcase.pdf",
+    pdfShowcase: "#",
     patternColor: "white",
     image: {
       pattern: { name: "Random", src: "Random - White.svg" },
@@ -605,7 +605,7 @@ export const categories: IProductCategory[] = [
     species: "Oak",
     thickness: "15 mm",
     grain: "Natural",
-    pdfShowcase: "Swiss Oak_Kandinsky lite product showcase.pdf",
+    pdfShowcase: "#",
     patternColor: "white",
     image: {
       pattern: { name: "Random", src: "Random - White.svg" },
@@ -626,7 +626,7 @@ export const categories: IProductCategory[] = [
     species: "Oak",
     thickness: "15 mm",
     grain: "Natural",
-    pdfShowcase: "Swiss Oak_Kandinsky lite product showcase.pdf",
+    pdfShowcase: "#",
     patternColor: "white",
     image: {
       pattern: { name: "Random", src: "Random - White.svg" },
@@ -647,7 +647,7 @@ export const categories: IProductCategory[] = [
     species: "Oak",
     thickness: "15 mm",
     grain: "Natural",
-    pdfShowcase: "Swiss Oak_Kandinsky lite product showcase.pdf",
+    pdfShowcase: "#",
     patternColor: "white",
     image: {
       pattern: { name: "Random", src: "Random - White.svg" },
@@ -675,7 +675,7 @@ export const categories: IProductCategory[] = [
     species: "Oak",
     thickness: "15 mm",
     grain: "Natural",
-    pdfShowcase: "Swiss Oak_Kandinsky lite product showcase.pdf",
+    pdfShowcase: "#",
     patternColor: "black",
     image: {
       pattern: { name: "Random", src: "Random.svg" },
@@ -703,7 +703,7 @@ export const categories: IProductCategory[] = [
     species: "Oak",
     thickness: "15 mm",
     grain: "Natural",
-    pdfShowcase: "Swiss Oak_Kandinsky lite product showcase.pdf",
+    pdfShowcase: "#",
     patternColor: "black",
     image: {
       pattern: { name: "Random", src: "Random.svg" },

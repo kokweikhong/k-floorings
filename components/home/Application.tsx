@@ -9,7 +9,9 @@ import applicationFloor from "../../public/images/home/application_floor.jpg";
 import applicationStair from "../../public/images/home/application_stair.jpg";
 import applicationWall from "../../public/images/home/application_wall.jpg";
 
-const certs = [
+import React from "react";
+
+const certs: { src: any; alt: string; desc: string }[] = [
   {
     src: cert1,
     alt: "SGBC certified (2 ticks)",
@@ -23,7 +25,11 @@ const certs = [
   },
 ];
 
-const applications = [
+const applications: {
+  title: string;
+  desc: string;
+  img: { src: any; alt: string };
+}[] = [
   {
     title: "ceiling",
     desc: "Transform your space with our professional wood ceiling installation services. Custom design with a range of wood types and finishes available.",
@@ -46,7 +52,7 @@ const applications = [
   },
 ];
 
-export default function Application() {
+const Application: React.FC = () => {
   return (
     <section className="mt-[50px]">
       <div className="px-[15px] flex flex-col items-start">
@@ -115,4 +121,6 @@ export default function Application() {
       </div>
     </section>
   );
-}
+};
+
+export default Application;
