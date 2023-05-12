@@ -63,27 +63,29 @@ export default function ProductPage() {
               />
             </div>
           </button>
-          <button
-            className={`bg-black text-[#fff] flex flex-col justify-center items-center w-full py-[15px] cursor-pointer ${
-              categoryType === "KL" && "animate-bounce-slow"
-            }`}
-            onClick={() => handleCategoryChange("K")}
-          >
-            <div className="px-[15px] w-full flex flex-col items-center">
-              <div className="relative h-[20px] w-full max-w-[180px] mb-1">
-                <Image
-                  src={logoKandinskyWhite}
-                  alt="kandinksy logo"
-                  fill
-                  // className="object-fill"
-                  // className="w-full h-full"
-                />
+          <div className="w-full bg-black">
+            <button
+              className={`bg-black text-[#fff] flex flex-col justify-center items-center w-full py-[15px] cursor-pointer ${
+                categoryType === "KL" && "animate-bounce-slow"
+              }`}
+              onClick={() => handleCategoryChange("K")}
+            >
+              <div className="px-[15px] w-full flex flex-col items-center">
+                <div className="relative h-[20px] w-full max-w-[180px] mb-1">
+                  <Image
+                    src={logoKandinskyWhite}
+                    alt="kandinksy logo"
+                    fill
+                    // className="object-fill"
+                    // className="w-full h-full"
+                  />
+                </div>
+                <span className="uppercase w-full max-w-[180px] text-left">
+                  premium timber
+                </span>
               </div>
-              <span className="uppercase w-full max-w-[180px] text-left">
-                premium timber
-              </span>
-            </div>
-          </button>
+            </button>
+          </div>
           <button
             className="w-full text-right py-4 px-6"
             onClick={() => handleCategoryChange("KL")}
