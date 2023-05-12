@@ -213,28 +213,30 @@ export default function SampleEmailTemplate({ data }) {
                   {Array.from(
                     product?.items?.map((item, idx) => {
                       return (
-                        <Column key={idx} align="left" style={tableCell}>
-                          <Row>
-                            <Column style={informationTableColumn}>
-                              <Text style={informationTableLabel}>
-                                PRODUCT SKU
-                              </Text>
-                              <Text style={informationTableValue}>
-                                {item.sku}
-                              </Text>
-                            </Column>
-                          </Row>
-                          <Row>
-                            <Column style={informationTableColumn}>
-                              <Text style={informationTableLabel}>
-                                DIMENSION
-                              </Text>
-                              <Text style={informationTableValue}>
-                                {item.dimension}
-                              </Text>
-                            </Column>
-                          </Row>
-                        </Column>
+                        <Row key={idx}>
+                          <Column align="left" style={tableCell}>
+                            <Row>
+                              <Column style={informationTableColumn}>
+                                <Text style={informationTableLabel}>
+                                  PRODUCT SKU
+                                </Text>
+                                <Text style={informationTableValue}>
+                                  {item.sku}
+                                </Text>
+                              </Column>
+                            </Row>
+                            <Row>
+                              <Column style={informationTableColumn}>
+                                <Text style={informationTableLabel}>
+                                  DIMENSION
+                                </Text>
+                                <Text style={informationTableValue}>
+                                  {item.dimension}
+                                </Text>
+                              </Column>
+                            </Row>
+                          </Column>
+                        </Row>
                       );
                     })
                   )}
