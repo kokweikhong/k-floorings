@@ -174,7 +174,11 @@ export default function IndividualProductPage({ params }) {
                 object: (
                   <div className="h-[10px] w-[125px] md:h-[12px] md:w-[145px]">
                     <Image
-                      src="/icons/Kandinsky Lite - vertical.svg"
+                      src={
+                        category?.category === "KL"
+                          ? "/icons/Kandinsky Lite - vertical.svg"
+                          : "/icons/kandinsky - vertical.svg"
+                      }
                       alt="kandinsky lite logo"
                       width="125"
                       height="10"
