@@ -73,7 +73,6 @@ const heading = {
 };
 
 export default function SampleEmailTemplate({ data }) {
-  console.log(data.products);
   return (
     <Html lang="en">
       <Head />

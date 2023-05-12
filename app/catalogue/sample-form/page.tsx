@@ -77,7 +77,6 @@ export default function SampleFormPage() {
     register,
     handleSubmit,
     reset,
-    watch,
     formState: { errors },
   } = useForm<ISampleForm>({
     defaultValues: formData,
@@ -85,14 +84,18 @@ export default function SampleFormPage() {
 
   const onSubmit = async (data: ISampleForm) => {
     console.log(products.filter((e) => e.isSelected).length);
-    const arragedData = data.data.map((e) => {
-      return {
-        ...e,
-        items: products.filter(
-          (p) => p.isSelected && p.productId === e.category?.productId
-        ),
-      };
-    });
+
+    const arragedData = {
+      ...data,
+      data: data.data.map((e) => {
+        return {
+          ...e,
+          items: products.filter(
+            (p) => p.isSelected && p.productId === e.category?.productId
+          ),
+        };
+      }),
+    };
 
     console.log(data);
     console.log(arragedData);
