@@ -69,7 +69,22 @@ export default function SampleFormPage() {
   const [isFailToSubmit, setIsFailToSubmit] = useState(false);
   const [isSubmit, setIsSubmit] = useState(false);
   const [isSendingRequest, setIsSendingRequest] = useState(false);
-  const [formData, setFormData] = useState<ISampleForm>();
+  const [formData, setFormData] = useState<ISampleForm>({
+    address1: "",
+    address2: "",
+    city: "",
+    company: "",
+    delivery: "",
+    email: "",
+    mailing: "",
+    name: "",
+    phone: "",
+    postcode: "",
+    remarks: "",
+    data: categories
+      .filter((e) => e.isSelected)
+      .map((e) => ({ items: [], applications: [], category: e })),
+  });
   const router = useRouter();
   const applications: string[] = ["ceiling", "wall", "floor"];
 
@@ -123,19 +138,12 @@ export default function SampleFormPage() {
         return b.isSelected ? (a += 1) : a;
       }, 0)
     );
-    let newData: ISelectedData[] = [];
-    categories.forEach((e) => {
-      return (
-        e.isSelected &&
-        newData.push({
-          category: e,
-          applications: [],
-          items: [],
-        })
-      );
-    });
-    setFormData((prev) => ({ ...prev, data: newData }));
-    reset(formData);
+    // const newData: ISelectedData[] = categories
+    //   .filter((e) => e.isSelected)
+    //   .map((e) => ({ items: [], applications: [], category: e }));
+    // console.log(newData);
+    // setFormData((prev) => ({ ...prev, data: newData }));
+    // reset(formData);
   }, [categories]);
 
   useEffect(() => {
@@ -289,7 +297,7 @@ export default function SampleFormPage() {
                                   type="checkbox"
                                   value={product.sku}
                                   checked={product.isSelected || false}
-                                  {...register(`data.${index}.items`, {
+                                  {...register(`data.${index}.items` as const, {
                                     required: true,
                                   })}
                                   onChange={(e) => handleProductChange(e)}
