@@ -72,6 +72,13 @@ const heading = {
   color: "#888888",
 };
 
+const subHeading = {
+  fontSize: "22px",
+  fontWeight: "300",
+  lineHeight: 1.5,
+  color: "#888888",
+};
+
 export default function SampleEmailTemplate({ data }) {
   return (
     <Html lang="en">
@@ -191,7 +198,7 @@ export default function SampleEmailTemplate({ data }) {
                   key={index}
                 >
                   <Column align="left" style={tableCell}>
-                    <Text style={`${heading} fontSize:22px;`}>{`${index + 1}) ${
+                    <Text style={`${subHeading}`}>{`${index + 1}) ${
                       product.category.name
                     } | ${product.category.productId}`}</Text>
                     <Row>
@@ -203,7 +210,7 @@ export default function SampleEmailTemplate({ data }) {
                       </Column>
                     </Row>
                   </Column>
-                  <Row style={`${informationTableRow} marginLeft:10px;`}>
+                  <Row style={{ ...informationTableRow, paddingLeft: "50px" }}>
                     {Array.from(
                       product?.items?.map((item, idx) => {
                         return (
