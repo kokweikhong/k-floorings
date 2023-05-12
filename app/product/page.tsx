@@ -48,7 +48,9 @@ export default function ProductPage() {
       <section>
         <div className="grid grid-cols-2">
           <button
-            className="flex items-center justify-center w-full px-[15px] cursor-pointer"
+            className={`flex items-center justify-center w-full px-[15px] cursor-pointer bg-white ${
+              categoryType === "K" && "animate-bounce-slow"
+            }`}
             onClick={() => handleCategoryChange("KL")}
           >
             <div className="max-w-[180px] w-full h-[35px] relative">
@@ -62,7 +64,9 @@ export default function ProductPage() {
             </div>
           </button>
           <button
-            className="bg-black text-[#fff] flex flex-col justify-center items-center w-full py-[15px] cursor-pointer"
+            className={`bg-black text-[#fff] flex flex-col justify-center items-center w-full py-[15px] cursor-pointer ${
+              categoryType === "KL" && "animate-bounce-slow"
+            }`}
             onClick={() => handleCategoryChange("K")}
           >
             <div className="px-[15px] w-full flex flex-col items-center">

@@ -14,6 +14,9 @@ module.exports = {
         primary: "#806840",
         secondary: "#488791",
       },
+      animation: {
+        "bounce-slow": "bounce 3s infinite",
+      },
     },
   },
   plugins: [],
