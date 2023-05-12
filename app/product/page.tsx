@@ -48,9 +48,8 @@ export default function ProductPage() {
       <section>
         <div className="grid grid-cols-2">
           <button
-            className={`flex items-center justify-center w-full px-[15px] cursor-pointer bg-white ${
-              categoryType === "K" && "animate-bounce-slow"
-            }`}
+            className={`flex items-center justify-center w-full px-[15px] cursor-pointer bg-white ${categoryType === "K" && "animate-bounce-slow"
+              }`}
             onClick={() => handleCategoryChange("KL")}
           >
             <div className="max-w-[180px] w-full h-[35px] relative">
@@ -58,16 +57,15 @@ export default function ProductPage() {
                 src={logoKandinskyLiteWhite}
                 alt="kandinksy logo"
                 fill
-                // className="object-cover"
-                // className="w-full h-full"
+              // className="object-cover"
+              // className="w-full h-full"
               />
             </div>
           </button>
           <div className="w-full bg-black">
             <button
-              className={`bg-black text-[#fff] flex flex-col justify-center items-center w-full py-[15px] cursor-pointer ${
-                categoryType === "KL" && "animate-bounce-slow"
-              }`}
+              className={`bg-black text-[#fff] flex flex-col justify-center items-center w-full py-[15px] cursor-pointer ${categoryType === "KL" && "animate-bounce-slow"
+                }`}
               onClick={() => handleCategoryChange("K")}
             >
               <div className="px-[15px] w-full flex flex-col items-center">
@@ -76,8 +74,8 @@ export default function ProductPage() {
                     src={logoKandinskyWhite}
                     alt="kandinksy logo"
                     fill
-                    // className="object-fill"
-                    // className="w-full h-full"
+                  // className="object-fill"
+                  // className="w-full h-full"
                   />
                 </div>
                 <span className="uppercase w-full max-w-[180px] text-left">
@@ -91,9 +89,8 @@ export default function ProductPage() {
             onClick={() => handleCategoryChange("KL")}
           >
             <span
-              className={`w-[15px] h-[15px] rounded-full text-right inline-block ${
-                categoryType === "KL" ? "bg-[#5A5A5A]" : "bg-[#D9D9D9]"
-              }`}
+              className={`w-[15px] h-[15px] rounded-full text-right inline-block ${categoryType === "KL" ? "bg-[#5A5A5A]" : "bg-[#D9D9D9]"
+                }`}
             ></span>
           </button>
           <button
@@ -101,9 +98,8 @@ export default function ProductPage() {
             onClick={() => handleCategoryChange("K")}
           >
             <span
-              className={`w-[15px] h-[15px] rounded-full text-right inline-block ${
-                categoryType === "K" ? "bg-[#5A5A5A]" : "bg-[#D9D9D9]"
-              }`}
+              className={`w-[15px] h-[15px] rounded-full text-right inline-block ${categoryType === "K" ? "bg-[#5A5A5A]" : "bg-[#D9D9D9]"
+                }`}
             ></span>
           </button>
         </div>
@@ -190,11 +186,10 @@ export default function ProductPage() {
                         />
                       </div>
                       <p
-                        className={`${
-                          category.patternColor === "white"
+                        className={`${category.patternColor === "white"
                             ? "text-[#fff]"
                             : "text-[#000]"
-                        } text-[12px] leading-[15px] break-all`}
+                          } text-[12px] leading-[15px] break-all`}
                       >
                         {category.image.pattern.name}
                       </p>
@@ -210,11 +205,10 @@ export default function ProductPage() {
                         />
                       </div>
                       <p
-                        className={`${
-                          category.patternColor === "white"
+                        className={`${category.patternColor === "white"
                             ? "text-[#fff]"
                             : "text-[#000]"
-                        } text-[12px] leading-[15px] break-all`}
+                          } text-[12px] leading-[15px] break-all`}
                       >
                         {category.image.grain.name}
                       </p>
@@ -233,15 +227,13 @@ export default function ProductPage() {
 
       <section className="mt-[50px]">
         <div className="border-top border-t-[#D9D9D9] border py-2">
-          <p className="text-center text-base leading-[19px] uppercase text-secondary">{`${
-            categories.filter((e) => e.category === categoryType).length
-          } of ${
-            categories.filter((e) => e.category === categoryType).length
-          } shown`}</p>
+          <p className="text-center text-base leading-[19px] uppercase text-secondary">{`${categories.filter((e) => e.category === categoryType).length
+            } of ${categories.filter((e) => e.category === categoryType).length
+            } shown`}</p>
         </div>
         <div className="flex items-center justify-center w-full p-3 bg-primary h-[70px]">
           <Image
-            src={logoKandinskyLiteWhiteHoz}
+            src={categoryType === "KL" ? logoKandinskyLiteWhiteHoz : logoKandinskyWhite}
             alt="kandinsky lite logo"
             className="max-w-[200px] h-auto"
           />
