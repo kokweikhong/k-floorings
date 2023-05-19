@@ -521,7 +521,7 @@ export const categories: IProductCategory[] = [
     species: "Oak",
     thickness: "15 mm",
     grain: "Natural",
-    pdfShowcase: "#",
+    pdfShowcase: "Bartek_Kandinsky product showcase-compressed.pdf",
     patternColor: "black",
     image: {
       pattern: { name: "Random", src: "Random.svg" },
@@ -548,7 +548,7 @@ export const categories: IProductCategory[] = [
     species: "Oak",
     thickness: "15 mm",
     grain: "Natural",
-    pdfShowcase: "#",
+    pdfShowcase: "Calvos_Kandinsky product showcase-compressed.pdf",
     patternColor: "white",
     image: {
       pattern: { name: "Random", src: "Random - White.svg" },
@@ -569,7 +569,7 @@ export const categories: IProductCategory[] = [
     species: "Oak",
     thickness: "15 mm",
     grain: "Natural",
-    pdfShowcase: "#",
+    pdfShowcase: "Ivenack_Kandinsky product showcase-compressed.pdf",
     patternColor: "white",
     image: {
       pattern: { name: "Random", src: "Random - White.svg" },
@@ -590,7 +590,7 @@ export const categories: IProductCategory[] = [
     species: "Oak",
     thickness: "15 mm",
     grain: "Natural",
-    pdfShowcase: "#",
+    pdfShowcase: "Kildare_Kandinsky product showcase-compressed.pdf",
     patternColor: "white",
     image: {
       pattern: { name: "Random", src: "Random - White.svg" },
@@ -617,7 +617,7 @@ export const categories: IProductCategory[] = [
     species: "Oak",
     thickness: "15 mm",
     grain: "Natural",
-    pdfShowcase: "#",
+    pdfShowcase: "Pugachov_Kandinsky product showcase-compressed.pdf",
     patternColor: "white",
     image: {
       pattern: { name: "Random", src: "Random - White.svg" },
@@ -736,6 +736,90 @@ export const categories: IProductCategory[] = [
         "K.9-4.jpg",
         "K.9-5.jpg",
         "Thumbnails_K.9.jpg",
+      ],
+    },
+  },
+
+  // productId: "K.10"
+  {
+    index: "K-10",
+    productId: "K.10",
+    name: "Jurupa",
+    category: "K",
+    description:
+      "Jurupa is a stunning deep reddish-brown hue that exudes warmth and elegance. Its rich and luxurious tones are enhanced by its beautiful wood grains, giving any space a natural and rustic feel. Jurupa's cozy atmosphere creates a welcoming and inviting environment, making it the perfect choice for those looking for a stylish and timeless flooring option.",
+    species: "Oak",
+    thickness: "15 mm",
+    grain: "Natural",
+    pdfShowcase: "Jurupa_Kandinsky product showcase-compressed.pdf",
+    patternColor: "white",
+    image: {
+      pattern: { name: "Random", src: "Random - White.svg" },
+      grain: { name: "Natural Grains", src: "Natural Grains - White.svg" },
+      thumbnail: "Thumbnails_K.10.jpg",
+      filenames: [
+        "K.10-1.jpg",
+        "K.10-2.webp",
+        "K.10-3.jpeg",
+        "K.10-4.jpeg",
+        "K.10-5.jpg",
+        "Thumbnails_K.10.jpg",
+      ],
+    },
+  },
+
+  // productId: "K.11"
+  {
+    index: "K-11",
+    productId: "K.11",
+    name: "Chrobry",
+    category: "K",
+    description:
+      "Chrobry is a light and airy oak color that adds a sense of warmth and comfort to any space. Its natural and understated tone creates a timeless and classic look that can complement a variety of design styles. The light beige hue of Chrobry gives a sense of openness and tranquility, making it a perfect choice for creating a calming and inviting atmosphere.",
+    species: "Oak",
+    thickness: "15 mm",
+    grain: "Natural",
+    pdfShowcase: "Chrobry_Kandinsky product showcase-compressed.pdf",
+    patternColor: "black",
+    image: {
+      pattern: { name: "Random", src: "Random.svg" },
+      grain: { name: "Natural Grains", src: "Natural Grains.svg" },
+      thumbnail: "Thumbnails_K.11.jpg",
+      filenames: [
+        "K.11-1.jpg",
+        "K.11-2.jpg",
+        "K.11-3.jpg",
+        "K.11-4.jpg",
+        "K.11-5.jpg",
+        "K.11-6.jpg",
+        "Thumbnails_K.11.jpg",
+      ],
+    },
+  },
+
+  // productId: "K.12"
+  {
+    index: "K-12",
+    productId: "K.12",
+    name: "Larch",
+    category: "K",
+    description:
+      "Larch is a beautiful and rustic natural white oil coat over European larch. Its light and airy appearance adds a sense of spaciousness to any room, making it the perfect choice for those who want a clean and fresh look. The grain patterns in the wood give it a unique character and depth, while the natural oil coat adds a touch of modern sophistication. Larch is a versatile and timeless choice that can complement a wide range of interior design styles.",
+    species: "Oak",
+    thickness: "15 mm",
+    grain: "Natural",
+    pdfShowcase: "Larch_Kandinsky product showcase-compressed.pdf",
+    patternColor: "black",
+    image: {
+      pattern: { name: "Random", src: "Random.svg" },
+      grain: { name: "Natural Grains", src: "Natural Grains.svg" },
+      thumbnail: "Thumbnails_K.12.jpg",
+      filenames: [
+        "K.12-1.jpeg",
+        "K.12-2.jpeg",
+        "K.12-3.jpeg",
+        "K.12-4.jpeg",
+        "Thumbnails_K.12.jpg",
       ],
     },
   },

@@ -158,4 +158,19 @@ export const products: IProduct[] = [
     productId: "K.9",
     dimension: "190 mm (w) * 1900 mm (l)",
   },
+  {
+    sku: "K.10",
+    productId: "K.10",
+    dimension: "190 mm (w) * 1900 mm (l)",
+  },
+  {
+    sku: "K.11",
+    productId: "K.11",
+    dimension: "190 mm (w) * 1900 mm (l)",
+  },
+  {
+    sku: "K.12",
+    productId: "K.12",
+    dimension: "190 mm (w) * 1900 mm (l)",
+  },
 ];
