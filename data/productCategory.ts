@@ -644,7 +644,7 @@ export const categories: IProductCategory[] = [
     species: "Oak",
     thickness: "15 mm",
     grain: "Natural",
-    pdfShowcase: "#",
+    pdfShowcase: "Siberia_Kandinsky product showcase-compressed.pdf",
     patternColor: "white",
     image: {
       pattern: { name: "Random", src: "Random - White.svg" },
@@ -665,7 +665,7 @@ export const categories: IProductCategory[] = [
     species: "Oak",
     thickness: "15 mm",
     grain: "Natural",
-    pdfShowcase: "#",
+    pdfShowcase: "Tuman_Kandinsky product showcase-compressed.pdf",
     patternColor: "white",
     image: {
       pattern: { name: "Random", src: "Random - White.svg" },
@@ -694,7 +694,7 @@ export const categories: IProductCategory[] = [
     species: "Oak",
     thickness: "15 mm",
     grain: "Natural",
-    pdfShowcase: "#",
+    pdfShowcase: "Zerno_Kandinsky product showcase-compressed.pdf",
     patternColor: "black",
     image: {
       pattern: { name: "Random", src: "Random.svg" },
@@ -723,7 +723,7 @@ export const categories: IProductCategory[] = [
     species: "Oak",
     thickness: "15 mm",
     grain: "Natural",
-    pdfShowcase: "#",
+    pdfShowcase: "Zima_Kandinsky product showcase-compressed.pdf",
     patternColor: "black",
     image: {
       pattern: { name: "Random", src: "Random.svg" },
