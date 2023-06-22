@@ -2,7 +2,7 @@ import { MetadataRoute } from "next";
 import { categories } from "@/data/productCategory";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseURL: string = "https://k-floors.com";
+  const baseURL: string = "https://www.k-floors.com";
   const productURLs = categories.map((p) => ({
     url: `${baseURL}/product/${p.index}`,
     lastModified: new Date(),
