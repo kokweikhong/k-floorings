@@ -683,10 +683,6 @@ video {
   z-index: 2;
 }
 
-.z-30 {
-  z-index: 30;
-}
-
 .col-span-2 {
   grid-column: span 2 / span 2;
 }
@@ -1231,16 +1227,6 @@ video {
   animation: bounce 1s infinite;
 }
 
-@keyframes spin {
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-.animate-spin {
-  animation: spin 1s linear infinite;
-}
-
 @keyframes bounce {
   0%, 100% {
     transform: translateY(-25%);
@@ -1255,6 +1241,16 @@ video {
 
 .animate-bounce-slow {
   animation: bounce 3s infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.animate-spin {
+  animation: spin 1s linear infinite;
 }
 
 .cursor-pointer {
