@@ -23,7 +23,7 @@ const projects = [
   {
     img: { src: project3, alt: "" },
     title: "Monocot Soleil",
-    material: "Kandinsk (Pugachov & Bartek)",
+    material: "Kandinsky (Pugachov & Bartek)",
   },
 ];
 
