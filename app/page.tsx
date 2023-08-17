@@ -88,7 +88,7 @@ export default function Home() {
                     className="w-full h-full"
                   />
                 </div>
-                <span className="uppercase">coming soon</span>
+                {/* <span className="uppercase">coming soon</span> */}
               </div>
             </div>
           </div>
