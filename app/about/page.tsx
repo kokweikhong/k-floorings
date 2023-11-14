@@ -170,8 +170,8 @@ export default function AboutPage() {
           />
           <IconHolder
             svgImage={svgSGBC}
-            imgAlt="SGBC certified 12 ticks"
-            desc="SGBC certified (12 ticks)"
+            imgAlt="SGBC certified"
+            desc="SGBC certified"
           />
           <IconHolder
             svgImage={svgStats}
