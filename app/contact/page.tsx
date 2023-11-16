@@ -86,6 +86,48 @@ export default function ContactPage() {
 
       {/* google maps and contact details */}
       <section className="container mx-auto px-[15px] mt-[50px]">
+        {/* Singapore Marina Square */}
+        <div className="mt-[30px]">
+          <div className="w-full h-[400px]">
+            <iframe 
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3988.805163107347!2d103.855623210814!3d1.2912450986910595!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31da19c6efbdfc6b%3A0x8e8b9d96b9e349ff!2sCalvary%20Carpentry%20-%20Kandinsky%20Showroom!5e0!3m2!1sen!2ssg!4v1700121835088!5m2!1sen!2ssg" 
+              width="600"
+              height="450"
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+              allowFullScreen
+              className="w-full h-full"
+              ></iframe>
+          </div>
+          <div className="text-[20px] font-normal font-inter flex flex-col gap-[15px] justify-center mt-[30px]">
+            <h3 className="text-[20px] font-inter font-medium uppercase text-[#999]">
+              Singapore Showroom
+            </h3>
+            <p>#03-207 Marina Square, Singapore 039594</p>
+            <div className="flex items-center justify-start gap-2">
+              <div className="w-[24px] h-[24px]">
+                <Image
+                  src={svgMail}
+                  alt="mail icon"
+                  className="w-full h-full"
+                />
+              </div>
+              <span className="underline">sales@k-floors.com</span>
+            </div>
+            <div className="flex items-center justify-start gap-2">
+              <div className="w-[24px] h-[24px]">
+                <Image
+                  src={svgPhone}
+                  alt="phone icon"
+                  className="w-full h-full"
+                />
+              </div>
+              <span className="underline">+65 6910 6069</span>
+            </div>
+          </div>
+        </div>
+
+        
         {/* Singapore */}
         <div className="mt-[30px]">
           <div className="w-full h-[400px]">
@@ -101,7 +143,7 @@ export default function ContactPage() {
           </div>
           <div className="text-[20px] font-normal font-inter flex flex-col gap-[15px] justify-center mt-[30px]">
             <h3 className="text-[20px] font-inter font-medium uppercase text-[#999]">
-              Singapore
+              Singapore HQ
             </h3>
             <p>54 Senoko Road, Singapore 758118, Floor 1</p>
             <div className="flex items-center justify-start gap-2">
