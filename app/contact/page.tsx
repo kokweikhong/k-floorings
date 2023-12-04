@@ -15,6 +15,8 @@ import SendingEmail from "@/components/SendingEmail";
 import EmailHasSubmitted from "@/components/EmailHasSubmitted";
 import FailedToSubmitRequestEmail from "@/components/FailedToSubmitRequestEmail";
 
+import Script from 'next/script'
+
 export default function ContactPage() {
   const [isFailToSubmit, setIsFailToSubmit] = useState(false);
   const [isSubmit, setIsSubmit] = useState(false);
@@ -67,6 +69,17 @@ export default function ContactPage() {
   if (isFailToSubmit) return <FailedToSubmitRequestEmail />;
   return (
     <main>
+      <Script async src="https://www.googletagmanager.com/gtag/js?id=G-ZGN4CPXHW1" />
+      <Script id="google-analytics">
+        {`
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+        
+          gtag('config', 'G-ZGN4CPXHW1');
+        `}
+      </Script>
+
       {/* national logos */}
       <section className="mt-[50px] container mx-auto px-[15px]">
         <h2 className="text-[40px] font-semibold text-center">Contact Us</h2>
