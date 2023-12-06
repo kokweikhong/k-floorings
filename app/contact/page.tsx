@@ -1,21 +1,20 @@
 "use client";
 
 import Image from "next/image";
-import { useForm } from "react-hook-form";
-import { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
+import { useEffect, useState } from "react";
+import { useForm } from "react-hook-form";
 
-import svgSingapore from "../../public/icons/Singapore.svg";
 import svgMalaysia from "../../public/icons/Malaysia.svg";
+import svgSingapore from "../../public/icons/Singapore.svg";
 
-import svgPhone from "../../public/icons/phone.svg";
 import svgMail from "../../public/icons/mail.svg";
+import svgPhone from "../../public/icons/phone.svg";
 
-import SendingEmail from "@/components/SendingEmail";
 import EmailHasSubmitted from "@/components/EmailHasSubmitted";
 import FailedToSubmitRequestEmail from "@/components/FailedToSubmitRequestEmail";
-
-import Script from 'next/script'
+import SendingEmail from "@/components/SendingEmail";
+import Script from "next/script";
 
 export default function ContactPage() {
   const [isFailToSubmit, setIsFailToSubmit] = useState(false);
@@ -69,14 +68,17 @@ export default function ContactPage() {
   if (isFailToSubmit) return <FailedToSubmitRequestEmail />;
   return (
     <main>
-      <Script async src="https://www.googletagmanager.com/gtag/js?id=G-ZGN4CPXHW1" />
+      <Script
+        async
+        src="https://www.googletagmanager.com/gtag/js?id=AW-11429172076"
+      />
       <Script id="google-analytics">
         {`
           window.dataLayer = window.dataLayer || [];
           function gtag(){dataLayer.push(arguments);}
           gtag('js', new Date());
         
-          gtag('config', 'G-ZGN4CPXHW1');
+          gtag('config', 'AW-11429172076');
         `}
       </Script>
 
@@ -102,15 +104,15 @@ export default function ContactPage() {
         {/* Singapore Marina Square */}
         <div className="mt-[30px]">
           <div className="w-full h-[400px]">
-            <iframe 
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3988.805163107347!2d103.855623210814!3d1.2912450986910595!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31da19c6efbdfc6b%3A0x8e8b9d96b9e349ff!2sCalvary%20Carpentry%20-%20Kandinsky%20Showroom!5e0!3m2!1sen!2ssg!4v1700121835088!5m2!1sen!2ssg" 
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3988.805163107347!2d103.855623210814!3d1.2912450986910595!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31da19c6efbdfc6b%3A0x8e8b9d96b9e349ff!2sCalvary%20Carpentry%20-%20Kandinsky%20Showroom!5e0!3m2!1sen!2ssg!4v1700121835088!5m2!1sen!2ssg"
               width="600"
               height="450"
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"
               allowFullScreen
               className="w-full h-full"
-              ></iframe>
+            ></iframe>
           </div>
           <div className="text-[20px] font-normal font-inter flex flex-col gap-[15px] justify-center mt-[30px]">
             <h3 className="text-[20px] font-inter font-medium uppercase text-[#999]">
@@ -140,7 +142,6 @@ export default function ContactPage() {
           </div>
         </div>
 
-        
         {/* Singapore */}
         <div className="mt-[30px]">
           <div className="w-full h-[400px]">
