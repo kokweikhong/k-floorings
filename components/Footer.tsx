@@ -189,7 +189,7 @@ const Footer: React.FC = () => {
           </div>
           <div>
             <ul className="flex flex-col gap-1">
-              <li>Privacy Policy</li>
+              <li><Link href="/privacy-policy">Privacy Policy</Link></li>
               <li>Terms of Use</li>
               <li>Sitemap</li>
             </ul>
