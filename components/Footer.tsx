@@ -11,7 +11,9 @@ import svgFacebook from "../public/icons/facebook.svg";
 import svgLinkedin from "../public/icons/linkedin.svg";
 import svgWhatsapp from "../public/icons/whatsapp.svg";
 import svgYoutube from "../public/icons/youtube.svg";
+import svgInstagram from "../public/icons/instagram.svg";
 import React, { useEffect, useState } from "react";
+import { contactLink } from "@/constants/contacts";
 
 const Footer: React.FC = () => {
   const [margin, setMargin] = useState<string>("mb-0");
@@ -46,7 +48,7 @@ const Footer: React.FC = () => {
             <h4 className="text-[#999]">
               <span className="text-[20px] font-medium">SINGAPORE</span>
             </h4>
-            <p className="">#03-207 Marina Square 039594</p>
+            <p className="">{contactLink.sg.msShowroomAddr}</p>
             <div className="flex items-center">
               <div className="w-[36px] h-[36px]">
                 <Image
@@ -55,7 +57,7 @@ const Footer: React.FC = () => {
                   className="w-full h-full"
                 />
               </div>
-              <span className="ml-1">sales@k-floors.com</span>
+              <span className="ml-1">{contactLink.sg.email}</span>
             </div>
             <div className="flex items-center">
               <div className="w-[36px] h-[36px]">
@@ -65,7 +67,17 @@ const Footer: React.FC = () => {
                   className="w-full h-full"
                 />
               </div>
-              <span className="ml-1">+65 6910 6069</span>
+              <span className="ml-1">{contactLink.sg.contactNumber}</span>
+            </div>
+            <div className="flex items-center">
+              <div className="w-[36px] h-[36px]">
+                <Image
+                  src={svgPhone}
+                  alt="contact number Singapore"
+                  className="w-full h-full"
+                />
+              </div>
+              <span className="ml-1">{contactLink.sg.hqContactNumber}</span>
             </div>
           </div>
           {/* Malaysia */}
@@ -73,10 +85,7 @@ const Footer: React.FC = () => {
             <h4 className="text-[#999]">
               <span className="text-[20px]">MALAYSIA</span>
             </h4>
-            <p>
-              No. 26, Jalan Laman Setia 7/6, Taman Laman Setia,81550 Gelang
-              Patah, Johor, Malaysia.
-            </p>
+            <p>{contactLink.my.factoryAddr}</p>
             <div className="flex items-center">
               <div className="w-[36px] h-[36px]">
                 <Image
@@ -85,7 +94,7 @@ const Footer: React.FC = () => {
                   className="w-full h-full"
                 />
               </div>
-              <span className="ml-1">msia@calvarycarpentry.com</span>
+              <span className="ml-1">{contactLink.my.email}</span>
             </div>
             <div className="flex items-center gap-1">
               <div className="w-[36px] h-[36px]">
@@ -95,7 +104,7 @@ const Footer: React.FC = () => {
                   className="w-full h-full"
                 />
               </div>
-              <span className="ml-1">+60 16-778 5788</span>
+              <span className="ml-1">{contactLink.my.contactNumber}</span>
             </div>
           </div>
         </div>
@@ -109,9 +118,9 @@ const Footer: React.FC = () => {
               </span>
             </h3>
           </div>
-          <div className="grid grid-cols-3 gap-3">
+          <div className="grid grid-cols-4 gap-3">
             <Link
-              href="tel:6566844012"
+              href={contactLink.sg.contactNumberTel}
               className="w-[52px] h-[52px] p-1 border border-black"
             >
               <Image
@@ -122,7 +131,7 @@ const Footer: React.FC = () => {
             </Link>
 
             <Link
-              href="https://wa.me/6587767837"
+              href={contactLink.sg.whatsapp}
               className="w-[52px] h-[52px] p-1 border border-black"
             >
               <Image
@@ -133,7 +142,7 @@ const Footer: React.FC = () => {
             </Link>
 
             <Link
-              href="https://www.linkedin.com/company/calvary-carpentry/"
+              href={contactLink.sg.linkedin}
               className="w-[52px] h-[52px] p-1 border border-black"
             >
               <Image
@@ -144,7 +153,7 @@ const Footer: React.FC = () => {
             </Link>
 
             <Link
-              href="https://goo.gl/maps/cD2nUGF7Go32EhRcA"
+              href={contactLink.sg.googleMap}
               className="w-[52px] h-[52px] p-1 border border-black"
             >
               <Image
@@ -155,7 +164,7 @@ const Footer: React.FC = () => {
             </Link>
 
             <Link
-              href="https://www.youtube.com/@calvarycarpentry"
+              href={contactLink.sg.youtube}
               className="w-[52px] h-[52px] p-1 border border-black"
             >
               <Image
@@ -166,12 +175,23 @@ const Footer: React.FC = () => {
             </Link>
 
             <Link
-              href="https://www.facebook.com/calvarycarpentry/"
+              href={contactLink.sg.facebook}
               className="w-[52px] h-[52px] p-1 border border-black"
             >
               <Image
                 src={svgFacebook}
                 alt="facebook icon"
+                className="w-full h-full"
+              />
+            </Link>
+
+            <Link
+              href={contactLink.sg.instagram}
+              className="w-[52px] h-[52px] p-1 border border-black"
+            >
+              <Image
+                src={svgInstagram}
+                alt="instagram icon"
                 className="w-full h-full"
               />
             </Link>
@@ -189,7 +209,9 @@ const Footer: React.FC = () => {
           </div>
           <div>
             <ul className="flex flex-col gap-1">
-              <li><Link href="/privacy-policy">Privacy Policy</Link></li>
+              <li>
+                <Link href="/privacy-policy">Privacy Policy</Link>
+              </li>
               <li>Terms of Use</li>
               <li>Sitemap</li>
             </ul>
@@ -208,7 +230,7 @@ const Footer: React.FC = () => {
 
         {/* copyright */}
         <div className="md:col-span-full">
-          <p className="text-base text-center">201407349E ©2023 k-floorings</p>
+          <p className="text-base text-center">201407349E ©2024 k-floorings</p>
         </div>
       </div>
     </footer>

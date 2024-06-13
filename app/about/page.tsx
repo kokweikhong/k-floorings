@@ -91,7 +91,7 @@ const faqs: { question: string; answer: string[] }[] = [
     question: "When will i receive my sample?",
     answer: [
       "We'll call you to confirm your delivery details before delivering to your preferred time slot.",
-      "If you prefer to pick up your order in Singapore, our showroom is open on weekdays from 9:30 am to 6:30 pm, and on Saturdays from 10 am to 2 pm.",
+      "If you prefer to pick up your order in Singapore, our showroom is open on daily from 11:00 am to 7:30 pm.",
       "For pick up in Malaysia, please contact us at +60 16-778 5788 to arrange your preferred time slot.",
     ],
   },

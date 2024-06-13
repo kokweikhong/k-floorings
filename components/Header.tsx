@@ -3,7 +3,6 @@
 import Image from "next/image";
 import Link from "next/link";
 import React, { useContext, useEffect, useState } from "react";
-import { usePathname } from "next/navigation";
 import { ProductContext } from "@/context/product";
 
 const NavLink: React.FC<{ href: string; text: string }> = ({ href, text }) => {
@@ -22,58 +21,14 @@ const NavLink: React.FC<{ href: string; text: string }> = ({ href, text }) => {
 const Header: React.FC = () => {
   const [isBurgerMenuClose, setIsBurgerMenuClose] = useState(false);
   const [isMenuOverlay, setIsMenuOverlay] = useState(false);
-  const [isHeaderHide, setIsHeaderHide] = useState(false);
-  const [lastScrollY, setLastScrollY] = useState(300);
-  const pathname = usePathname();
   const { categories } = useContext(ProductContext);
-
-  useEffect(() => {
-    setIsBurgerMenuClose(false);
-    setIsMenuOverlay(false);
-    if (typeof window !== "undefined") {
-      window.scrollTo({
-        top: 0,
-      });
-      if (pathname === "/") {
-        setIsHeaderHide(true);
-
-        window.addEventListener("scroll", controlNavbar);
-
-        // cleanup function
-        return () => {
-          window.removeEventListener("scroll", controlNavbar);
-        };
-      } else {
-        setIsHeaderHide(false);
-      }
-    }
-  }, [pathname]);
-
-  const controlNavbar = () => {
-    if (typeof window !== "undefined") {
-      if (window.scrollY < lastScrollY) {
-        // if scroll down hide the navbar
-        setIsHeaderHide(true);
-      } else {
-        // if scroll up show the navbar
-        setIsHeaderHide(false);
-      }
-
-      // remember current page location to use in the next move
-      setLastScrollY(window.scrollY);
-    }
-  };
 
   function handleMenuToggle() {
     setIsBurgerMenuClose((current) => !current);
     setIsMenuOverlay((current) => !current);
   }
   return (
-    <header
-      className={`${
-        isHeaderHide ? "hidden" : "block"
-      } sticky top-0 w-full bg-[#000] z-50 h-[65px]`}
-    >
+    <header className="sticky top-0 w-full bg-[#000] z-50 h-[65px]">
       <nav className="container relative flex w-full h-full p-5 mx-auto">
         <div className="my-auto mr-auto">
           <Link href="/" shallow>

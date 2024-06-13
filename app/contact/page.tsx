@@ -15,6 +15,7 @@ import EmailHasSubmitted from "@/components/EmailHasSubmitted";
 import FailedToSubmitRequestEmail from "@/components/FailedToSubmitRequestEmail";
 import SendingEmail from "@/components/SendingEmail";
 import Script from "next/script";
+import { contactLink } from "@/constants/contacts";
 
 export default function ContactPage() {
   const [isFailToSubmit, setIsFailToSubmit] = useState(false);
@@ -118,7 +119,7 @@ export default function ContactPage() {
             <h3 className="text-[20px] font-inter font-medium uppercase text-[#999]">
               Singapore Showroom
             </h3>
-            <p>#03-207 Marina Square, Singapore 039594</p>
+            <p>{contactLink.sg.msShowroomAddr}</p>
             <div className="flex items-center justify-start gap-2">
               <div className="w-[24px] h-[24px]">
                 <Image
@@ -127,7 +128,7 @@ export default function ContactPage() {
                   className="w-full h-full"
                 />
               </div>
-              <span className="underline">sales@k-floors.com</span>
+              <span className="underline">{contactLink.sg.email}</span>
             </div>
             <div className="flex items-center justify-start gap-2">
               <div className="w-[24px] h-[24px]">
@@ -137,7 +138,7 @@ export default function ContactPage() {
                   className="w-full h-full"
                 />
               </div>
-              <span className="underline">+65 6910 6069</span>
+              <span className="underline">{contactLink.sg.contactNumber}</span>
             </div>
           </div>
         </div>
@@ -159,7 +160,7 @@ export default function ContactPage() {
             <h3 className="text-[20px] font-inter font-medium uppercase text-[#999]">
               Singapore HQ
             </h3>
-            <p>54 Senoko Road, Singapore 758118, Floor 1</p>
+            <p>{contactLink.sg.officeAddr}</p>
             <div className="flex items-center justify-start gap-2">
               <div className="w-[24px] h-[24px]">
                 <Image
@@ -168,7 +169,7 @@ export default function ContactPage() {
                   className="w-full h-full"
                 />
               </div>
-              <span className="underline">sales@calvarycarpentry.com</span>
+              <span className="underline">{contactLink.sg.hqEmail}</span>
             </div>
             <div className="flex items-center justify-start gap-2">
               <div className="w-[24px] h-[24px]">
@@ -178,7 +179,9 @@ export default function ContactPage() {
                   className="w-full h-full"
                 />
               </div>
-              <span className="underline">+65 8776 7837</span>
+              <span className="underline">
+                {contactLink.sg.hqContactNumber}
+              </span>
             </div>
           </div>
         </div>
@@ -200,10 +203,7 @@ export default function ContactPage() {
             <h3 className="text-[20px] font-inter font-medium uppercase text-[#999]">
               Malaysia
             </h3>
-            <p>
-              No. 26, Jalan Laman Setia 7/6, Taman Laman Setia,81550 Gelang
-              Patah, Johor, Malaysia.
-            </p>
+            <p>{contactLink.my.factoryAddr}</p>
             <div className="flex items-center justify-start gap-2">
               <div className="w-[24px] h-[24px]">
                 <Image
@@ -212,7 +212,7 @@ export default function ContactPage() {
                   className="w-full h-full"
                 />
               </div>
-              <span className="underline">Msia@calvarycarpentry.com</span>
+              <span className="underline">{contactLink.my.email}</span>
             </div>
             <div className="flex items-center justify-start gap-2">
               <div className="w-[24px] h-[24px]">
@@ -222,7 +222,7 @@ export default function ContactPage() {
                   className="w-full h-full"
                 />
               </div>
-              <span className="underline">+60 16-778 5788</span>
+              <span className="underline">{contactLink.my.contactNumber}</span>
             </div>
           </div>
         </div>
