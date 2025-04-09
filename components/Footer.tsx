@@ -48,7 +48,7 @@ const Footer: React.FC = () => {
             <h4 className="text-[#999]">
               <span className="text-[20px] font-medium">SINGAPORE</span>
             </h4>
-            <p className="">{contactLink.sg.msShowroomAddr}</p>
+            <p className="">{contactLink.sg.officeAddr}</p>
             <div className="flex items-center">
               <div className="w-[36px] h-[36px]">
                 <Image
@@ -67,7 +67,7 @@ const Footer: React.FC = () => {
                   className="w-full h-full"
                 />
               </div>
-              <span className="ml-1">{contactLink.sg.contactNumber}</span>
+              <span className="ml-1">{contactLink.sg.hqContactNumber1}</span>
             </div>
             <div className="flex items-center">
               <div className="w-[36px] h-[36px]">
@@ -77,7 +77,7 @@ const Footer: React.FC = () => {
                   className="w-full h-full"
                 />
               </div>
-              <span className="ml-1">{contactLink.sg.hqContactNumber}</span>
+              <span className="ml-1">{contactLink.sg.hqContactNumber2}</span>
             </div>
           </div>
           {/* Malaysia */}

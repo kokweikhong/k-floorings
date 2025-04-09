@@ -206,9 +206,8 @@ export default function CataloguePage() {
           href="/catalogue/sample-form"
           className="bg-secondary uppercase text-[#fff] rounded-[40px] text-[13px] leading-[16px] tracking-[2px] px-[32px] py-[24px] font-semibold"
         >
-          {`Request for free sample (${
-            categories.filter((ele) => ele.isSelected).length
-          })`}
+          {`Request for free sample (${categories.filter((ele) => ele.isSelected).length
+            })`}
         </Link>
         <div className="flex flex-col items-center justify-center gap-2">
           <p className="text-[10px] leading-[12px]">or contact us at</p>
@@ -222,7 +221,7 @@ export default function CataloguePage() {
                 className="w-full h-full"
               />
             </Link>
-            <Link href="tel:6566844012" className="w-[45px] h-[45px]">
+            <Link href="tel:6587767837" className="w-[45px] h-[45px]">
               <Image
                 src="/icons/phone.svg"
                 alt="phone icon"

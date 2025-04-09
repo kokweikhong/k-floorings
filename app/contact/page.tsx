@@ -103,6 +103,7 @@ export default function ContactPage() {
       {/* google maps and contact details */}
       <section className="container mx-auto px-[15px] mt-[50px]">
         {/* Singapore Marina Square */}
+        {/*
         <div className="mt-[30px]">
           <div className="w-full h-[400px]">
             <iframe
@@ -142,7 +143,7 @@ export default function ContactPage() {
             </div>
           </div>
         </div>
-
+        */}
         {/* Singapore */}
         <div className="mt-[30px]">
           <div className="w-full h-[400px]">
@@ -158,7 +159,7 @@ export default function ContactPage() {
           </div>
           <div className="text-[20px] font-normal font-inter flex flex-col gap-[15px] justify-center mt-[30px]">
             <h3 className="text-[20px] font-inter font-medium uppercase text-[#999]">
-              Singapore HQ
+              Singapore
             </h3>
             <p>{contactLink.sg.officeAddr}</p>
             <div className="flex items-center justify-start gap-2">
@@ -180,7 +181,19 @@ export default function ContactPage() {
                 />
               </div>
               <span className="underline">
-                {contactLink.sg.hqContactNumber}
+                {contactLink.sg.hqContactNumber1}
+              </span>
+            </div>
+            <div className="flex items-center justify-start gap-2">
+              <div className="w-[24px] h-[24px]">
+                <Image
+                  src={svgPhone}
+                  alt="phone icon"
+                  className="w-full h-full"
+                />
+              </div>
+              <span className="underline">
+                {contactLink.sg.hqContactNumber2}
               </span>
             </div>
           </div>
