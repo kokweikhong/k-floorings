@@ -42,7 +42,6 @@ export interface ISampleForm {
   address2: string;
   city: string;
   company: string;
-  delivery: string;
   email: string;
   mailing: string;
   name: string;
@@ -76,7 +75,6 @@ export default function SampleFormPage() {
     address2: "",
     city: "",
     company: "",
-    delivery: "",
     email: "",
     mailing: "",
     name: "",
@@ -426,27 +424,6 @@ export default function SampleFormPage() {
               {/* add a text "pick up only" */}
               <p className="text-[16px] text-[#767676] mt-1">Pick up only</p>
               {errors.mailing && <p role="alert">Mailing is requred</p>}
-
-              {/* <select
-                {...register("delivery", {
-                  required: "Delivery or Pick up?",
-                  pattern: {
-                    value: /^delivery$|^pickup$/,
-                    message: "Delivery or Pick up?",
-                  },
-                })}
-                defaultValue=""
-                className="text-[20px] font-medium p-2 bg-[#fff] w-3/4"
-              >
-                <option value="" disabled>
-                  Delivery / Pick up
-                </option>
-                <option value="delivery">Delivery</option>
-                <option value="pickup">Pick up</option>
-              </select>
-              {errors.delivery && (
-                <p role="alert">Delivery method is requred</p>
-              )} */}
             </div>
 
             {/* address1 */}
