@@ -13,6 +13,8 @@ import FailedToSubmitRequestEmail from "@/components/FailedToSubmitRequestEmail"
 import { IProductCategory } from "@/types/productCategory";
 import { IProduct } from "@/types/product";
 
+import PickUpNotice from "@/components/PickUpNotice";
+
 const NotProductIsSelected = () => {
   return (
     <section className="container mx-auto px-[15px] mt-[50px]">
@@ -178,6 +180,7 @@ export default function SampleFormPage() {
 
   return (
     <main>
+      <PickUpNotice />
       <section className="container mx-auto px-[15px] mt-[50px]">
         <h2 className="text-[40px] text-center font-semibold font-inter">
           Sample Form
@@ -402,7 +405,7 @@ export default function SampleFormPage() {
             {/* maillig address */}
             <div className="flex flex-col">
               <label className="text-[20px] font-medium mb-[8px] text-[#767676]">
-                Mailing Address:
+                Collection Point:
               </label>
               <select
                 {...register("mailing", {
@@ -420,9 +423,11 @@ export default function SampleFormPage() {
                 <option value="Singapore">Singapore</option>
                 <option value="Malaysia">Malaysia</option>
               </select>
+              {/* add a text "pick up only" */}
+              <p className="text-[16px] text-[#767676] mt-1">Pick up only</p>
               {errors.mailing && <p role="alert">Mailing is requred</p>}
 
-              <select
+              {/* <select
                 {...register("delivery", {
                   required: "Delivery or Pick up?",
                   pattern: {
@@ -441,7 +446,7 @@ export default function SampleFormPage() {
               </select>
               {errors.delivery && (
                 <p role="alert">Delivery method is requred</p>
-              )}
+              )} */}
             </div>
 
             {/* address1 */}
