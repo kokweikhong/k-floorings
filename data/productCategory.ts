@@ -32,7 +32,7 @@ export const categories: IProductCategory[] = [
     image: {
       pattern: { name: "Chevron", src: "Chevron.svg" },
       grain: { name: "Natural Grains", src: "Natural Grains.svg" },
-      thumbnail: "Thumbnails_KL1.C.jpg",
+      thumbnail: getImageURL("KL1.C/Thumbnails_KL1.C.jpg"),
       filenames: [
         getImageURL("KL1.C/KL1.C-1.jpg"),
         getImageURL("KL1.C/KL1.C-2.jpg"),
@@ -60,7 +60,7 @@ export const categories: IProductCategory[] = [
     image: {
       pattern: { name: "Chevron", src: "Chevron - White.svg" },
       grain: { name: "Natural Grains", src: "Natural Grains - White.svg" },
-      thumbnail: "Thumbnails_KL2.C.jpg",
+      thumbnail: getImageURL("KL2.C/Thumbnails_KL2.C.jpg"),
       filenames: [
         getImageURL("KL2.C/KL2.C-1.jpg"),
         getImageURL("KL2.C/KL2.C-2.jpg"),
@@ -89,7 +89,7 @@ export const categories: IProductCategory[] = [
     image: {
       pattern: { name: "Straight", src: "Straight.svg" },
       grain: { name: "Straight Grains", src: "Straight Grains.svg" },
-      thumbnail: "Thumbnails_KL1.S.jpg",
+      thumbnail: getImageURL("KL1.S/Thumbnails_KL1.S.jpg"),
       filenames: [
         getImageURL("KL1.S/KL1.S-1.jpg"),
         getImageURL("KL1.S/KL1.S-2.jpg"),
@@ -117,7 +117,7 @@ export const categories: IProductCategory[] = [
     image: {
       pattern: { name: "Straight", src: "Straight.svg" },
       grain: { name: "Straight Grains", src: "Straight Grains.svg" },
-      thumbnail: "Thumbnails_KL3.jpg",
+      thumbnail: getImageURL("KL3/Thumbnails_KL3.jpg"),
       filenames: [
         getImageURL("KL3/KL3-1.jpg"),
         getImageURL("KL3/KL3-2.jpg"),
@@ -146,7 +146,7 @@ export const categories: IProductCategory[] = [
     image: {
       pattern: { name: "Herringbone", src: "Herringbone - White.svg" },
       grain: { name: "Natural Grains", src: "Natural Grains - White.svg" },
-      thumbnail: "Thumbnails_KL4.H.jpg",
+      thumbnail: getImageURL("KL4.H/Thumbnails_KL4.H.jpg"),
       filenames: [
         getImageURL("KL4.H/KL4.H-1.jpg"),
         getImageURL("KL4.H/KL4.H-2.jpg"),
@@ -174,7 +174,7 @@ export const categories: IProductCategory[] = [
     image: {
       pattern: { name: "Herringbone", src: "Herringbone.svg" },
       grain: { name: "Natural Grains", src: "Natural Grains.svg" },
-      thumbnail: "Thumbnails_KL5.H.jpg",
+      thumbnail: getImageURL("KL5.H/Thumbnails_KL5.H.jpg"),
       filenames: [
         getImageURL("KL5.H/KL5.H-1.jpg"),
         getImageURL("KL5.H/KL5.H-2.jpg"),
@@ -202,7 +202,7 @@ export const categories: IProductCategory[] = [
     image: {
       pattern: { name: "Straight", src: "Straight - White.svg" },
       grain: { name: "Natural Grains", src: "Natural Grains - White.svg" },
-      thumbnail: "Thumbnails_KL6.jpg",
+      thumbnail: getImageURL("KL6/Thumbnails_KL6.jpg"),
       filenames: [
         getImageURL("KL6/KL6-1.jpg"),
         getImageURL("KL6/KL6-2.jpg"),
@@ -229,7 +229,7 @@ export const categories: IProductCategory[] = [
     image: {
       pattern: { name: "Straight", src: "Straight - White.svg" },
       grain: { name: "Natural Grains", src: "Natural Grains - White.svg" },
-      thumbnail: "Thumbnails_KL7.jpg",
+      thumbnail: getImageURL("KL7/Thumbnails_KL7.jpg"),
       filenames: [
         getImageURL("KL7/KL7-1.jpg"),
         getImageURL("KL7/KL7-2.jpg"),
@@ -256,7 +256,7 @@ export const categories: IProductCategory[] = [
     image: {
       pattern: { name: "Straight", src: "Straight.svg" },
       grain: { name: "Natural Grains", src: "Natural Grains.svg" },
-      thumbnail: "Thumbnails_KL10.jpg",
+      thumbnail: getImageURL("KL10/Thumbnails_KL10.jpg"),
       filenames: [
         getImageURL("KL10/KL10-1.jpg"),
         getImageURL("KL10/KL10-2.jpg"),
@@ -284,7 +284,7 @@ export const categories: IProductCategory[] = [
     image: {
       pattern: { name: "Straight", src: "Straight.svg" },
       grain: { name: "Natural Grains", src: "Natural Grains.svg" },
-      thumbnail: "Thumbnails_KL11.jpg",
+      thumbnail: getImageURL("KL11/Thumbnails_KL11.jpg"),
       filenames: [
         getImageURL("KL11/KL11-1.jpg"),
         getImageURL("KL11/KL11-2.jpg"),
@@ -313,7 +313,7 @@ export const categories: IProductCategory[] = [
     image: {
       pattern: { name: "Straight", src: "Straight - White.svg" },
       grain: { name: "Natural Grains", src: "Natural Grains - White.svg" },
-      thumbnail: "Thumbnails_KL13.jpg",
+      thumbnail: getImageURL("KL13/Thumbnails_KL13.jpg"),
       filenames: [
         getImageURL("KL13/KL13-1.jpg"),
         getImageURL("KL13/KL13-2.jpg"),
@@ -340,7 +340,7 @@ export const categories: IProductCategory[] = [
     image: {
       pattern: { name: "Straight", src: "Straight.svg" },
       grain: { name: "Natural Grains", src: "Natural Grains.svg" },
-      thumbnail: "Thumbnails_KL14.jpg",
+      thumbnail: getImageURL("KL14/Thumbnails_KL14.jpg"),
       filenames: [
         getImageURL("KL14/KL14-1.jpg"),
         getImageURL("KL14/KL14-2.jpg"),
@@ -369,7 +369,7 @@ export const categories: IProductCategory[] = [
     image: {
       pattern: { name: "Straight", src: "Straight - White.svg" },
       grain: { name: "Natural Grains", src: "Natural Grains - White.svg" },
-      thumbnail: "Thumbnails_KL15.jpg",
+      thumbnail: getImageURL("KL15/Thumbnails_KL15.jpg"),
       filenames: [
         getImageURL("KL15/KL15-1.jpg"),
         getImageURL("KL15/KL15-2.jpg"),
@@ -398,7 +398,7 @@ export const categories: IProductCategory[] = [
     image: {
       pattern: { name: "Chevron", src: "Chevron.svg" },
       grain: { name: "Natural Grains", src: "Natural Grains.svg" },
-      thumbnail: "Thumbnails_KL9.C.jpg",
+      thumbnail: getImageURL("KL9.C/Thumbnails_KL9.C.jpg"),
       filenames: [
         getImageURL("KL9.C/KL9.C-1.jpg"),
         getImageURL("KL9.C/KL9.C-2.jpg"),
@@ -429,7 +429,7 @@ export const categories: IProductCategory[] = [
     image: {
       pattern: { name: "Chevron", src: "Chevron - White.svg" },
       grain: { name: "Natural Grains", src: "Natural Grains - White.svg" },
-      thumbnail: "Thumbnails_KL12.C.jpg",
+      thumbnail: getImageURL("KL12.C/Thumbnails_KL12.C.jpg"),
       filenames: [
         getImageURL("KL12.C/KL12.C-1.jpg"),
         getImageURL("KL12.C/KL12.C-2.jpg"),
@@ -459,7 +459,7 @@ export const categories: IProductCategory[] = [
     image: {
       pattern: { name: "Herringbone", src: "Herringbone - White.svg" },
       grain: { name: "Natural Grains", src: "Natural Grains - White.svg" },
-      thumbnail: "Thumbnails_KL13.H.jpg",
+      thumbnail: getImageURL("KL13.H/Thumbnails_KL13.H.jpg"),
       filenames: [
         getImageURL("KL13.H/KL13.H-1.jpg"),
         getImageURL("KL13.H/KL13.H-2.jpg"),
@@ -487,7 +487,7 @@ export const categories: IProductCategory[] = [
     image: {
       pattern: { name: "Straight", src: "Straight.svg" },
       grain: { name: "Natural Grains", src: "Natural Grains.svg" },
-      thumbnail: "Thumbnails_KL1.jpg",
+      thumbnail: getImageURL("KL1/Thumbnails_KL1.jpg"),
       filenames: [
         getImageURL("KL1/KL1-1.jpg"),
         getImageURL("KL1/KL1-2.jpg"),
@@ -517,7 +517,7 @@ export const categories: IProductCategory[] = [
     image: {
       pattern: { name: "Herringbone", src: "Herringbone.svg" },
       grain: { name: "Natural Grains", src: "Natural Grains.svg" },
-      thumbnail: "Thumbnails_KL8.jpg",
+      thumbnail: getImageURL("KL8/Thumbnails_KL8.jpg"),
       filenames: [
         getImageURL("KL8/KL8-1.jpg"),
         getImageURL("KL8/KL8-2.jpg"),
@@ -547,7 +547,7 @@ export const categories: IProductCategory[] = [
     image: {
       pattern: { name: "Random", src: "Random.svg" },
       grain: { name: "Natural Grains", src: "Natural Grains.svg" },
-      thumbnail: "Thumbnails_K.1.jpg",
+      thumbnail: getImageURL("K.1/Thumbnails_K.1.jpg"),
       filenames: [
         getImageURL("K.1/K.1-1.jpg"),
         getImageURL("K.1/K.1-2.jpg"),
@@ -574,7 +574,7 @@ export const categories: IProductCategory[] = [
     image: {
       pattern: { name: "Random", src: "Random - White.svg" },
       grain: { name: "Natural Grains", src: "Natural Grains - White.svg" },
-      thumbnail: "Thumbnails_K.2.jpg",
+      thumbnail: getImageURL("K.2/Thumbnails_K.2.jpg"),
       filenames: [
         getImageURL("K.2/K.2-1.png"),
         getImageURL("K.2/K.2-2.png"),
@@ -599,7 +599,7 @@ export const categories: IProductCategory[] = [
     image: {
       pattern: { name: "Random", src: "Random - White.svg" },
       grain: { name: "Natural Grains", src: "Natural Grains - White.svg" },
-      thumbnail: "Thumbnails_K.3.jpg",
+      thumbnail: getImageURL("K.3/Thumbnails_K.3.jpg"),
       filenames: [getImageURL("K.3-1.jpg"), getImageURL("Thumbnails_K.3.jpg")],
     },
   },
@@ -620,13 +620,13 @@ export const categories: IProductCategory[] = [
     image: {
       pattern: { name: "Random", src: "Random - White.svg" },
       grain: { name: "Natural Grains", src: "Natural Grains - White.svg" },
-      thumbnail: "Thumbnails_K.4.jpg",
+      thumbnail: getImageURL("K.4/Thumbnails_K.4.jpg"),
       filenames: [
-        getImageURL("K.4-1.jpeg"),
-        getImageURL("K.4-2.jpeg"),
-        getImageURL("K.4-3.jpeg"),
-        getImageURL("K.4-4.jpeg"),
-        getImageURL("Thumbnails_K.4.jpg"),
+        getImageURL("K.4/K.4-1.jpeg"),
+        getImageURL("K.4/K.4-2.jpeg"),
+        getImageURL("K.4/K.4-3.jpeg"),
+        getImageURL("K.4/K.4-4.jpeg"),
+        getImageURL("K.4/Thumbnails_K.4.jpg"),
       ],
     },
   },
@@ -649,13 +649,13 @@ export const categories: IProductCategory[] = [
     image: {
       pattern: { name: "Random", src: "Random - White.svg" },
       grain: { name: "Natural Grains", src: "Natural Grains - White.svg" },
-      thumbnail: "Thumbnails_K.5.jpg",
+      thumbnail: getImageURL("K.5/Thumbnails_K.5.jpg"),
       filenames: [
-        getImageURL("K.5-1.jpg"),
-        getImageURL("K.5-2.jpg"),
-        getImageURL("K.5-3.jpg"),
-        getImageURL("K.5-4.jpg"),
-        getImageURL("Thumbnails_K.5.jpg"),
+        getImageURL("K.5/K.5-1.jpg"),
+        getImageURL("K.5/K.5-2.jpg"),
+        getImageURL("K.5/K.5-3.jpg"),
+        getImageURL("K.5/K.5-4.jpg"),
+        getImageURL("K.5/Thumbnails_K.5.jpg"),
       ],
     },
   },
@@ -676,8 +676,11 @@ export const categories: IProductCategory[] = [
     image: {
       pattern: { name: "Random", src: "Random - White.svg" },
       grain: { name: "Natural Grains", src: "Natural Grains - White.svg" },
-      thumbnail: "Thumbnails_K.6.png",
-      filenames: [getImageURL("K.6-1.jpg"), getImageURL("Thumbnails_K.6.png")],
+      thumbnail: getImageURL("K.6/Thumbnails_K.6.png"),
+      filenames: [
+        getImageURL("K.6/K.6-1.jpg"),
+        getImageURL("K.6/Thumbnails_K.6.png"),
+      ],
     },
   },
 
@@ -697,15 +700,15 @@ export const categories: IProductCategory[] = [
     image: {
       pattern: { name: "Random", src: "Random - White.svg" },
       grain: { name: "Natural Grains", src: "Natural Grains - White.svg" },
-      thumbnail: "Thumbnails_K.7.jpg",
+      thumbnail: getImageURL("K.7/Thumbnails_K.7.jpg"),
       filenames: [
-        getImageURL("K.7-1.jpg"),
-        getImageURL("K.7-2.jpg"),
-        getImageURL("K.7-3.jpg"),
-        getImageURL("K.7-4.jpg"),
-        getImageURL("K.7-5.jpg"),
-        getImageURL("K.7-6.jpg"),
-        getImageURL("Thumbnails_K.7.jpg"),
+        getImageURL("K.7/K.7-1.jpg"),
+        getImageURL("K.7/K.7-2.jpg"),
+        getImageURL("K.7/K.7-3.jpg"),
+        getImageURL("K.7/K.7-4.jpg"),
+        getImageURL("K.7/K.7-5.jpg"),
+        getImageURL("K.7/K.7-6.jpg"),
+        getImageURL("K.7/Thumbnails_K.7.jpg"),
       ],
     },
   },
@@ -726,15 +729,15 @@ export const categories: IProductCategory[] = [
     image: {
       pattern: { name: "Random", src: "Random.svg" },
       grain: { name: "Natural Grains", src: "Natural Grains.svg" },
-      thumbnail: "Thumbnails_K.8.jpg",
+      thumbnail: getImageURL("K.8/Thumbnails_K.8.jpg"),
       filenames: [
-        getImageURL("K.8-1.jpeg"),
-        getImageURL("K.8-2.jpeg"),
-        getImageURL("K.8-3.jpeg"),
-        getImageURL("K.8-4.jpeg"),
-        getImageURL("K.8-5.jpg"),
-        getImageURL("K.8-6.jpg"),
-        getImageURL("Thumbnails_K.8.jpg"),
+        getImageURL("K.8/K.8-1.jpeg"),
+        getImageURL("K.8/K.8-2.jpeg"),
+        getImageURL("K.8/K.8-3.jpeg"),
+        getImageURL("K.8/K.8-4.jpeg"),
+        getImageURL("K.8/K.8-5.jpg"),
+        getImageURL("K.8/K.8-6.jpg"),
+        getImageURL("K.8/Thumbnails_K.8.jpg"),
       ],
     },
   },
@@ -755,14 +758,14 @@ export const categories: IProductCategory[] = [
     image: {
       pattern: { name: "Random", src: "Random.svg" },
       grain: { name: "Natural Grains", src: "Natural Grains.svg" },
-      thumbnail: "Thumbnails_K.9.jpg",
+      thumbnail: getImageURL("K.9/Thumbnails_K.9.jpg"),
       filenames: [
-        getImageURL("K.9-1.jpg"),
-        getImageURL("K.9-2.jpg"),
-        getImageURL("K.9-3.jpg"),
-        getImageURL("K.9-4.jpg"),
-        getImageURL("K.9-5.jpg"),
-        getImageURL("Thumbnails_K.9.jpg"),
+        getImageURL("K.9/K.9-1.jpg"),
+        getImageURL("K.9/K.9-2.jpg"),
+        getImageURL("K.9/K.9-3.jpg"),
+        getImageURL("K.9/K.9-4.jpg"),
+        getImageURL("K.9/K.9-5.jpg"),
+        getImageURL("K.9/Thumbnails_K.9.jpg"),
       ],
     },
   },
@@ -783,14 +786,14 @@ export const categories: IProductCategory[] = [
     image: {
       pattern: { name: "Random", src: "Random - White.svg" },
       grain: { name: "Natural Grains", src: "Natural Grains - White.svg" },
-      thumbnail: "Thumbnails_K.10.jpg",
+      thumbnail: getImageURL("K.10/Thumbnails_K.10.jpg"),
       filenames: [
-        getImageURL("K.10-1.jpg"),
-        getImageURL("K.10-2.webp"),
-        getImageURL("K.10-3.jpeg"),
-        getImageURL("K.10-4.jpeg"),
-        getImageURL("K.10-5.jpg"),
-        getImageURL("Thumbnails_K.10.jpg"),
+        getImageURL("K.10/K.10-1.jpg"),
+        getImageURL("K.10/K.10-2.webp"),
+        getImageURL("K.10/K.10-3.jpeg"),
+        getImageURL("K.10/K.10-4.jpeg"),
+        getImageURL("K.10/K.10-5.jpg"),
+        getImageURL("K.10/Thumbnails_K.10.jpg"),
       ],
     },
   },
@@ -811,15 +814,15 @@ export const categories: IProductCategory[] = [
     image: {
       pattern: { name: "Random", src: "Random.svg" },
       grain: { name: "Natural Grains", src: "Natural Grains.svg" },
-      thumbnail: "Thumbnails_K.11.jpg",
+      thumbnail: getImageURL("K.11/Thumbnails_K.11.jpg"),
       filenames: [
-        getImageURL("K.11-1.jpg"),
-        getImageURL("K.11-2.jpg"),
-        getImageURL("K.11-3.jpg"),
-        getImageURL("K.11-4.jpg"),
-        getImageURL("K.11-5.jpg"),
-        getImageURL("K.11-6.jpg"),
-        getImageURL("Thumbnails_K.11.jpg"),
+        getImageURL("K.11/K.11-1.jpg"),
+        getImageURL("K.11/K.11-2.jpg"),
+        getImageURL("K.11/K.11-3.jpg"),
+        getImageURL("K.11/K.11-4.jpg"),
+        getImageURL("K.11/K.11-5.jpg"),
+        getImageURL("K.11/K.11-6.jpg"),
+        getImageURL("K.11/Thumbnails_K.11.jpg"),
       ],
     },
   },
@@ -840,13 +843,13 @@ export const categories: IProductCategory[] = [
     image: {
       pattern: { name: "Random", src: "Random.svg" },
       grain: { name: "Natural Grains", src: "Natural Grains.svg" },
-      thumbnail: "Thumbnails_K.12.jpg",
+      thumbnail: getImageURL("K.12/Thumbnails_K.12.jpg"),
       filenames: [
-        getImageURL("K.12-1.jpeg"),
-        getImageURL("K.12-2.jpeg"),
-        getImageURL("K.12-3.jpeg"),
-        getImageURL("K.12-4.jpeg"),
-        getImageURL("Thumbnails_K.12.jpg"),
+        getImageURL("K.12/K.12-1.jpeg"),
+        getImageURL("K.12/K.12-2.jpeg"),
+        getImageURL("K.12/K.12-3.jpeg"),
+        getImageURL("K.12/K.12-4.jpeg"),
+        getImageURL("K.12/Thumbnails_K.12.jpg"),
       ],
     },
   },
