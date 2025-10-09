@@ -1,4 +1,8 @@
 import { IProductCategory } from "@/types/productCategory";
+const cdnEndpoint = "https://assets.calvarycarpentry.com/k-floors/products/";
+function getImageURL(filename: string) {
+  return cdnEndpoint + filename;
+}
 
 export const categories: IProductCategory[] = [
   // productId: "KL1.C"
@@ -528,11 +532,11 @@ export const categories: IProductCategory[] = [
       grain: { name: "Natural Grains", src: "Natural Grains.svg" },
       thumbnail: "Thumbnails_K.1.jpg",
       filenames: [
-        "K.1-1.jpg",
-        "K.1-2.jpg",
-        "K.1-3.jpg",
-        "K.1-4.jpeg",
-        "Thumbnails_K.1.jpg",
+        getImageURL("K.1/K.1-1.jpg"),
+        getImageURL("K.1/K.1-2.jpg"),
+        getImageURL("K.1/K.1-3.jpg"),
+        getImageURL("K.1/K.1-4.jpeg"),
+        getImageURL("K.1/Thumbnails_K.1.jpg"),
       ],
     },
   },
@@ -554,7 +558,14 @@ export const categories: IProductCategory[] = [
       pattern: { name: "Random", src: "Random - White.svg" },
       grain: { name: "Natural Grains", src: "Natural Grains - White.svg" },
       thumbnail: "Thumbnails_K.2.jpg",
-      filenames: ["K.2-1.png", "K.2-2.jpg", "Thumbnails_K.2.jpg"],
+      filenames: [
+        getImageURL("K.2/K.2-1.png"),
+        getImageURL("K.2/K.2-2.png"),
+        getImageURL("K.2/Thumbnails_K.2.jpg"),
+        // "K.2/K.2-1.png",
+        // "K.2/K.2-2.jpg",
+        // "K.2/Thumbnails_K.2.jpg"
+      ],
     },
   },
 

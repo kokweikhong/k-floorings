@@ -131,9 +131,9 @@ export default function IndividualProductPage({ params }) {
               return (
                 <div key={index} className="h-[500px]">
                   <Image
-                    src={`${imageBaseURL}/${category.productId}/${img}`}
+                    src={img}
                     alt=""
-                    width="500"
+                    width="1080"
                     height="500"
                     className="object-cover w-full h-full"
                   />
@@ -141,6 +141,7 @@ export default function IndividualProductPage({ params }) {
               );
             })}
           </Slider>
+
           <button
             onClick={() => setOpen(true)}
             className="w-[40px] h-[40px] absolute bottom-3 right-3 cursor-pointer z-20"
